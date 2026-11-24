@@ -1,6 +1,6 @@
 # 原始外壳盖子改造专项审计
 
-- 生成时间（UTC）：2026-11-24T13:28:06.929627+00:00
+- 生成时间（UTC）：2026-11-24T13:52:26.429239+00:00
 - 原始 STEP：只读；未修改、未导出任何改版实体。
 - 目标：以原始盖子 #85 为设计基体，检查右移后的快门输入模块及高位齿轮包络。
 - 约束：主体 #86、编码器机构、AS5600/磁铁基准、TSL2591 光路及所有已验证电子件保持冻结。
@@ -14,17 +14,17 @@
 
 ## 盖子与改造机构的实体检查
 
-|检查对象|交叠体积 (mm³)|最小距离 (mm)|说明|
-|---|---:|---:|---|
-|original cover vs +10 mm translated shutter input module|186.323213776|0.0|实体空间探针|
-|original cover vs output gear blank Ø11 x 2 at Z=21..23|0.0|3.201562|实体空间探针|
-|original cover vs input gear blank Ø11 x 2 at Z=21..23|0.0|0.1|实体空间探针|
-|original cover vs output axial probe Ø2 from Z=20.9|0.0|7.7|实体空间探针|
-|original cover vs input axial probe Ø2 from Z=20.9|0.0|0.271374|实体空间探针|
-|original cover vs fixed encoder button|0.0|17.6|实体空间探针|
-|original cover vs fixed encoder dial|0.0|15.1|实体空间探针|
-|original cover vs fixed encoder bracket|0.0|7.4|实体空间探针|
-|original cover vs original main body (baseline fit; not automatically a collision)|0.0|0.0|原始盖体/主体配合基线，不能简单当作碰撞|
+|检查对象|交叠体积 (mm³)|交叠实体数|交叠区域包围盒 min/max (mm)|最小距离 (mm)|说明|
+|---|---:|---:|---|---:|---|
+|original cover vs +10 mm translated shutter input module|186.323213776|1|[29.672, -8.5, 18.3, 39.45, 8.5, 20.9]|0.0|实体空间探针|
+|original cover vs output gear blank Ø11 x 2 at Z=21..23|0.0|0|None|3.201562|实体空间探针|
+|original cover vs input gear blank Ø11 x 2 at Z=21..23|0.0|0|None|0.1|实体空间探针|
+|original cover vs output axial probe Ø2 from Z=20.9|0.0|0|None|7.7|实体空间探针|
+|original cover vs input axial probe Ø2 from Z=20.9|0.0|0|None|0.271374|实体空间探针|
+|original cover vs fixed encoder button|0.0|0|None|17.6|实体空间探针|
+|original cover vs fixed encoder dial|0.0|0|None|15.1|实体空间探针|
+|original cover vs fixed encoder bracket|0.0|0|None|7.4|实体空间探针|
+|original cover vs original main body (baseline fit; not automatically a collision)|0.0|0|None|0.0|原始盖体/主体配合基线，不能简单当作碰撞|
 
 ## 盖子面级交叠定位
 
@@ -84,46 +84,71 @@
     {
       "pair": "original cover vs +10 mm translated shutter input module",
       "intersection_volume_mm3": 186.323213776,
+      "intersection_solid_count": 1,
+      "intersection_bbox_mm": [
+        29.672,
+        -8.5,
+        18.3,
+        39.45,
+        8.5,
+        20.9
+      ],
       "minimum_distance_mm": 0.0
     },
     {
       "pair": "original cover vs output gear blank Ø11 x 2 at Z=21..23",
       "intersection_volume_mm3": 0.0,
+      "intersection_solid_count": 0,
+      "intersection_bbox_mm": null,
       "minimum_distance_mm": 3.201562
     },
     {
       "pair": "original cover vs input gear blank Ø11 x 2 at Z=21..23",
       "intersection_volume_mm3": 0.0,
+      "intersection_solid_count": 0,
+      "intersection_bbox_mm": null,
       "minimum_distance_mm": 0.1
     },
     {
       "pair": "original cover vs output axial probe Ø2 from Z=20.9",
       "intersection_volume_mm3": 0.0,
+      "intersection_solid_count": 0,
+      "intersection_bbox_mm": null,
       "minimum_distance_mm": 7.7
     },
     {
       "pair": "original cover vs input axial probe Ø2 from Z=20.9",
       "intersection_volume_mm3": 0.0,
+      "intersection_solid_count": 0,
+      "intersection_bbox_mm": null,
       "minimum_distance_mm": 0.271374
     },
     {
       "pair": "original cover vs fixed encoder button",
       "intersection_volume_mm3": 0.0,
+      "intersection_solid_count": 0,
+      "intersection_bbox_mm": null,
       "minimum_distance_mm": 17.6
     },
     {
       "pair": "original cover vs fixed encoder dial",
       "intersection_volume_mm3": 0.0,
+      "intersection_solid_count": 0,
+      "intersection_bbox_mm": null,
       "minimum_distance_mm": 15.1
     },
     {
       "pair": "original cover vs fixed encoder bracket",
       "intersection_volume_mm3": 0.0,
+      "intersection_solid_count": 0,
+      "intersection_bbox_mm": null,
       "minimum_distance_mm": 7.4
     },
     {
       "pair": "original cover vs original main body (baseline fit; not automatically a collision)",
       "intersection_volume_mm3": 0.0,
+      "intersection_solid_count": 0,
+      "intersection_bbox_mm": null,
       "minimum_distance_mm": 0.0
     }
   ],
@@ -201,6 +226,7 @@
   ],
   "limitations": [
     "The original cover and body are not modified.",
+    "Intersection bounding boxes localize volumetric interference; they do not define a valid cut profile.",
     "A cylindrical gear blank is only a spatial envelope; it does not validate involute tooth geometry or meshing.",
     "The Ø2 axial probes are diagnostic envelopes, not selected shaft diameters or approved shaft paths.",
     "Zero overlap is not a manufacturing clearance or assembly-path proof.",
@@ -213,6 +239,7 @@
 ## 解释边界
 
 - The original cover and body are not modified.
+- Intersection bounding boxes localize volumetric interference; they do not define a valid cut profile.
 - A cylindrical gear blank is only a spatial envelope; it does not validate involute tooth geometry or meshing.
 - The Ø2 axial probes are diagnostic envelopes, not selected shaft diameters or approved shaft paths.
 - Zero overlap is not a manufacturing clearance or assembly-path proof.
