@@ -1,6 +1,6 @@
 # STEP 几何内核检查报告
 
-- 生成时间（UTC）：2026-11-24T11:28:21.049567+00:00
+- 生成时间（UTC）：2026-11-24T11:37:44.022604+00:00
 - 输入文件：source/leica_m3_light_meter.stp
 - 文件大小：565011 bytes
 - CadQuery：2.5.2
@@ -7960,7 +7960,7 @@
 ## 原始数据
 
 {
-  "generated_utc": "2026-11-24T11:28:21.049567+00:00",
+  "generated_utc": "2026-11-24T11:37:44.022604+00:00",
   "source": "source/leica_m3_light_meter.stp",
   "source_bytes": 565011,
   "cadquery_version": "2.5.2",
@@ -124092,11 +124092,37 @@
         ],
         "base_assembly_valid": true,
         "base_assembly_solid_count": 1,
-        "filleted_assembly_valid": false,
-        "filleted_assembly_solid_count": null,
-        "fillet_error": "Expected one bridge/shaft junction edge, found 2",
-        "fixed_geometry_checks": [],
-        "clear_of_checked_frozen_geometry": false,
+        "filleted_assembly_valid": true,
+        "filleted_assembly_solid_count": 1,
+        "fillet_error": null,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_frozen_geometry": true,
         "limitations": [
           "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
           "A successful fillet is local geometric validity, not stress or fatigue validation",
@@ -124154,11 +124180,37 @@
         ],
         "base_assembly_valid": true,
         "base_assembly_solid_count": 1,
-        "filleted_assembly_valid": false,
-        "filleted_assembly_solid_count": null,
-        "fillet_error": "Expected one bridge/shaft junction edge, found 2",
-        "fixed_geometry_checks": [],
-        "clear_of_checked_frozen_geometry": false,
+        "filleted_assembly_valid": true,
+        "filleted_assembly_solid_count": 1,
+        "fillet_error": null,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_frozen_geometry": true,
         "limitations": [
           "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
           "A successful fillet is local geometric validity, not stress or fatigue validation",
@@ -124216,11 +124268,37 @@
         ],
         "base_assembly_valid": true,
         "base_assembly_solid_count": 1,
-        "filleted_assembly_valid": false,
-        "filleted_assembly_solid_count": null,
-        "fillet_error": "Expected one bridge/shaft junction edge, found 2",
-        "fixed_geometry_checks": [],
-        "clear_of_checked_frozen_geometry": false,
+        "filleted_assembly_valid": true,
+        "filleted_assembly_solid_count": 1,
+        "fillet_error": null,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_frozen_geometry": true,
         "limitations": [
           "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
           "A successful fillet is local geometric validity, not stress or fatigue validation",
@@ -124278,11 +124356,37 @@
         ],
         "base_assembly_valid": true,
         "base_assembly_solid_count": 1,
-        "filleted_assembly_valid": false,
-        "filleted_assembly_solid_count": null,
-        "fillet_error": "Expected one bridge/shaft junction edge, found 2",
-        "fixed_geometry_checks": [],
-        "clear_of_checked_frozen_geometry": false,
+        "filleted_assembly_valid": true,
+        "filleted_assembly_solid_count": 1,
+        "fillet_error": null,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_frozen_geometry": true,
         "limitations": [
           "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
           "A successful fillet is local geometric validity, not stress or fatigue validation",
@@ -124340,11 +124444,37 @@
         ],
         "base_assembly_valid": true,
         "base_assembly_solid_count": 1,
-        "filleted_assembly_valid": false,
-        "filleted_assembly_solid_count": null,
-        "fillet_error": "Expected one bridge/shaft junction edge, found 2",
-        "fixed_geometry_checks": [],
-        "clear_of_checked_frozen_geometry": false,
+        "filleted_assembly_valid": true,
+        "filleted_assembly_solid_count": 1,
+        "fillet_error": null,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_frozen_geometry": true,
         "limitations": [
           "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
           "A successful fillet is local geometric validity, not stress or fatigue validation",
@@ -124402,11 +124532,37 @@
         ],
         "base_assembly_valid": true,
         "base_assembly_solid_count": 1,
-        "filleted_assembly_valid": false,
-        "filleted_assembly_solid_count": null,
-        "fillet_error": "Expected one bridge/shaft junction edge, found 2",
-        "fixed_geometry_checks": [],
-        "clear_of_checked_frozen_geometry": false,
+        "filleted_assembly_valid": true,
+        "filleted_assembly_solid_count": 1,
+        "fillet_error": null,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_frozen_geometry": true,
         "limitations": [
           "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
           "A successful fillet is local geometric validity, not stress or fatigue validation",
@@ -124562,6 +124718,17 @@
       {
         "angle_range_deg": [
           0,
+          5
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          5,
           10
         ],
         "candidate_valid": true,
@@ -124573,6 +124740,17 @@
       {
         "angle_range_deg": [
           10,
+          15
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          15,
           20
         ],
         "candidate_valid": true,
@@ -124584,6 +124762,17 @@
       {
         "angle_range_deg": [
           20,
+          25
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          25,
           30
         ],
         "candidate_valid": true,
@@ -124595,6 +124784,17 @@
       {
         "angle_range_deg": [
           30,
+          35
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          35,
           40
         ],
         "candidate_valid": true,
@@ -124606,6 +124806,17 @@
       {
         "angle_range_deg": [
           40,
+          45
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          45,
           50
         ],
         "candidate_valid": true,
@@ -124617,6 +124828,17 @@
       {
         "angle_range_deg": [
           50,
+          55
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          55,
           60
         ],
         "candidate_valid": true,
@@ -124628,6 +124850,17 @@
       {
         "angle_range_deg": [
           60,
+          65
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          65,
           70
         ],
         "candidate_valid": true,
@@ -124639,6 +124872,17 @@
       {
         "angle_range_deg": [
           70,
+          75
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          75,
           80
         ],
         "candidate_valid": true,
@@ -124650,6 +124894,17 @@
       {
         "angle_range_deg": [
           80,
+          85
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          85,
           90
         ],
         "candidate_valid": true,
@@ -124661,6 +124916,17 @@
       {
         "angle_range_deg": [
           90,
+          95
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          95,
           100
         ],
         "candidate_valid": true,
@@ -124672,6 +124938,17 @@
       {
         "angle_range_deg": [
           100,
+          105
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          105,
           110
         ],
         "candidate_valid": true,
@@ -124683,6 +124960,17 @@
       {
         "angle_range_deg": [
           110,
+          115
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          115,
           120
         ],
         "candidate_valid": true,
@@ -124694,6 +124982,17 @@
       {
         "angle_range_deg": [
           120,
+          125
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          125,
           130
         ],
         "candidate_valid": true,
@@ -124705,6 +125004,17 @@
       {
         "angle_range_deg": [
           130,
+          135
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          135,
           140
         ],
         "candidate_valid": true,
@@ -124716,6 +125026,17 @@
       {
         "angle_range_deg": [
           140,
+          145
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          145,
           150
         ],
         "candidate_valid": true,
@@ -124727,17 +125048,39 @@
       {
         "angle_range_deg": [
           150,
+          155
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 6.242128021,
+        "clear_of_main_body": false,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          155,
           160
         ],
         "candidate_valid": true,
         "candidate_solid_count": 1,
-        "main_body_intersection_mm3": 10.634324422,
+        "main_body_intersection_mm3": 4.392196401,
         "clear_of_main_body": false,
         "error": null
       },
       {
         "angle_range_deg": [
           160,
+          165
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          165,
           170
         ],
         "candidate_valid": true,
@@ -124749,6 +125092,17 @@
       {
         "angle_range_deg": [
           170,
+          175
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          175,
           180
         ],
         "candidate_valid": true,
@@ -124760,6 +125114,17 @@
       {
         "angle_range_deg": [
           180,
+          185
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          185,
           190
         ],
         "candidate_valid": true,
@@ -124771,6 +125136,17 @@
       {
         "angle_range_deg": [
           190,
+          195
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          195,
           200
         ],
         "candidate_valid": true,
@@ -124782,17 +125158,39 @@
       {
         "angle_range_deg": [
           200,
+          205
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 4.392196401,
+        "clear_of_main_body": false,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          205,
           210
         ],
         "candidate_valid": true,
         "candidate_solid_count": 1,
-        "main_body_intersection_mm3": 10.634327484,
+        "main_body_intersection_mm3": 6.242131082,
         "clear_of_main_body": false,
         "error": null
       },
       {
         "angle_range_deg": [
           210,
+          215
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          215,
           220
         ],
         "candidate_valid": true,
@@ -124804,6 +125202,17 @@
       {
         "angle_range_deg": [
           220,
+          225
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          225,
           230
         ],
         "candidate_valid": true,
@@ -124815,6 +125224,17 @@
       {
         "angle_range_deg": [
           230,
+          235
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          235,
           240
         ],
         "candidate_valid": true,
@@ -124826,6 +125246,17 @@
       {
         "angle_range_deg": [
           240,
+          245
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          245,
           250
         ],
         "candidate_valid": true,
@@ -124837,6 +125268,17 @@
       {
         "angle_range_deg": [
           250,
+          255
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          255,
           260
         ],
         "candidate_valid": true,
@@ -124848,6 +125290,17 @@
       {
         "angle_range_deg": [
           260,
+          265
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          265,
           270
         ],
         "candidate_valid": true,
@@ -124859,6 +125312,17 @@
       {
         "angle_range_deg": [
           270,
+          275
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          275,
           280
         ],
         "candidate_valid": true,
@@ -124870,6 +125334,17 @@
       {
         "angle_range_deg": [
           280,
+          285
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          285,
           290
         ],
         "candidate_valid": true,
@@ -124881,6 +125356,17 @@
       {
         "angle_range_deg": [
           290,
+          295
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          295,
           300
         ],
         "candidate_valid": true,
@@ -124892,6 +125378,17 @@
       {
         "angle_range_deg": [
           300,
+          305
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          305,
           310
         ],
         "candidate_valid": true,
@@ -124903,6 +125400,17 @@
       {
         "angle_range_deg": [
           310,
+          315
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          315,
           320
         ],
         "candidate_valid": true,
@@ -124914,6 +125422,17 @@
       {
         "angle_range_deg": [
           320,
+          325
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          325,
           330
         ],
         "candidate_valid": true,
@@ -124925,6 +125444,17 @@
       {
         "angle_range_deg": [
           330,
+          335
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          335,
           340
         ],
         "candidate_valid": true,
@@ -124936,6 +125466,17 @@
       {
         "angle_range_deg": [
           340,
+          345
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          345,
           350
         ],
         "candidate_valid": true,
@@ -124947,6 +125488,17 @@
       {
         "angle_range_deg": [
           350,
+          355
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          355,
           360
         ],
         "candidate_valid": true,
@@ -124957,7 +125509,7 @@
       }
     ],
     "input_new_cover_ring_sector_scan_parameters": {
-      "sector_step_deg": 10,
+      "sector_step_deg": 5,
       "radial_clearance_mm": 0.5,
       "radial_frame_width_mm": 1.5,
       "z_range_mm": [
@@ -141515,11 +142067,37 @@
     ],
     "base_assembly_valid": true,
     "base_assembly_solid_count": 1,
-    "filleted_assembly_valid": false,
-    "filleted_assembly_solid_count": null,
-    "fillet_error": "Expected one bridge/shaft junction edge, found 2",
-    "fixed_geometry_checks": [],
-    "clear_of_checked_frozen_geometry": false,
+    "filleted_assembly_valid": true,
+    "filleted_assembly_solid_count": 1,
+    "fillet_error": null,
+    "fixed_geometry_checks": [
+      {
+        "obstacle": "main_body",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_button",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_dial",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_bracket",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "preserved_pin_hole_envelope",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      }
+    ],
+    "clear_of_checked_frozen_geometry": true,
     "limitations": [
       "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
       "A successful fillet is local geometric validity, not stress or fatigue validation",
@@ -141577,11 +142155,37 @@
     ],
     "base_assembly_valid": true,
     "base_assembly_solid_count": 1,
-    "filleted_assembly_valid": false,
-    "filleted_assembly_solid_count": null,
-    "fillet_error": "Expected one bridge/shaft junction edge, found 2",
-    "fixed_geometry_checks": [],
-    "clear_of_checked_frozen_geometry": false,
+    "filleted_assembly_valid": true,
+    "filleted_assembly_solid_count": 1,
+    "fillet_error": null,
+    "fixed_geometry_checks": [
+      {
+        "obstacle": "main_body",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_button",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_dial",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_bracket",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "preserved_pin_hole_envelope",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      }
+    ],
+    "clear_of_checked_frozen_geometry": true,
     "limitations": [
       "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
       "A successful fillet is local geometric validity, not stress or fatigue validation",
@@ -141639,11 +142243,37 @@
     ],
     "base_assembly_valid": true,
     "base_assembly_solid_count": 1,
-    "filleted_assembly_valid": false,
-    "filleted_assembly_solid_count": null,
-    "fillet_error": "Expected one bridge/shaft junction edge, found 2",
-    "fixed_geometry_checks": [],
-    "clear_of_checked_frozen_geometry": false,
+    "filleted_assembly_valid": true,
+    "filleted_assembly_solid_count": 1,
+    "fillet_error": null,
+    "fixed_geometry_checks": [
+      {
+        "obstacle": "main_body",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_button",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_dial",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_bracket",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "preserved_pin_hole_envelope",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      }
+    ],
+    "clear_of_checked_frozen_geometry": true,
     "limitations": [
       "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
       "A successful fillet is local geometric validity, not stress or fatigue validation",
@@ -141701,11 +142331,37 @@
     ],
     "base_assembly_valid": true,
     "base_assembly_solid_count": 1,
-    "filleted_assembly_valid": false,
-    "filleted_assembly_solid_count": null,
-    "fillet_error": "Expected one bridge/shaft junction edge, found 2",
-    "fixed_geometry_checks": [],
-    "clear_of_checked_frozen_geometry": false,
+    "filleted_assembly_valid": true,
+    "filleted_assembly_solid_count": 1,
+    "fillet_error": null,
+    "fixed_geometry_checks": [
+      {
+        "obstacle": "main_body",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_button",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_dial",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_bracket",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "preserved_pin_hole_envelope",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      }
+    ],
+    "clear_of_checked_frozen_geometry": true,
     "limitations": [
       "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
       "A successful fillet is local geometric validity, not stress or fatigue validation",
@@ -141763,11 +142419,37 @@
     ],
     "base_assembly_valid": true,
     "base_assembly_solid_count": 1,
-    "filleted_assembly_valid": false,
-    "filleted_assembly_solid_count": null,
-    "fillet_error": "Expected one bridge/shaft junction edge, found 2",
-    "fixed_geometry_checks": [],
-    "clear_of_checked_frozen_geometry": false,
+    "filleted_assembly_valid": true,
+    "filleted_assembly_solid_count": 1,
+    "fillet_error": null,
+    "fixed_geometry_checks": [
+      {
+        "obstacle": "main_body",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_button",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_dial",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_bracket",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "preserved_pin_hole_envelope",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      }
+    ],
+    "clear_of_checked_frozen_geometry": true,
     "limitations": [
       "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
       "A successful fillet is local geometric validity, not stress or fatigue validation",
@@ -141825,11 +142507,37 @@
     ],
     "base_assembly_valid": true,
     "base_assembly_solid_count": 1,
-    "filleted_assembly_valid": false,
-    "filleted_assembly_solid_count": null,
-    "fillet_error": "Expected one bridge/shaft junction edge, found 2",
-    "fixed_geometry_checks": [],
-    "clear_of_checked_frozen_geometry": false,
+    "filleted_assembly_valid": true,
+    "filleted_assembly_solid_count": 1,
+    "fillet_error": null,
+    "fixed_geometry_checks": [
+      {
+        "obstacle": "main_body",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_button",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_dial",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_bracket",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "preserved_pin_hole_envelope",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      }
+    ],
+    "clear_of_checked_frozen_geometry": true,
     "limitations": [
       "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
       "A successful fillet is local geometric validity, not stress or fatigue validation",
