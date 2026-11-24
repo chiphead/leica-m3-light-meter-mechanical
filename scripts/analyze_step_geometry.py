@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate the source STEP with CadQuery/OpenCascade and write a Markdown report."""
 from __future__ import annotations
+import hashlib
 import json
 import math
 import sys
@@ -9,6 +10,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 import cadquery as cq
 from OCP.BRepExtrema import BRepExtrema_DistShapeShape
+
+from analysis_cache import load_or_compute
 
 ROOT = Path(__file__).resolve().parents[1]
 STEP = ROOT / "source/leica_m3_light_meter.stp"
@@ -33,35 +36,52 @@ def main():
     solids = root_shape.Solids()
     if not solids:
         raise RuntimeError("STEP import produced no solid bodies")
-    rows = []
-    for index, solid in enumerate(solids, 1):
-        rows.append({
-            "index": index, "valid": bool(solid.isValid()),
-            "volume_mm3": round(float(solid.Volume()), 6),
-            "center_of_mass_mm": vec(solid.Center()),
-            "bbox_mm": bbox(solid), "faces": len(solid.Faces()),
-            "edges": len(solid.Edges()), "vertices": len(solid.Vertices()),
-        })
-    pairs = []
-    for i in range(len(solids)):
-        for j in range(i + 1, len(solids)):
-            a, b = solids[i], solids[j]
-            try:
-                common_volume = float(a.intersect(b).Volume())
-                intersection_error = None
-            except Exception as exc:
-                common_volume, intersection_error = None, str(exc)
-            try:
-                distance = float(a.distance(b))
-                distance_error = None
-            except Exception as exc:
-                distance, distance_error = None, str(exc)
-            pairs.append({
-                "a": i + 1, "b": j + 1,
-                "intersection_volume_mm3": round(common_volume, 9) if common_volume is not None else None,
-                "minimum_distance_mm": round(distance, 6) if distance is not None else None,
-                "intersection_error": intersection_error, "distance_error": distance_error,
+    source_sha256 = hashlib.sha256(STEP.read_bytes()).hexdigest()
+
+    def compute_base_geometry_inventory():
+        rows = []
+        for index, solid in enumerate(solids, 1):
+            rows.append({
+                "index": index, "valid": bool(solid.isValid()),
+                "volume_mm3": round(float(solid.Volume()), 6),
+                "center_of_mass_mm": vec(solid.Center()),
+                "bbox_mm": bbox(solid), "faces": len(solid.Faces()),
+                "edges": len(solid.Edges()), "vertices": len(solid.Vertices()),
             })
+        pairs = []
+        for i in range(len(solids)):
+            for j in range(i + 1, len(solids)):
+                a, b = solids[i], solids[j]
+                try:
+                    common_volume = float(a.intersect(b).Volume())
+                    intersection_error = None
+                except Exception as exc:
+                    common_volume, intersection_error = None, str(exc)
+                try:
+                    distance = float(a.distance(b))
+                    distance_error = None
+                except Exception as exc:
+                    distance, distance_error = None, str(exc)
+                pairs.append({
+                    "a": i + 1, "b": j + 1,
+                    "intersection_volume_mm3": round(common_volume, 9) if common_volume is not None else None,
+                    "minimum_distance_mm": round(distance, 6) if distance is not None else None,
+                    "intersection_error": intersection_error, "distance_error": distance_error,
+                })
+        return {"rows": rows, "pairs": pairs}
+
+    inventory = load_or_compute(
+        stage="base_geometry_inventory",
+        version="1",
+        inputs={
+            "source_sha256": source_sha256,
+            "cadquery_version": getattr(cq, "__version__", "unknown"),
+            "solid_count": len(solids),
+        },
+        compute=compute_base_geometry_inventory,
+    )
+    rows = inventory["rows"]
+    pairs = inventory["pairs"]
     all_valid = bool(root_shape.isValid()) and all(x["valid"] for x in rows)
     # First-pass axial sweep for the proposed 1:1, module-0.5 gear pair.
     # Gear blanks use the theoretical 11 mm addendum diameter and 2 mm face width.

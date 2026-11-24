@@ -1,0 +1,4 @@
+# Local CAD analysis cache (restored by GitHub Actions cache)
+.cad-cache/
+__pycache__/
+*.py[cod]
