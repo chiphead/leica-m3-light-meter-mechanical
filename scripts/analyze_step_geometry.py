@@ -2358,6 +2358,67 @@ def main():
                 "error": str(exc),
             })
 
+    # Test whether trimming only the new cover (never the immutable body) by
+    # the exact body intersection can preserve a single connected B-rep.
+    # This is a topology feasibility test; it does not add manufacturing clearance.
+    input_new_cover_ring_body_relief_scan = []
+    for radial_clearance_mm in cover_ring_clearances_mm:
+        row = {
+            "radial_clearance_mm": radial_clearance_mm,
+            "radial_frame_width_mm": cover_ring_radial_width_mm,
+            "moving_sweep_radius_mm": round(moving_sweep_radius_mm, 6),
+            "body_relief_method": "subtract exact main-body B-rep intersection from cover ring",
+            "candidate_valid": False,
+            "candidate_solid_count": None,
+            "candidate_volume_mm3": None,
+            "removed_volume_mm3": None,
+            "moving_assembly_intersection_mm3": None,
+            "fixed_geometry_checks": [],
+            "error": None,
+            "limitations": [
+                "Only the cover candidate is trimmed; source STEP and main body remain unchanged",
+                "Exact body subtraction provides zero-clearance contact at the trimmed interface, not manufacturing clearance",
+                "Single-solid topology does not prove adequate stiffness, mounting, sealing, tool access or printability",
+            ],
+        }
+        try:
+            inner_radius_mm = moving_sweep_radius_mm + radial_clearance_mm
+            outer_radius_mm = inner_radius_mm + cover_ring_radial_width_mm
+            outer = cq.Solid.makeCylinder(
+                outer_radius_mm, cover_ring_height_mm,
+                cq.Vector(bridge_center_x_mm, bridge_center_y_mm, cover_ring_z_min_mm),
+                cq.Vector(0, 0, 1),
+            )
+            inner = cq.Solid.makeCylinder(
+                inner_radius_mm, cover_ring_height_mm,
+                cq.Vector(bridge_center_x_mm, bridge_center_y_mm, cover_ring_z_min_mm),
+                cq.Vector(0, 0, 1),
+            )
+            raw_ring = outer.cut(inner)
+            relieved_ring = raw_ring.cut(solids[5])
+            body_removed = float(raw_ring.Volume()) - float(relieved_ring.Volume())
+            row.update({
+                "candidate_valid": bool(relieved_ring.isValid()),
+                "candidate_solid_count": len(relieved_ring.Solids()),
+                "candidate_volume_mm3": round(float(relieved_ring.Volume()), 9),
+                "removed_volume_mm3": round(body_removed, 9),
+                "moving_assembly_intersection_mm3": round(float(relieved_ring.intersect(cover_ring_moving_assembly).Volume()), 9),
+            })
+            for obstacle_name, obstacle in bridge_fixed_obstacles:
+                try:
+                    overlap = float(relieved_ring.intersect(obstacle).Volume())
+                    error = None
+                except Exception as exc:
+                    overlap, error = None, str(exc)
+                row["fixed_geometry_checks"].append({
+                    "obstacle": obstacle_name,
+                    "intersection_volume_mm3": round(overlap, 9) if overlap is not None else None,
+                    "error": error,
+                })
+        except Exception as exc:
+            row["error"] = str(exc)
+        input_new_cover_ring_body_relief_scan.append(row)
+
     gear_axial_analysis = {
         "gear_blank_diameter_mm": 11.0,
         "gear_face_width_mm": 2.0,
@@ -2438,6 +2499,7 @@ def main():
         "input_bridge_true_fillet_scan_parameters": {"bridge_widths_mm": true_fillet_bridge_widths_mm, "fillet_radii_mm": true_fillet_radii_mm, "shaft_diameter_mm": true_fillet_shaft_diameter_mm, "filleted_edge": "upper circular bridge/shaft junction at bridge top Z"},
         "input_new_cover_ring_candidate_scan": input_new_cover_ring_candidate_scan,
         "input_new_cover_ring_sector_scan": input_new_cover_ring_sector_scan,
+        "input_new_cover_ring_body_relief_scan": input_new_cover_ring_body_relief_scan,
         "input_new_cover_ring_sector_scan_parameters": {
             "sector_step_deg": cover_ring_sector_step_deg,
             "radial_clearance_mm": 0.5,
