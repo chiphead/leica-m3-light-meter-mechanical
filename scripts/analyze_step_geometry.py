@@ -2419,6 +2419,117 @@ def main():
             row["error"] = str(exc)
         input_new_cover_ring_body_relief_scan.append(row)
 
+    # Build a single-piece open annular frame with two body-clearance gaps.
+    # Each gap is bridged outside the nominal ring radius; the bridge overlaps
+    # the ring by 0.5 mm to give the Boolean fuse a positive-volume connection.
+    # This is a topology/layout experiment, not a production cover.
+    input_new_cover_open_ring_bridge_scan = []
+    open_ring_gap_margins_deg = [2.5, 5.0]
+    open_ring_bridge_offsets_mm = [1.0, 2.0]
+    open_ring_inner_radius_mm = moving_sweep_radius_mm + 0.5
+    open_ring_outer_radius_mm = open_ring_inner_radius_mm + cover_ring_radial_width_mm
+    for gap_margin_deg in open_ring_gap_margins_deg:
+        gap_ranges = [
+            [150.0 - gap_margin_deg, 160.0 + gap_margin_deg],
+            [200.0 - gap_margin_deg, 210.0 + gap_margin_deg],
+        ]
+        for bridge_offset_mm in open_ring_bridge_offsets_mm:
+            row = {
+                "gap_margin_deg": gap_margin_deg,
+                "gap_ranges_deg": gap_ranges,
+                "bridge_outer_offset_mm": bridge_offset_mm,
+                "bridge_overlap_into_ring_mm": 0.5,
+                "candidate_valid": False,
+                "candidate_solid_count": None,
+                "candidate_volume_mm3": None,
+                "main_body_intersection_mm3": None,
+                "moving_assembly_intersection_mm3": None,
+                "fixed_geometry_checks": [],
+                "error": None,
+                "limitations": [
+                    "Exploratory annular frame with two local gaps and external polygonal bridges",
+                    "Bridge overlap is a Boolean-fuse aid, not a specified manufacturing joint",
+                    "No mounting tabs, fasteners, wall-thickness, stiffness, sealing or tool-access validation",
+                ],
+            }
+            try:
+                outer = cq.Solid.makeCylinder(
+                    open_ring_outer_radius_mm, cover_ring_height_mm,
+                    cq.Vector(bridge_center_x_mm, bridge_center_y_mm, cover_ring_z_min_mm),
+                    cq.Vector(0, 0, 1),
+                )
+                inner = cq.Solid.makeCylinder(
+                    open_ring_inner_radius_mm, cover_ring_height_mm,
+                    cq.Vector(bridge_center_x_mm, bridge_center_y_mm, cover_ring_z_min_mm),
+                    cq.Vector(0, 0, 1),
+                )
+                frame = outer.cut(inner)
+                bridge_solids = []
+                for gap_start_deg, gap_end_deg in gap_ranges:
+                    gap_outer = cq.Solid.makeCylinder(
+                        open_ring_outer_radius_mm + 0.01, cover_ring_height_mm + 0.02,
+                        cq.Vector(bridge_center_x_mm, bridge_center_y_mm, cover_ring_z_min_mm - 0.01),
+                        cq.Vector(0, 0, 1), gap_end_deg - gap_start_deg,
+                    ).rotate(
+                        (bridge_center_x_mm, bridge_center_y_mm, 0),
+                        (bridge_center_x_mm, bridge_center_y_mm, 1), gap_start_deg,
+                    )
+                    gap_inner = cq.Solid.makeCylinder(
+                        max(0.0, open_ring_inner_radius_mm - 0.01), cover_ring_height_mm + 0.02,
+                        cq.Vector(bridge_center_x_mm, bridge_center_y_mm, cover_ring_z_min_mm - 0.01),
+                        cq.Vector(0, 0, 1), gap_end_deg - gap_start_deg,
+                    ).rotate(
+                        (bridge_center_x_mm, bridge_center_y_mm, 0),
+                        (bridge_center_x_mm, bridge_center_y_mm, 1), gap_start_deg,
+                    )
+                    frame = frame.cut(gap_outer.cut(gap_inner))
+                    r_inner_bridge = open_ring_outer_radius_mm - 0.5
+                    r_outer_bridge = open_ring_outer_radius_mm + bridge_offset_mm
+                    points = []
+                    for radius, angle_deg in [
+                        (r_inner_bridge, gap_start_deg),
+                        (r_outer_bridge, gap_start_deg),
+                        (r_outer_bridge, gap_end_deg),
+                        (r_inner_bridge, gap_end_deg),
+                    ]:
+                        angle_rad = math.radians(angle_deg)
+                        points.append(cq.Vector(
+                            bridge_center_x_mm + radius * math.cos(angle_rad),
+                            bridge_center_y_mm + radius * math.sin(angle_rad),
+                            cover_ring_z_min_mm,
+                        ))
+                    wire = cq.Wire.makePolygon(points + [points[0]])
+                    face = cq.Face.makeFromWires(wire)
+                    bridge_solids.append(cq.Solid.extrudeLinear(
+                        face.outerWire(), [], cq.Vector(0, 0, cover_ring_height_mm)
+                    ))
+                for bridge in bridge_solids:
+                    frame = frame.fuse(bridge)
+                frame = frame.clean()
+                body_overlap = float(frame.intersect(solids[5]).Volume())
+                moving_overlap = float(frame.intersect(cover_ring_moving_assembly).Volume())
+                row.update({
+                    "candidate_valid": bool(frame.isValid()),
+                    "candidate_solid_count": len(frame.Solids()),
+                    "candidate_volume_mm3": round(float(frame.Volume()), 9),
+                    "main_body_intersection_mm3": round(body_overlap, 9),
+                    "moving_assembly_intersection_mm3": round(moving_overlap, 9),
+                })
+                for obstacle_name, obstacle in bridge_fixed_obstacles:
+                    try:
+                        overlap = float(frame.intersect(obstacle).Volume())
+                        error = None
+                    except Exception as exc:
+                        overlap, error = None, str(exc)
+                    row["fixed_geometry_checks"].append({
+                        "obstacle": obstacle_name,
+                        "intersection_volume_mm3": round(overlap, 9) if overlap is not None else None,
+                        "error": error,
+                    })
+            except Exception as exc:
+                row["error"] = str(exc)
+            input_new_cover_open_ring_bridge_scan.append(row)
+
     gear_axial_analysis = {
         "gear_blank_diameter_mm": 11.0,
         "gear_face_width_mm": 2.0,
@@ -2500,6 +2611,7 @@ def main():
         "input_new_cover_ring_candidate_scan": input_new_cover_ring_candidate_scan,
         "input_new_cover_ring_sector_scan": input_new_cover_ring_sector_scan,
         "input_new_cover_ring_body_relief_scan": input_new_cover_ring_body_relief_scan,
+        "input_new_cover_open_ring_bridge_scan": input_new_cover_open_ring_bridge_scan,
         "input_new_cover_ring_sector_scan_parameters": {
             "sector_step_deg": cover_ring_sector_step_deg,
             "radial_clearance_mm": 0.5,
@@ -2643,6 +2755,7 @@ def main():
         "- 环框仅用于验证单件拓扑、运动净空及冻结结构避让，不包含安装耳、螺钉孔、密封和最终外形。",
         "", "### 桥根圆角候选", "", json.dumps(input_bridge_true_fillet_scan, ensure_ascii=False, indent=2),
         "", "### 独立上盖环框候选", "", json.dumps(input_new_cover_ring_candidate_scan, ensure_ascii=False, indent=2),
+        "", "### 双开口环框与外侧桥接候选", "", json.dumps(input_new_cover_open_ring_bridge_scan, ensure_ascii=False, indent=2),
     ]
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text("\n".join(lines), encoding="utf-8")
