@@ -1670,6 +1670,209 @@ def main():
             ),
         })
 
+    # Exploratory input-side bridge hub candidates. The bridge intentionally
+    # overlaps the translated shutter dial at the two ends of the measured gap;
+    # no source solid is modified. Sweep the dial+bridge at 15-degree increments.
+    input_bridge_hub_candidate_scan = []
+    input_bridge_sweep_by_bridge_width = {}
+    bridge_widths_mm = [0.6, 0.8, 1.0]
+    bridge_span_y_mm = 6.0
+    bridge_z_min_mm = 18.0
+    bridge_thickness_z_mm = 0.6
+    bridge_center_x_mm = 34.5
+    bridge_center_y_mm = 0.0
+    input_hub_shaft_diameters_mm = [1.5, 1.8, 2.0]
+    input_hub_shaft_z_min_mm = 18.0
+    input_hub_shaft_z_max_mm = 21.2
+    input_hub_gear_diameter_mm = 11.0
+    input_hub_gear_z_min_mm = 21.0
+    input_hub_gear_width_mm = 2.0
+    bridge_fixed_obstacles = [
+        ("main_body", solids[5]),
+        ("encoder_button", solids[1]),
+        ("encoder_dial", solids[2]),
+        ("encoder_bracket", solids[6]),
+    ]
+    bridge_redesignable_obstacles = [("current_cover", solids[4])]
+
+    for bridge_width_mm in bridge_widths_mm:
+        bridge = cq.Solid.makeBox(
+            bridge_width_mm, bridge_span_y_mm, bridge_thickness_z_mm,
+            cq.Vector(bridge_center_x_mm - bridge_width_mm / 2.0,
+                      bridge_center_y_mm - bridge_span_y_mm / 2.0,
+                      bridge_z_min_mm),
+        )
+        try:
+            bridge_dial_overlap = float(bridge.intersect(moved_shutter_dial).Volume())
+            moving_dial_bridge = moved_shutter_dial.fuse(bridge)
+            moving_fuse_valid = bool(moving_dial_bridge.isValid())
+            moving_fuse_solid_count = len(moving_dial_bridge.Solids())
+            moving_fuse_error = None
+        except Exception as exc:
+            bridge_dial_overlap = None
+            moving_dial_bridge = None
+            moving_fuse_valid = False
+            moving_fuse_solid_count = None
+            moving_fuse_error = str(exc)
+
+        sweep_rows = []
+        if moving_dial_bridge is not None:
+            for angle_deg in range(0, 360, 15):
+                try:
+                    rotated_moving = moving_dial_bridge.rotate(
+                        (bridge_center_x_mm, bridge_center_y_mm, 0.0),
+                        (bridge_center_x_mm, bridge_center_y_mm, 1.0),
+                        float(angle_deg),
+                    )
+                    checks = []
+                    for obstacle_name, obstacle in bridge_fixed_obstacles + bridge_redesignable_obstacles:
+                        try:
+                            overlap = float(rotated_moving.intersect(obstacle).Volume())
+                            error = None
+                        except Exception as exc:
+                            overlap, error = None, str(exc)
+                        if error is not None or overlap is None or overlap > 1e-6:
+                            checks.append({
+                                "obstacle": obstacle_name,
+                                "intersection_volume_mm3": round(overlap, 9) if overlap is not None else None,
+                                "error": error,
+                            })
+                    sweep_rows.append({
+                        "angle_deg": angle_deg,
+                        "collision_count": len(checks),
+                        "collisions": checks,
+                        "clear_of_frozen_geometry": not any(
+                            x["obstacle"] != "current_cover" for x in checks
+                        ),
+                        "clear_of_current_cover": not any(
+                            x["obstacle"] == "current_cover" for x in checks
+                        ),
+                    })
+                except Exception as exc:
+                    sweep_rows.append({
+                        "angle_deg": angle_deg,
+                        "collision_count": 1,
+                        "collisions": [{"obstacle": "rotation_or_boolean",
+                                        "intersection_volume_mm3": None, "error": str(exc)}],
+                        "clear_of_frozen_geometry": False,
+                        "clear_of_current_cover": False,
+                    })
+        input_bridge_sweep_by_bridge_width[str(bridge_width_mm)] = {
+            "bridge_width_x_mm": bridge_width_mm,
+            "bridge_span_y_mm": bridge_span_y_mm,
+            "bridge_z_range_mm": [bridge_z_min_mm, bridge_z_min_mm + bridge_thickness_z_mm],
+            "bridge_dial_overlap_mm3": round(bridge_dial_overlap, 9) if bridge_dial_overlap is not None else None,
+            "dial_bridge_fuse_valid": moving_fuse_valid,
+            "dial_bridge_fuse_solid_count": moving_fuse_solid_count,
+            "fuse_error": moving_fuse_error,
+            "rotation_step_deg": 15,
+            "rotation_samples": len(sweep_rows),
+            "rotation_sweep": sweep_rows,
+            "clear_of_frozen_geometry_all_angles": len(sweep_rows) == 24 and all(x["clear_of_frozen_geometry"] for x in sweep_rows),
+            "clear_of_current_cover_all_angles": len(sweep_rows) == 24 and all(x["clear_of_current_cover"] for x in sweep_rows),
+        }
+
+        for shaft_diameter_mm in input_hub_shaft_diameters_mm:
+            shaft_radius_mm = shaft_diameter_mm / 2.0
+            shaft = cq.Solid.makeCylinder(
+                shaft_radius_mm,
+                input_hub_shaft_z_max_mm - input_hub_shaft_z_min_mm,
+                cq.Vector(bridge_center_x_mm, bridge_center_y_mm, input_hub_shaft_z_min_mm),
+                cq.Vector(0, 0, 1),
+            )
+            gear_blank = cq.Solid.makeCylinder(
+                input_hub_gear_diameter_mm / 2.0,
+                input_hub_gear_width_mm,
+                cq.Vector(bridge_center_x_mm, bridge_center_y_mm, input_hub_gear_z_min_mm),
+                cq.Vector(0, 0, 1),
+            )
+            try:
+                shaft_bridge_overlap = float(shaft.intersect(bridge).Volume())
+                gear_shaft_overlap = float(gear_blank.intersect(shaft).Volume())
+                shaft_dial_overlap = float(shaft.intersect(moved_shutter_dial).Volume())
+                candidate_assembly = moving_dial_bridge.fuse(shaft).fuse(gear_blank)
+                assembly_valid = bool(candidate_assembly.isValid())
+                assembly_solid_count = len(candidate_assembly.Solids())
+                assembly_error = None
+            except Exception as exc:
+                shaft_bridge_overlap = None
+                gear_shaft_overlap = None
+                shaft_dial_overlap = None
+                assembly_valid = False
+                assembly_solid_count = None
+                assembly_error = str(exc)
+
+            shaft_checks = []
+            for obstacle_name, obstacle in bridge_fixed_obstacles + [
+                ("translated_shutter_dial", moved_shutter_dial),
+                ("preserved_pin_hole_envelope", pin_envelope),
+            ]:
+                try:
+                    overlap = float(shaft.intersect(obstacle).Volume())
+                    error = None
+                except Exception as exc:
+                    overlap, error = None, str(exc)
+                shaft_checks.append({
+                    "obstacle": obstacle_name,
+                    "intersection_volume_mm3": round(overlap, 9) if overlap is not None else None,
+                    "error": error,
+                })
+
+            gear_checks = []
+            for obstacle_name, obstacle in bridge_fixed_obstacles + bridge_redesignable_obstacles + [
+                ("translated_shutter_dial", moved_shutter_dial),
+                ("preserved_pin_hole_envelope", pin_envelope),
+            ]:
+                try:
+                    overlap = float(gear_blank.intersect(obstacle).Volume())
+                    error = None
+                except Exception as exc:
+                    overlap, error = None, str(exc)
+                gear_checks.append({
+                    "obstacle": obstacle_name,
+                    "intersection_volume_mm3": round(overlap, 9) if overlap is not None else None,
+                    "error": error,
+                })
+
+            sweep = input_bridge_sweep_by_bridge_width[str(bridge_width_mm)]
+            input_bridge_hub_candidate_scan.append({
+                "bridge_width_x_mm": bridge_width_mm,
+                "bridge_span_y_mm": bridge_span_y_mm,
+                "bridge_z_range_mm": [bridge_z_min_mm, bridge_z_min_mm + bridge_thickness_z_mm],
+                "shaft_diameter_mm": shaft_diameter_mm,
+                "shaft_z_range_mm": [input_hub_shaft_z_min_mm, input_hub_shaft_z_max_mm],
+                "gear_blank_diameter_mm": input_hub_gear_diameter_mm,
+                "gear_blank_z_range_mm": [input_hub_gear_z_min_mm, input_hub_gear_z_min_mm + input_hub_gear_width_mm],
+                "bridge_dial_intentional_overlap_mm3": round(bridge_dial_overlap, 9) if bridge_dial_overlap is not None else None,
+                "shaft_bridge_overlap_mm3": round(shaft_bridge_overlap, 9) if shaft_bridge_overlap is not None else None,
+                "gear_shaft_overlap_mm3": round(gear_shaft_overlap, 9) if gear_shaft_overlap is not None else None,
+                "shaft_dial_overlap_mm3": round(shaft_dial_overlap, 9) if shaft_dial_overlap is not None else None,
+                "assembly_valid": assembly_valid,
+                "assembly_solid_count": assembly_solid_count,
+                "assembly_fuse_error": assembly_error,
+                "shaft_checks": shaft_checks,
+                "gear_blank_checks": gear_checks,
+                "shaft_clear_of_checked_fixed_geometry": all(
+                    x["error"] is None and x["intersection_volume_mm3"] is not None
+                    and x["intersection_volume_mm3"] <= 1e-6 for x in shaft_checks
+                    if x["obstacle"] != "translated_shutter_dial"
+                ),
+                "gear_blank_clear_of_checked_fixed_geometry": all(
+                    x["error"] is None and x["intersection_volume_mm3"] is not None
+                    and x["intersection_volume_mm3"] <= 1e-6 for x in gear_checks
+                    if x["obstacle"] not in ("current_cover", "translated_shutter_dial")
+                ),
+                "rotation_sweep_clear_of_frozen_geometry_all_angles": sweep["clear_of_frozen_geometry_all_angles"],
+                "rotation_sweep_clear_of_current_cover_all_angles": sweep["clear_of_current_cover_all_angles"],
+                "limitations": [
+                    "Exploratory additive bridge and shaft geometry only; not a production design",
+                    "Gear is an 11 mm cylindrical blank; involute teeth and mesh are not modeled",
+                    "15-degree sweep samples are discrete and do not prove continuous swept clearance",
+                    "Strength, fatigue, bearing support, fasteners, tolerances and assembly tooling are not assessed",
+                    "The bridge-to-dial overlap is intentional; the preserved source dial is never cut or modified",
+                ],
+            })
+
     gear_axial_analysis = {
         "gear_blank_diameter_mm": 11.0,
         "gear_face_width_mm": 2.0,
@@ -1741,6 +1944,8 @@ def main():
         "high_gear_output_shaft_checks": high_gear_output_shaft_checks,
         "segmented_output_axis_checks": segmented_output_axis_checks,
         "high_gear_input_stub_checks": high_gear_input_stub_checks,
+        "input_bridge_hub_candidate_scan": input_bridge_hub_candidate_scan,
+        "input_bridge_sweep_by_bridge_width": input_bridge_sweep_by_bridge_width,
         "high_gear_layer_scan_parameters": {"z_starts_mm": [20.5, 23.5], "step_mm": 0.25, "blank_diameter_mm": 11.0, "face_width_mm": 2.0, "centers_xy_mm": [[24.5, 0.0], [34.5, 0.0]]},
         "gear_layer_pin_clearance_scan": gear_layer_pin_clearance_scan,
         "true_gear_axial_window_scan": true_gear_axial_window_scan,
