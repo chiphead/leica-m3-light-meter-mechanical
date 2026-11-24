@@ -1,6 +1,6 @@
 # STEP 几何内核检查报告
 
-- 生成时间（UTC）：2026-11-24T10:49:26.434571+00:00
+- 生成时间（UTC）：2026-11-24T11:04:48.399439+00:00
 - 输入文件：source/leica_m3_light_meter.stp
 - 文件大小：565011 bytes
 - CadQuery：2.5.2
@@ -7960,7 +7960,7 @@
 ## 原始数据
 
 {
-  "generated_utc": "2026-11-24T10:49:26.434571+00:00",
+  "generated_utc": "2026-11-24T11:04:48.399439+00:00",
   "source": "source/leica_m3_light_meter.stp",
   "source_bytes": 565011,
   "cadquery_version": "2.5.2",
@@ -123692,6 +123692,353 @@
         "clear_of_frozen_geometry_all_angles": true,
         "clear_of_current_cover_all_angles": false
       }
+    },
+    "input_bridge_root_transition_scan": [
+      {
+        "bridge_width_x_mm": 0.6,
+        "shaft_diameter_mm": 1.8,
+        "collar_radius_mm": 1.2,
+        "collar_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "fuse_error": null,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_frozen_geometry": true,
+        "collar_volume_mm3": 2.714336053,
+        "limitations": [
+          "Cylindrical collar is a reinforcement proxy, not a true tangent fillet",
+          "No stress, fatigue, print anisotropy or torque capacity analysis"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 0.6,
+        "shaft_diameter_mm": 1.8,
+        "collar_radius_mm": 1.5,
+        "collar_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "fuse_error": null,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_frozen_geometry": true,
+        "collar_volume_mm3": 4.241150082,
+        "limitations": [
+          "Cylindrical collar is a reinforcement proxy, not a true tangent fillet",
+          "No stress, fatigue, print anisotropy or torque capacity analysis"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 0.6,
+        "shaft_diameter_mm": 1.8,
+        "collar_radius_mm": 1.8,
+        "collar_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "fuse_error": null,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_frozen_geometry": true,
+        "collar_volume_mm3": 6.107256119,
+        "limitations": [
+          "Cylindrical collar is a reinforcement proxy, not a true tangent fillet",
+          "No stress, fatigue, print anisotropy or torque capacity analysis"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 1.0,
+        "shaft_diameter_mm": 1.8,
+        "collar_radius_mm": 1.2,
+        "collar_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "fuse_error": null,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_frozen_geometry": true,
+        "collar_volume_mm3": 2.714336053,
+        "limitations": [
+          "Cylindrical collar is a reinforcement proxy, not a true tangent fillet",
+          "No stress, fatigue, print anisotropy or torque capacity analysis"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 1.0,
+        "shaft_diameter_mm": 1.8,
+        "collar_radius_mm": 1.5,
+        "collar_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "fuse_error": null,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_frozen_geometry": true,
+        "collar_volume_mm3": 4.241150082,
+        "limitations": [
+          "Cylindrical collar is a reinforcement proxy, not a true tangent fillet",
+          "No stress, fatigue, print anisotropy or torque capacity analysis"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 1.0,
+        "shaft_diameter_mm": 1.8,
+        "collar_radius_mm": 1.8,
+        "collar_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "fuse_error": null,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_frozen_geometry": true,
+        "collar_volume_mm3": 6.107256119,
+        "limitations": [
+          "Cylindrical collar is a reinforcement proxy, not a true tangent fillet",
+          "No stress, fatigue, print anisotropy or torque capacity analysis"
+        ]
+      }
+    ],
+    "input_cover_relief_candidate_scan": [
+      {
+        "bridge_width_x_mm": 0.6,
+        "shaft_diameter_mm": 1.8,
+        "gear_blank_diameter_mm": 11.0,
+        "rotation_step_deg": 10,
+        "rotation_samples_applied": 36,
+        "moving_assembly_valid": true,
+        "moving_assembly_solid_count": 1,
+        "cover_candidate_valid": true,
+        "cover_candidate_solid_count": 2,
+        "original_cover_volume_mm3": 3837.56809524,
+        "remaining_cover_volume_mm3": 3637.769443361,
+        "removed_cover_volume_mm3": 199.79865188,
+        "cut_errors": [],
+        "error": null,
+        "limitations": [
+          "Cover is only a subtractive relief diagnostic from the old cover blank",
+          "10-degree discrete samples do not prove continuous swept clearance",
+          "No wall-thickness, fastening, sealing, machining access or assembly validation"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 0.8,
+        "shaft_diameter_mm": 1.8,
+        "gear_blank_diameter_mm": 11.0,
+        "rotation_step_deg": 10,
+        "rotation_samples_applied": 36,
+        "moving_assembly_valid": true,
+        "moving_assembly_solid_count": 1,
+        "cover_candidate_valid": true,
+        "cover_candidate_solid_count": 2,
+        "original_cover_volume_mm3": 3837.56809524,
+        "remaining_cover_volume_mm3": 3637.769445011,
+        "removed_cover_volume_mm3": 199.79865023,
+        "cut_errors": [],
+        "error": null,
+        "limitations": [
+          "Cover is only a subtractive relief diagnostic from the old cover blank",
+          "10-degree discrete samples do not prove continuous swept clearance",
+          "No wall-thickness, fastening, sealing, machining access or assembly validation"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 1.0,
+        "shaft_diameter_mm": 1.8,
+        "gear_blank_diameter_mm": 11.0,
+        "rotation_step_deg": 10,
+        "rotation_samples_applied": 36,
+        "moving_assembly_valid": true,
+        "moving_assembly_solid_count": 1,
+        "cover_candidate_valid": true,
+        "cover_candidate_solid_count": 2,
+        "original_cover_volume_mm3": 3837.56809524,
+        "remaining_cover_volume_mm3": 3637.769442527,
+        "removed_cover_volume_mm3": 199.798652713,
+        "cut_errors": [],
+        "error": null,
+        "limitations": [
+          "Cover is only a subtractive relief diagnostic from the old cover blank",
+          "10-degree discrete samples do not prove continuous swept clearance",
+          "No wall-thickness, fastening, sealing, machining access or assembly validation"
+        ]
+      }
+    ],
+    "input_cover_relief_candidate_scan_parameters": {
+      "rotation_step_deg": 10,
+      "bridge_widths_mm": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "shaft_diameter_mm": 1.8,
+      "method": "subtract sampled rotating dial+bridge+shaft+gear blank from current cover as diagnostic only"
     },
     "input_bridge_cover_and_engagement_scan_parameters": {
       "rotation_step_deg": 15,
