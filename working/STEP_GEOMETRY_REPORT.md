@@ -1,6 +1,6 @@
 # STEP 几何内核检查报告
 
-- 生成时间（UTC）：2026-11-24T09:19:58.548192+00:00
+- 生成时间（UTC）：2026-11-24T09:32:29.555913+00:00
 - 输入文件：source/leica_m3_light_meter.stp
 - 文件大小：565011 bytes
 - CadQuery：2.5.2
@@ -4485,7 +4485,7 @@
 ## 原始数据
 
 {
-  "generated_utc": "2026-11-24T09:19:58.548192+00:00",
+  "generated_utc": "2026-11-24T09:32:29.555913+00:00",
   "source": "source/leica_m3_light_meter.stp",
   "source_bytes": 565011,
   "cadquery_version": "2.5.2",
@@ -107967,6 +107967,8393 @@
           }
         ],
         "clear_of_checked_geometry": false
+      }
+    ],
+    "segmented_output_axis_checks": [
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          0.0,
+          0.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.392699082,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          0.0,
+          0.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.883572934,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          0.0,
+          0.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 1.570796327,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          0.0,
+          0.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 2.454369261,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          0.0,
+          0.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 3.534291735,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          0.5,
+          1.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.392699082,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          0.5,
+          1.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.883572934,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          0.5,
+          1.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 1.570796327,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          0.5,
+          1.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 2.454369261,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          0.5,
+          1.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 3.534291735,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          1.0,
+          1.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.235619449,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          1.0,
+          1.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.53014376,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          1.0,
+          1.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.942477796,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          1.0,
+          1.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 1.472621556,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          1.0,
+          1.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 2.120575041,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          1.5,
+          2.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.392699082,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          1.5,
+          2.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.883572934,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          1.5,
+          2.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 1.570796327,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          1.5,
+          2.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 2.454369261,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          1.5,
+          2.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 3.534291735,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          2.0,
+          2.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.392699082,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          2.0,
+          2.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.883572934,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          2.0,
+          2.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 1.570796327,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          2.0,
+          2.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 2.454369261,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          2.0,
+          2.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 3.534291735,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          2.5,
+          3.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.392699082,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          2.5,
+          3.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.883572934,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          2.5,
+          3.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 1.570796327,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          2.5,
+          3.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 2.454369261,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          2.5,
+          3.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 3.534291735,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          3.0,
+          3.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.157079633,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          3.0,
+          3.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.353429174,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          3.0,
+          3.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.628318531,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          3.0,
+          3.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.981747704,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          3.0,
+          3.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 1.413716694,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          3.5,
+          4.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          3.5,
+          4.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          3.5,
+          4.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          3.5,
+          4.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          3.5,
+          4.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          4.0,
+          4.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          4.0,
+          4.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          4.0,
+          4.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          4.0,
+          4.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          4.0,
+          4.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          4.5,
+          5.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          4.5,
+          5.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          4.5,
+          5.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          4.5,
+          5.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          4.5,
+          5.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          5.0,
+          5.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          5.0,
+          5.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          5.0,
+          5.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          5.0,
+          5.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          5.0,
+          5.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          5.5,
+          6.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          5.5,
+          6.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          5.5,
+          6.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          5.5,
+          6.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          5.5,
+          6.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          6.0,
+          6.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          6.0,
+          6.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          6.0,
+          6.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          6.0,
+          6.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          6.0,
+          6.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          6.5,
+          7.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          6.5,
+          7.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          6.5,
+          7.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          6.5,
+          7.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          6.5,
+          7.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          7.0,
+          7.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          7.0,
+          7.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          7.0,
+          7.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          7.0,
+          7.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          7.0,
+          7.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          7.5,
+          8.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          7.5,
+          8.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          7.5,
+          8.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          7.5,
+          8.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          7.5,
+          8.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          8.0,
+          8.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          8.0,
+          8.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          8.0,
+          8.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          8.0,
+          8.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          8.0,
+          8.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          8.5,
+          9.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          8.5,
+          9.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          8.5,
+          9.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          8.5,
+          9.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          8.5,
+          9.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          9.0,
+          9.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          9.0,
+          9.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          9.0,
+          9.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          9.0,
+          9.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          9.0,
+          9.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          9.5,
+          10.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          9.5,
+          10.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          9.5,
+          10.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          9.5,
+          10.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          9.5,
+          10.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          10.0,
+          10.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          10.0,
+          10.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          10.0,
+          10.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          10.0,
+          10.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          10.0,
+          10.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          10.5,
+          11.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          10.5,
+          11.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          10.5,
+          11.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          10.5,
+          11.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          10.5,
+          11.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          11.0,
+          11.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          11.0,
+          11.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          11.0,
+          11.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          11.0,
+          11.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          11.0,
+          11.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          11.5,
+          12.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          11.5,
+          12.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          11.5,
+          12.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          11.5,
+          12.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          11.5,
+          12.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          12.0,
+          12.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          12.0,
+          12.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          12.0,
+          12.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          12.0,
+          12.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          12.0,
+          12.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          12.5,
+          13.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          12.5,
+          13.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          12.5,
+          13.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          12.5,
+          13.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          12.5,
+          13.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          13.0,
+          13.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          13.0,
+          13.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          13.0,
+          13.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          13.0,
+          13.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          13.0,
+          13.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          13.5,
+          14.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          13.5,
+          14.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          13.5,
+          14.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          13.5,
+          14.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          13.5,
+          14.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          14.0,
+          14.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          14.0,
+          14.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          14.0,
+          14.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          14.0,
+          14.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          14.0,
+          14.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          14.5,
+          15.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          14.5,
+          15.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          14.5,
+          15.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          14.5,
+          15.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          14.5,
+          15.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          15.0,
+          15.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          15.0,
+          15.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          15.0,
+          15.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          15.0,
+          15.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          15.0,
+          15.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          15.5,
+          16.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          15.5,
+          16.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          15.5,
+          16.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          15.5,
+          16.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          15.5,
+          16.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          16.0,
+          16.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.314159265,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          16.0,
+          16.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.706858347,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          16.0,
+          16.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 1.256637061,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          16.0,
+          16.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 1.963495408,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          16.0,
+          16.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 2.827433388,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          16.5,
+          17.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.392699082,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          16.5,
+          17.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.883572934,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          16.5,
+          17.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 1.570796327,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          16.5,
+          17.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 2.454369261,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          16.5,
+          17.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 3.534291735,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          17.0,
+          17.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.392699082,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          17.0,
+          17.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.883572934,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          17.0,
+          17.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 1.570796327,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          17.0,
+          17.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 2.454369261,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          17.0,
+          17.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 3.534291735,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          17.5,
+          18.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.392699082,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          17.5,
+          18.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.883572934,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          17.5,
+          18.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 1.570796327,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          17.5,
+          18.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 2.454369261,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          17.5,
+          18.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 3.534291735,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          18.0,
+          18.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.235619449,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          18.0,
+          18.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.53014376,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          18.0,
+          18.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.942477796,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          18.0,
+          18.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 1.472621556,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          18.0,
+          18.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 2.120575041,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          18.5,
+          19.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          18.5,
+          19.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          18.5,
+          19.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          18.5,
+          19.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          18.5,
+          19.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          19.0,
+          19.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          19.0,
+          19.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          19.0,
+          19.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          19.0,
+          19.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          19.0,
+          19.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          19.5,
+          20.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          19.5,
+          20.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          19.5,
+          20.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          19.5,
+          20.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          19.5,
+          20.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          20.0,
+          20.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          20.0,
+          20.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          20.0,
+          20.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          20.0,
+          20.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          20.0,
+          20.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          20.5,
+          21.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          20.5,
+          21.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          20.5,
+          21.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          20.5,
+          21.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          20.5,
+          21.0
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          21.0,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          21.0,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          21.0,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          21.0,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          21.0,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_all_checked_geometry": true
       }
     ],
     "high_gear_input_stub_checks": [
