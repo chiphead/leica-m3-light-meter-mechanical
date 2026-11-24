@@ -7,13 +7,13 @@ on:
     paths:
       - "source/**"
       - "scripts/analyze_step_geometry.py"
+      - "scripts/analyze_open_cover_body_relief.py"
       - "scripts/analysis_cache.py"
       - ".github/workflows/cad-step-analysis.yml"
 
 permissions:
   contents: write
 
-# Serialize CAD report writers: concurrent runs overwrite the same generated report.
 concurrency:
   group: cad-step-analysis-main
   cancel-in-progress: false
@@ -42,17 +42,19 @@ jobs:
       - name: Install CadQuery and OpenCascade
         run: python -m pip install --disable-pip-version-check -r requirements-cad.txt
       - name: Analyze source STEP
-        run: python scripts/analyze_step_geometry.py
-      - name: Commit geometry report
+        run: |
+          python scripts/analyze_step_geometry.py
+          python scripts/analyze_open_cover_body_relief.py
+      - name: Commit geometry reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           git reset --soft origin/main
-          git add working/STEP_GEOMETRY_REPORT.md
+          git add working/STEP_GEOMETRY_REPORT.md working/OPEN_COVER_BODY_RELIEF_REPORT.md
           if git diff --cached --quiet; then
-            echo "Geometry report unchanged"
+            echo "Geometry reports unchanged"
             exit 0
           fi
-          git commit -m "Add STEP geometry validation report"
+          git commit -m "Add STEP geometry validation reports"
           git push origin HEAD:main
