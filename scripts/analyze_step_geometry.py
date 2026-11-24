@@ -2129,17 +2129,33 @@ def main():
             base_solids = None
             base_error = str(exc)
         target_edges = []
+        target_edge_diagnostics = []
         if unfilleted is not None:
+            target_radius_mm = true_fillet_shaft_diameter_mm / 2.0
             for edge in unfilleted.Edges():
                 try:
-                    if edge.geomType() != "CIRCLE":
-                        continue
-                    center = edge.Center()
-                    radius = float(edge.radius())
-                    if (abs(center.x - bridge_center_x_mm) <= 1e-4
-                        and abs(center.y - bridge_center_y_mm) <= 1e-4
-                        and abs(center.z - target_bridge_top_z_mm) <= 1e-4
-                        and abs(radius - true_fillet_shaft_diameter_mm / 2.0) <= 1e-4):
+                    edge_type = edge.geomType()
+                    eb = edge.BoundingBox()
+                    radius = float(edge.radius()) if edge_type == "CIRCLE" else None
+                    near_top_plane = (
+                        abs(float(eb.zmin) - target_bridge_top_z_mm) <= 1e-4
+                        and abs(float(eb.zmax) - target_bridge_top_z_mm) <= 1e-4
+                    )
+                    within_shaft_circle = (
+                        eb.xmin >= bridge_center_x_mm - target_radius_mm - 1e-4
+                        and eb.xmax <= bridge_center_x_mm + target_radius_mm + 1e-4
+                        and eb.ymin >= bridge_center_y_mm - target_radius_mm - 1e-4
+                        and eb.ymax <= bridge_center_y_mm + target_radius_mm + 1e-4
+                    )
+                    if near_top_plane and within_shaft_circle:
+                        target_edge_diagnostics.append({
+                            "edge_type": edge_type,
+                            "radius_mm": round(radius, 6) if radius is not None else None,
+                            "bbox_mm": bbox(edge),
+                        })
+                    if (edge_type == "CIRCLE" and radius is not None
+                        and abs(radius - target_radius_mm) <= 1e-4
+                        and near_top_plane and within_shaft_circle):
                         target_edges.append(edge)
                 except Exception:
                     continue
@@ -2176,6 +2192,7 @@ def main():
                 "shaft_diameter_mm": true_fillet_shaft_diameter_mm,
                 "fillet_radius_mm": fillet_radius_mm,
                 "target_edge_count": len(target_edges),
+                "target_edge_diagnostics": target_edge_diagnostics,
                 "base_assembly_valid": base_valid,
                 "base_assembly_solid_count": base_solids,
                 "filleted_assembly_valid": valid,
@@ -2296,6 +2313,49 @@ def main():
             row["error"] = str(exc)
         input_new_cover_ring_candidate_scan.append(row)
 
+    # Diagnose which angular portions of the conservative annular frame can
+    # coexist with the immutable main body. Each 10-degree sector is checked
+    # independently; this is a layout diagnostic, not a final cover design.
+    input_new_cover_ring_sector_scan = []
+    cover_ring_sector_step_deg = 10
+    for sector_start_deg in range(0, 360, cover_ring_sector_step_deg):
+        try:
+            outer_sector = cq.Solid.makeCylinder(
+                moving_sweep_radius_mm + 0.5 + cover_ring_radial_width_mm,
+                cover_ring_height_mm,
+                cq.Vector(bridge_center_x_mm, bridge_center_y_mm, cover_ring_z_min_mm),
+                cq.Vector(0, 0, 1), cover_ring_sector_step_deg,
+            )
+            inner_sector = cq.Solid.makeCylinder(
+                moving_sweep_radius_mm + 0.5,
+                cover_ring_height_mm,
+                cq.Vector(bridge_center_x_mm, bridge_center_y_mm, cover_ring_z_min_mm),
+                cq.Vector(0, 0, 1), cover_ring_sector_step_deg,
+            )
+            sector = outer_sector.cut(inner_sector).rotate(
+                (bridge_center_x_mm, bridge_center_y_mm, 0),
+                (bridge_center_x_mm, bridge_center_y_mm, 1),
+                float(sector_start_deg),
+            )
+            body_overlap = float(sector.intersect(solids[5]).Volume())
+            input_new_cover_ring_sector_scan.append({
+                "angle_range_deg": [sector_start_deg, sector_start_deg + cover_ring_sector_step_deg],
+                "candidate_valid": bool(sector.isValid()),
+                "candidate_solid_count": len(sector.Solids()),
+                "main_body_intersection_mm3": round(body_overlap, 9),
+                "clear_of_main_body": body_overlap <= 1e-6,
+                "error": None,
+            })
+        except Exception as exc:
+            input_new_cover_ring_sector_scan.append({
+                "angle_range_deg": [sector_start_deg, sector_start_deg + cover_ring_sector_step_deg],
+                "candidate_valid": False,
+                "candidate_solid_count": None,
+                "main_body_intersection_mm3": None,
+                "clear_of_main_body": False,
+                "error": str(exc),
+            })
+
     gear_axial_analysis = {
         "gear_blank_diameter_mm": 11.0,
         "gear_face_width_mm": 2.0,
@@ -2375,6 +2435,15 @@ def main():
         "input_bridge_true_fillet_scan": input_bridge_true_fillet_scan,
         "input_bridge_true_fillet_scan_parameters": {"bridge_widths_mm": true_fillet_bridge_widths_mm, "fillet_radii_mm": true_fillet_radii_mm, "shaft_diameter_mm": true_fillet_shaft_diameter_mm, "filleted_edge": "upper circular bridge/shaft junction at bridge top Z"},
         "input_new_cover_ring_candidate_scan": input_new_cover_ring_candidate_scan,
+        "input_new_cover_ring_sector_scan": input_new_cover_ring_sector_scan,
+        "input_new_cover_ring_sector_scan_parameters": {
+            "sector_step_deg": cover_ring_sector_step_deg,
+            "radial_clearance_mm": 0.5,
+            "radial_frame_width_mm": cover_ring_radial_width_mm,
+            "z_range_mm": [cover_ring_z_min_mm, cover_ring_z_min_mm + cover_ring_height_mm],
+            "checked_obstacle": "main_body",
+            "scope": "independent annular sector screening; not a complete cover"
+        },
         "input_new_cover_ring_candidate_scan_parameters": {"bridge_width_mm": cover_ring_bridge_width_mm, "shaft_diameter_mm": cover_ring_shaft_diameter_mm, "radial_clearances_mm": cover_ring_clearances_mm, "radial_frame_width_mm": cover_ring_radial_width_mm, "z_height_source": "current cover bounding-box height and lower Z only; exploratory"},
         "input_bridge_cover_and_engagement_scan_parameters": {
             "rotation_step_deg": 15,
