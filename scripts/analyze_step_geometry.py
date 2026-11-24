@@ -1119,6 +1119,7 @@ def main():
                 ("encoder_dial", solids[2]), ("encoder_bracket", solids[6]),
                 ("translated_shutter_dial", moved_shutter_dial),
                 ("current_cover", solids[4]),
+                ("preserved_pin_hole_envelope", pin_envelope),
             ]:
                 try:
                     overlap = float(blank.intersect(obstacle).Volume())
@@ -1437,6 +1438,88 @@ def main():
         ]
     }
 
+    # High-layer gear alternative: include the preserved blind-hole / pin envelope,
+    # then test whether the fixed output axis can be extended up to the gear plane.
+    # The existing cover is redesignable and is intentionally not treated as fixed.
+    high_gear_output_shaft_checks = []
+    high_gear_output_axis_xy = (24.5, 0.0)
+    high_gear_output_shaft_z_range = (0.0, 21.5)
+    for shaft_radius in [0.5, 0.75, 1.0, 1.25, 1.5]:
+        shaft = cq.Solid.makeCylinder(
+            shaft_radius,
+            high_gear_output_shaft_z_range[1] - high_gear_output_shaft_z_range[0],
+            cq.Vector(high_gear_output_axis_xy[0], high_gear_output_axis_xy[1], high_gear_output_shaft_z_range[0]),
+            cq.Vector(0, 0, 1),
+        )
+        checks = []
+        for obstacle_name, obstacle in (
+            ("main_body", solids[5]),
+            ("encoder_button", solids[1]),
+            ("encoder_dial", solids[2]),
+            ("encoder_bracket", solids[6]),
+            ("translated_shutter_dial", moved_shutter_dial),
+        ):
+            try:
+                overlap = float(shaft.intersect(obstacle).Volume())
+                error = None
+            except Exception as exc:
+                overlap, error = None, str(exc)
+            checks.append({
+                "obstacle": obstacle_name,
+                "intersection_volume_mm3": round(overlap, 9) if overlap is not None else None,
+                "error": error,
+            })
+        high_gear_output_shaft_checks.append({
+            "axis_xy_mm": list(high_gear_output_axis_xy),
+            "shaft_diameter_mm": round(2.0 * shaft_radius, 3),
+            "z_range_mm": list(high_gear_output_shaft_z_range),
+            "checks": checks,
+            "clear_of_checked_geometry": all(
+                x["error"] is None and x["intersection_volume_mm3"] is not None
+                and x["intersection_volume_mm3"] <= 1e-6 for x in checks
+            ),
+        })
+
+    high_gear_input_stub_checks = []
+    high_gear_input_axis_xy = (34.5, 0.0)
+    high_gear_input_stub_z_range = (20.9, 21.5)
+    for shaft_radius in [0.5, 0.75, 1.0, 1.25, 1.5]:
+        stub = cq.Solid.makeCylinder(
+            shaft_radius,
+            high_gear_input_stub_z_range[1] - high_gear_input_stub_z_range[0],
+            cq.Vector(high_gear_input_axis_xy[0], high_gear_input_axis_xy[1], high_gear_input_stub_z_range[0]),
+            cq.Vector(0, 0, 1),
+        )
+        checks = []
+        for obstacle_name, obstacle in (
+            ("main_body", solids[5]),
+            ("encoder_button", solids[1]),
+            ("encoder_dial", solids[2]),
+            ("encoder_bracket", solids[6]),
+            ("translated_shutter_dial", moved_shutter_dial),
+            ("preserved_pin_hole_envelope", pin_envelope),
+        ):
+            try:
+                overlap = float(stub.intersect(obstacle).Volume())
+                error = None
+            except Exception as exc:
+                overlap, error = None, str(exc)
+            checks.append({
+                "obstacle": obstacle_name,
+                "intersection_volume_mm3": round(overlap, 9) if overlap is not None else None,
+                "error": error,
+            })
+        high_gear_input_stub_checks.append({
+            "axis_xy_mm": list(high_gear_input_axis_xy),
+            "shaft_diameter_mm": round(2.0 * shaft_radius, 3),
+            "z_range_mm": list(high_gear_input_stub_z_range),
+            "checks": checks,
+            "clear_of_checked_geometry": all(
+                x["error"] is None and x["intersection_volume_mm3"] is not None
+                and x["intersection_volume_mm3"] <= 1e-6 for x in checks
+            ),
+        })
+
     gear_axial_analysis = {
         "gear_blank_diameter_mm": 11.0,
         "gear_face_width_mm": 2.0,
@@ -1505,6 +1588,8 @@ def main():
         },
         "true_10mm_gear_pair_height_scan": true_10mm_gear_pair_height_scan,
         "high_gear_layer_scan": high_gear_layer_scan,
+        "high_gear_output_shaft_checks": high_gear_output_shaft_checks,
+        "high_gear_input_stub_checks": high_gear_input_stub_checks,
         "high_gear_layer_scan_parameters": {"z_starts_mm": [20.5, 23.5], "step_mm": 0.25, "blank_diameter_mm": 11.0, "face_width_mm": 2.0, "centers_xy_mm": [[24.5, 0.0], [34.5, 0.0]]},
         "gear_layer_pin_clearance_scan": gear_layer_pin_clearance_scan,
         "true_gear_axial_window_scan": true_gear_axial_window_scan,
