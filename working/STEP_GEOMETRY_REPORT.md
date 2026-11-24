@@ -1,6 +1,6 @@
 # STEP 几何内核检查报告
 
-- 生成时间（UTC）：2026-11-24T11:16:08.052487+00:00
+- 生成时间（UTC）：2026-11-24T11:28:21.049567+00:00
 - 输入文件：source/leica_m3_light_meter.stp
 - 文件大小：565011 bytes
 - CadQuery：2.5.2
@@ -7960,7 +7960,7 @@
 ## 原始数据
 
 {
-  "generated_utc": "2026-11-24T11:16:08.052487+00:00",
+  "generated_utc": "2026-11-24T11:28:21.049567+00:00",
   "source": "source/leica_m3_light_meter.stp",
   "source_bytes": 565011,
   "cadquery_version": "2.5.2",
@@ -124045,12 +124045,56 @@
         "bridge_width_x_mm": 0.6,
         "shaft_diameter_mm": 1.8,
         "fillet_radius_mm": 0.1,
-        "target_edge_count": 0,
+        "target_edge_count": 2,
+        "target_edge_diagnostics": [
+          {
+            "edge_type": "CIRCLE",
+            "radius_mm": 0.9,
+            "bbox_mm": {
+              "min": [
+                34.2,
+                0.848528,
+                18.6
+              ],
+              "max": [
+                34.8,
+                0.9,
+                18.6
+              ],
+              "size": [
+                0.6,
+                0.051472,
+                0.0
+              ]
+            }
+          },
+          {
+            "edge_type": "CIRCLE",
+            "radius_mm": 0.9,
+            "bbox_mm": {
+              "min": [
+                34.2,
+                -0.9,
+                18.6
+              ],
+              "max": [
+                34.8,
+                -0.848528,
+                18.6
+              ],
+              "size": [
+                0.6,
+                0.051472,
+                0.0
+              ]
+            }
+          }
+        ],
         "base_assembly_valid": true,
         "base_assembly_solid_count": 1,
         "filleted_assembly_valid": false,
         "filleted_assembly_solid_count": null,
-        "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+        "fillet_error": "Expected one bridge/shaft junction edge, found 2",
         "fixed_geometry_checks": [],
         "clear_of_checked_frozen_geometry": false,
         "limitations": [
@@ -124063,12 +124107,56 @@
         "bridge_width_x_mm": 0.6,
         "shaft_diameter_mm": 1.8,
         "fillet_radius_mm": 0.15,
-        "target_edge_count": 0,
+        "target_edge_count": 2,
+        "target_edge_diagnostics": [
+          {
+            "edge_type": "CIRCLE",
+            "radius_mm": 0.9,
+            "bbox_mm": {
+              "min": [
+                34.2,
+                0.848528,
+                18.6
+              ],
+              "max": [
+                34.8,
+                0.9,
+                18.6
+              ],
+              "size": [
+                0.6,
+                0.051472,
+                0.0
+              ]
+            }
+          },
+          {
+            "edge_type": "CIRCLE",
+            "radius_mm": 0.9,
+            "bbox_mm": {
+              "min": [
+                34.2,
+                -0.9,
+                18.6
+              ],
+              "max": [
+                34.8,
+                -0.848528,
+                18.6
+              ],
+              "size": [
+                0.6,
+                0.051472,
+                0.0
+              ]
+            }
+          }
+        ],
         "base_assembly_valid": true,
         "base_assembly_solid_count": 1,
         "filleted_assembly_valid": false,
         "filleted_assembly_solid_count": null,
-        "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+        "fillet_error": "Expected one bridge/shaft junction edge, found 2",
         "fixed_geometry_checks": [],
         "clear_of_checked_frozen_geometry": false,
         "limitations": [
@@ -124081,12 +124169,56 @@
         "bridge_width_x_mm": 0.6,
         "shaft_diameter_mm": 1.8,
         "fillet_radius_mm": 0.2,
-        "target_edge_count": 0,
+        "target_edge_count": 2,
+        "target_edge_diagnostics": [
+          {
+            "edge_type": "CIRCLE",
+            "radius_mm": 0.9,
+            "bbox_mm": {
+              "min": [
+                34.2,
+                0.848528,
+                18.6
+              ],
+              "max": [
+                34.8,
+                0.9,
+                18.6
+              ],
+              "size": [
+                0.6,
+                0.051472,
+                0.0
+              ]
+            }
+          },
+          {
+            "edge_type": "CIRCLE",
+            "radius_mm": 0.9,
+            "bbox_mm": {
+              "min": [
+                34.2,
+                -0.9,
+                18.6
+              ],
+              "max": [
+                34.8,
+                -0.848528,
+                18.6
+              ],
+              "size": [
+                0.6,
+                0.051472,
+                0.0
+              ]
+            }
+          }
+        ],
         "base_assembly_valid": true,
         "base_assembly_solid_count": 1,
         "filleted_assembly_valid": false,
         "filleted_assembly_solid_count": null,
-        "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+        "fillet_error": "Expected one bridge/shaft junction edge, found 2",
         "fixed_geometry_checks": [],
         "clear_of_checked_frozen_geometry": false,
         "limitations": [
@@ -124099,12 +124231,56 @@
         "bridge_width_x_mm": 1.0,
         "shaft_diameter_mm": 1.8,
         "fillet_radius_mm": 0.1,
-        "target_edge_count": 0,
+        "target_edge_count": 2,
+        "target_edge_diagnostics": [
+          {
+            "edge_type": "CIRCLE",
+            "radius_mm": 0.9,
+            "bbox_mm": {
+              "min": [
+                34.0,
+                0.748331,
+                18.6
+              ],
+              "max": [
+                35.0,
+                0.9,
+                18.6
+              ],
+              "size": [
+                1.0,
+                0.151669,
+                0.0
+              ]
+            }
+          },
+          {
+            "edge_type": "CIRCLE",
+            "radius_mm": 0.9,
+            "bbox_mm": {
+              "min": [
+                34.0,
+                -0.9,
+                18.6
+              ],
+              "max": [
+                35.0,
+                -0.748331,
+                18.6
+              ],
+              "size": [
+                1.0,
+                0.151669,
+                0.0
+              ]
+            }
+          }
+        ],
         "base_assembly_valid": true,
         "base_assembly_solid_count": 1,
         "filleted_assembly_valid": false,
         "filleted_assembly_solid_count": null,
-        "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+        "fillet_error": "Expected one bridge/shaft junction edge, found 2",
         "fixed_geometry_checks": [],
         "clear_of_checked_frozen_geometry": false,
         "limitations": [
@@ -124117,12 +124293,56 @@
         "bridge_width_x_mm": 1.0,
         "shaft_diameter_mm": 1.8,
         "fillet_radius_mm": 0.15,
-        "target_edge_count": 0,
+        "target_edge_count": 2,
+        "target_edge_diagnostics": [
+          {
+            "edge_type": "CIRCLE",
+            "radius_mm": 0.9,
+            "bbox_mm": {
+              "min": [
+                34.0,
+                0.748331,
+                18.6
+              ],
+              "max": [
+                35.0,
+                0.9,
+                18.6
+              ],
+              "size": [
+                1.0,
+                0.151669,
+                0.0
+              ]
+            }
+          },
+          {
+            "edge_type": "CIRCLE",
+            "radius_mm": 0.9,
+            "bbox_mm": {
+              "min": [
+                34.0,
+                -0.9,
+                18.6
+              ],
+              "max": [
+                35.0,
+                -0.748331,
+                18.6
+              ],
+              "size": [
+                1.0,
+                0.151669,
+                0.0
+              ]
+            }
+          }
+        ],
         "base_assembly_valid": true,
         "base_assembly_solid_count": 1,
         "filleted_assembly_valid": false,
         "filleted_assembly_solid_count": null,
-        "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+        "fillet_error": "Expected one bridge/shaft junction edge, found 2",
         "fixed_geometry_checks": [],
         "clear_of_checked_frozen_geometry": false,
         "limitations": [
@@ -124135,12 +124355,56 @@
         "bridge_width_x_mm": 1.0,
         "shaft_diameter_mm": 1.8,
         "fillet_radius_mm": 0.2,
-        "target_edge_count": 0,
+        "target_edge_count": 2,
+        "target_edge_diagnostics": [
+          {
+            "edge_type": "CIRCLE",
+            "radius_mm": 0.9,
+            "bbox_mm": {
+              "min": [
+                34.0,
+                0.748331,
+                18.6
+              ],
+              "max": [
+                35.0,
+                0.9,
+                18.6
+              ],
+              "size": [
+                1.0,
+                0.151669,
+                0.0
+              ]
+            }
+          },
+          {
+            "edge_type": "CIRCLE",
+            "radius_mm": 0.9,
+            "bbox_mm": {
+              "min": [
+                34.0,
+                -0.9,
+                18.6
+              ],
+              "max": [
+                35.0,
+                -0.748331,
+                18.6
+              ],
+              "size": [
+                1.0,
+                0.151669,
+                0.0
+              ]
+            }
+          }
+        ],
         "base_assembly_valid": true,
         "base_assembly_solid_count": 1,
         "filleted_assembly_valid": false,
         "filleted_assembly_solid_count": null,
-        "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+        "fillet_error": "Expected one bridge/shaft junction edge, found 2",
         "fixed_geometry_checks": [],
         "clear_of_checked_frozen_geometry": false,
         "limitations": [
@@ -124294,6 +124558,415 @@
         ]
       }
     ],
+    "input_new_cover_ring_sector_scan": [
+      {
+        "angle_range_deg": [
+          0,
+          10
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          10,
+          20
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          20,
+          30
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          30,
+          40
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          40,
+          50
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          50,
+          60
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          60,
+          70
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          70,
+          80
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          80,
+          90
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          90,
+          100
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          100,
+          110
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          110,
+          120
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          120,
+          130
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          130,
+          140
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          140,
+          150
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          150,
+          160
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 10.634324422,
+        "clear_of_main_body": false,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          160,
+          170
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          170,
+          180
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          180,
+          190
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          190,
+          200
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          200,
+          210
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 10.634327484,
+        "clear_of_main_body": false,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          210,
+          220
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          220,
+          230
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          230,
+          240
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          240,
+          250
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          250,
+          260
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          260,
+          270
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          270,
+          280
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          280,
+          290
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          290,
+          300
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          300,
+          310
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          310,
+          320
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          320,
+          330
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          330,
+          340
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          340,
+          350
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      },
+      {
+        "angle_range_deg": [
+          350,
+          360
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "main_body_intersection_mm3": 0.0,
+        "clear_of_main_body": true,
+        "error": null
+      }
+    ],
+    "input_new_cover_ring_sector_scan_parameters": {
+      "sector_step_deg": 10,
+      "radial_clearance_mm": 0.5,
+      "radial_frame_width_mm": 1.5,
+      "z_range_mm": [
+        14.899999999999999,
+        20.90000000000019
+      ],
+      "checked_obstacle": "main_body",
+      "scope": "independent annular sector screening; not a complete cover"
+    },
     "input_new_cover_ring_candidate_scan_parameters": {
       "bridge_width_mm": 1.0,
       "shaft_diameter_mm": 1.8,
@@ -140795,12 +141468,56 @@
     "bridge_width_x_mm": 0.6,
     "shaft_diameter_mm": 1.8,
     "fillet_radius_mm": 0.1,
-    "target_edge_count": 0,
+    "target_edge_count": 2,
+    "target_edge_diagnostics": [
+      {
+        "edge_type": "CIRCLE",
+        "radius_mm": 0.9,
+        "bbox_mm": {
+          "min": [
+            34.2,
+            0.848528,
+            18.6
+          ],
+          "max": [
+            34.8,
+            0.9,
+            18.6
+          ],
+          "size": [
+            0.6,
+            0.051472,
+            0.0
+          ]
+        }
+      },
+      {
+        "edge_type": "CIRCLE",
+        "radius_mm": 0.9,
+        "bbox_mm": {
+          "min": [
+            34.2,
+            -0.9,
+            18.6
+          ],
+          "max": [
+            34.8,
+            -0.848528,
+            18.6
+          ],
+          "size": [
+            0.6,
+            0.051472,
+            0.0
+          ]
+        }
+      }
+    ],
     "base_assembly_valid": true,
     "base_assembly_solid_count": 1,
     "filleted_assembly_valid": false,
     "filleted_assembly_solid_count": null,
-    "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+    "fillet_error": "Expected one bridge/shaft junction edge, found 2",
     "fixed_geometry_checks": [],
     "clear_of_checked_frozen_geometry": false,
     "limitations": [
@@ -140813,12 +141530,56 @@
     "bridge_width_x_mm": 0.6,
     "shaft_diameter_mm": 1.8,
     "fillet_radius_mm": 0.15,
-    "target_edge_count": 0,
+    "target_edge_count": 2,
+    "target_edge_diagnostics": [
+      {
+        "edge_type": "CIRCLE",
+        "radius_mm": 0.9,
+        "bbox_mm": {
+          "min": [
+            34.2,
+            0.848528,
+            18.6
+          ],
+          "max": [
+            34.8,
+            0.9,
+            18.6
+          ],
+          "size": [
+            0.6,
+            0.051472,
+            0.0
+          ]
+        }
+      },
+      {
+        "edge_type": "CIRCLE",
+        "radius_mm": 0.9,
+        "bbox_mm": {
+          "min": [
+            34.2,
+            -0.9,
+            18.6
+          ],
+          "max": [
+            34.8,
+            -0.848528,
+            18.6
+          ],
+          "size": [
+            0.6,
+            0.051472,
+            0.0
+          ]
+        }
+      }
+    ],
     "base_assembly_valid": true,
     "base_assembly_solid_count": 1,
     "filleted_assembly_valid": false,
     "filleted_assembly_solid_count": null,
-    "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+    "fillet_error": "Expected one bridge/shaft junction edge, found 2",
     "fixed_geometry_checks": [],
     "clear_of_checked_frozen_geometry": false,
     "limitations": [
@@ -140831,12 +141592,56 @@
     "bridge_width_x_mm": 0.6,
     "shaft_diameter_mm": 1.8,
     "fillet_radius_mm": 0.2,
-    "target_edge_count": 0,
+    "target_edge_count": 2,
+    "target_edge_diagnostics": [
+      {
+        "edge_type": "CIRCLE",
+        "radius_mm": 0.9,
+        "bbox_mm": {
+          "min": [
+            34.2,
+            0.848528,
+            18.6
+          ],
+          "max": [
+            34.8,
+            0.9,
+            18.6
+          ],
+          "size": [
+            0.6,
+            0.051472,
+            0.0
+          ]
+        }
+      },
+      {
+        "edge_type": "CIRCLE",
+        "radius_mm": 0.9,
+        "bbox_mm": {
+          "min": [
+            34.2,
+            -0.9,
+            18.6
+          ],
+          "max": [
+            34.8,
+            -0.848528,
+            18.6
+          ],
+          "size": [
+            0.6,
+            0.051472,
+            0.0
+          ]
+        }
+      }
+    ],
     "base_assembly_valid": true,
     "base_assembly_solid_count": 1,
     "filleted_assembly_valid": false,
     "filleted_assembly_solid_count": null,
-    "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+    "fillet_error": "Expected one bridge/shaft junction edge, found 2",
     "fixed_geometry_checks": [],
     "clear_of_checked_frozen_geometry": false,
     "limitations": [
@@ -140849,12 +141654,56 @@
     "bridge_width_x_mm": 1.0,
     "shaft_diameter_mm": 1.8,
     "fillet_radius_mm": 0.1,
-    "target_edge_count": 0,
+    "target_edge_count": 2,
+    "target_edge_diagnostics": [
+      {
+        "edge_type": "CIRCLE",
+        "radius_mm": 0.9,
+        "bbox_mm": {
+          "min": [
+            34.0,
+            0.748331,
+            18.6
+          ],
+          "max": [
+            35.0,
+            0.9,
+            18.6
+          ],
+          "size": [
+            1.0,
+            0.151669,
+            0.0
+          ]
+        }
+      },
+      {
+        "edge_type": "CIRCLE",
+        "radius_mm": 0.9,
+        "bbox_mm": {
+          "min": [
+            34.0,
+            -0.9,
+            18.6
+          ],
+          "max": [
+            35.0,
+            -0.748331,
+            18.6
+          ],
+          "size": [
+            1.0,
+            0.151669,
+            0.0
+          ]
+        }
+      }
+    ],
     "base_assembly_valid": true,
     "base_assembly_solid_count": 1,
     "filleted_assembly_valid": false,
     "filleted_assembly_solid_count": null,
-    "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+    "fillet_error": "Expected one bridge/shaft junction edge, found 2",
     "fixed_geometry_checks": [],
     "clear_of_checked_frozen_geometry": false,
     "limitations": [
@@ -140867,12 +141716,56 @@
     "bridge_width_x_mm": 1.0,
     "shaft_diameter_mm": 1.8,
     "fillet_radius_mm": 0.15,
-    "target_edge_count": 0,
+    "target_edge_count": 2,
+    "target_edge_diagnostics": [
+      {
+        "edge_type": "CIRCLE",
+        "radius_mm": 0.9,
+        "bbox_mm": {
+          "min": [
+            34.0,
+            0.748331,
+            18.6
+          ],
+          "max": [
+            35.0,
+            0.9,
+            18.6
+          ],
+          "size": [
+            1.0,
+            0.151669,
+            0.0
+          ]
+        }
+      },
+      {
+        "edge_type": "CIRCLE",
+        "radius_mm": 0.9,
+        "bbox_mm": {
+          "min": [
+            34.0,
+            -0.9,
+            18.6
+          ],
+          "max": [
+            35.0,
+            -0.748331,
+            18.6
+          ],
+          "size": [
+            1.0,
+            0.151669,
+            0.0
+          ]
+        }
+      }
+    ],
     "base_assembly_valid": true,
     "base_assembly_solid_count": 1,
     "filleted_assembly_valid": false,
     "filleted_assembly_solid_count": null,
-    "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+    "fillet_error": "Expected one bridge/shaft junction edge, found 2",
     "fixed_geometry_checks": [],
     "clear_of_checked_frozen_geometry": false,
     "limitations": [
@@ -140885,12 +141778,56 @@
     "bridge_width_x_mm": 1.0,
     "shaft_diameter_mm": 1.8,
     "fillet_radius_mm": 0.2,
-    "target_edge_count": 0,
+    "target_edge_count": 2,
+    "target_edge_diagnostics": [
+      {
+        "edge_type": "CIRCLE",
+        "radius_mm": 0.9,
+        "bbox_mm": {
+          "min": [
+            34.0,
+            0.748331,
+            18.6
+          ],
+          "max": [
+            35.0,
+            0.9,
+            18.6
+          ],
+          "size": [
+            1.0,
+            0.151669,
+            0.0
+          ]
+        }
+      },
+      {
+        "edge_type": "CIRCLE",
+        "radius_mm": 0.9,
+        "bbox_mm": {
+          "min": [
+            34.0,
+            -0.9,
+            18.6
+          ],
+          "max": [
+            35.0,
+            -0.748331,
+            18.6
+          ],
+          "size": [
+            1.0,
+            0.151669,
+            0.0
+          ]
+        }
+      }
+    ],
     "base_assembly_valid": true,
     "base_assembly_solid_count": 1,
     "filleted_assembly_valid": false,
     "filleted_assembly_solid_count": null,
-    "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+    "fillet_error": "Expected one bridge/shaft junction edge, found 2",
     "fixed_geometry_checks": [],
     "clear_of_checked_frozen_geometry": false,
     "limitations": [
