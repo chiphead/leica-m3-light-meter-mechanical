@@ -102,6 +102,20 @@ def main():
                 for name, obstacle in fixed_parts.items():
                     row["fixed_geometry_checks"].append({
                         "obstacle": name, "intersection_volume_mm3": round(float(relieved.intersect(obstacle).Volume()), 9)})
+
+                # Export inspectable candidate solids only after all geometric validity checks.
+                # The source STEP and frozen camera geometry remain read-only.
+                if relieved.isValid() and len(relieved.Solids()) == 1:
+                    candidate_dir = ROOT / "working/open_cover_candidates"
+                    candidate_dir.mkdir(parents=True, exist_ok=True)
+                    stem = f"open_cover_gap{margin:g}deg_bridge{bridge_offset:g}mm"
+                    step_path = candidate_dir / f"{stem}.step"
+                    stl_path = candidate_dir / f"{stem}.stl"
+                    cq.exporters.export(relieved, str(step_path), exportType="STEP")
+                    cq.exporters.export(relieved, str(stl_path), exportType="STL",
+                                        tolerance=0.05, angularTolerance=0.1)
+                    row["step_file"] = str(step_path.relative_to(ROOT))
+                    row["stl_file"] = str(stl_path.relative_to(ROOT))
             except Exception as exc:
                 row["error"] = str(exc)
             rows.append(row)
@@ -115,12 +129,13 @@ def main():
              f"- Z范围：{z_min:.6f}…{z_min + height:.6f} mm",
              "- 方法：对双开口环框候选执行 Boolean fuse，再仅从盖体候选中扣除机身主体 B-rep",
              "- 主体和原始 STEP 均不修改；扣除后接口为零制造间隙，不等于生产公差。", "",
-             "|开口余量|桥外扩|原始有效/实体数|原始机身交叠 mm³|避让后有效/实体数|避让后机身交叠 mm³|运动总成交叠 mm³|",
-             "|---:|---:|---:|---:|---:|---:|---:|"]
+             "|开口余量|桥外扩|原始有效/实体数|原始机身交叠 mm³|避让后有效/实体数|避让后机身交叠 mm³|运动总成交叠 mm³|STEP候选|",
+             "|---:|---:|---:|---:|---:|---:|---:|---|"]
     for x in rows:
         lines.append(f"|{x['gap_margin_deg']}°|{x['bridge_outer_offset_mm']} mm|{x['raw_valid']}/{x['raw_solid_count']}|"
                      f"{x['raw_body_intersection_mm3']}|{x['relieved_valid']}/{x['relieved_solid_count']}|"
-                     f"{x['relieved_body_intersection_mm3']}|{x['moving_assembly_intersection_mm3']}|")
+                     f"{x['relieved_body_intersection_mm3']}|{x['moving_assembly_intersection_mm3']}|"
+                     f"{x.get('step_file', '未导出')}|")
     lines += ["", "## 完整结果", "", json.dumps(rows, ensure_ascii=False, indent=2), "",
               "## 限制", "",
               "- 单一有效 B-rep 仅代表拓扑/几何内核有效，不代表结构强度、刚度或疲劳寿命。",

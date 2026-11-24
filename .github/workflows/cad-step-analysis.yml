@@ -45,6 +45,13 @@ jobs:
         run: |
           python scripts/analyze_step_geometry.py
           python scripts/analyze_open_cover_body_relief.py
+      - name: Upload open-cover STEP and STL candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: open-cover-cad-candidates
+          path: working/open_cover_candidates/
+          if-no-files-found: error
+          retention-days: 14
       - name: Commit geometry reports
         run: |
           git config user.name "github-actions[bot]"
