@@ -1,4 +1,4 @@
-name: CAD STEP geometry analysis # local section and shaft-corridor sampling
+name: CAD STEP geometry analysis
 
 on:
   push:
@@ -12,6 +12,11 @@ on:
 
 permissions:
   contents: write
+
+# Serialize CAD report writers: concurrent runs overwrite the same generated report.
+concurrency:
+  group: cad-step-analysis-main
+  cancel-in-progress: false
 
 jobs:
   analyze-step:
@@ -42,13 +47,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git reset --soft origin/main
           git add working/STEP_GEOMETRY_REPORT.md
           if git diff --cached --quiet; then
             echo "Geometry report unchanged"
             exit 0
           fi
           git commit -m "Add STEP geometry validation report"
-          git pull --rebase origin main
           git push origin HEAD:main
-
-# Dedicated CAD workflow: analyze the immutable source STEP and safely rebase the generated report.
