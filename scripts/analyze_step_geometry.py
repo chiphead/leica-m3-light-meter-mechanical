@@ -1410,6 +1410,42 @@ def main():
         except Exception as exc:
             input_gap_z_sweep.append({"z_center_mm": z_center, "error": str(exc)})
 
+    # Localize the known input-footprint gap by measuring missing material,
+    # not merely connected material in the wider rectangular ROI above.
+    # The ROI encloses the central gap observed in the offset X-Z sections.
+    # This is a diagnostic probe only; it does not alter the shutter dial.
+    input_gap_local_void_sweep = []
+    local_gap_roi = {
+        "x_mm": [33.0, 36.0],
+        "y_mm": [-1.5, 1.5],
+        "z_mm": [16.1, 20.9],
+    }
+    for z_center in gap_z_values:
+        probe = cq.Solid.makeBox(
+            3.0, 3.0, 0.02,
+            cq.Vector(33.0, -1.5, z_center - 0.01)
+        )
+        try:
+            missing = probe.cut(moved_shutter_dial)
+            parts = missing.Solids() or ([missing] if missing.Volume() > 1e-8 else [])
+            input_gap_local_void_sweep.append({
+                "z_center_mm": z_center,
+                "missing_area_estimate_mm2": round(float(missing.Volume()) / 0.02, 6),
+                "void_components": [
+                    {
+                        "bbox_mm": bbox(part),
+                        "area_estimate_mm2": round(float(part.Volume()) / 0.02, 6),
+                    }
+                    for part in parts
+                ],
+                "error": None,
+            })
+        except Exception as exc:
+            input_gap_local_void_sweep.append({
+                "z_center_mm": z_center,
+                "error": str(exc),
+            })
+
     # Cross-sections of the material bridge between the fixed output axis and
     # the preserved pin-hole axis. Offset from exact Y=0 to avoid the known
     # symmetry-plane Boolean artifact. These are diagnostics, not cut geometry.
@@ -1447,6 +1483,8 @@ def main():
         "pin_radial_material_scan": pin_radial_material_scan,
         "input_gap_z_sweep": input_gap_z_sweep,
         "input_gap_z_sweep_step_mm": 0.1,
+        "input_gap_local_void_sweep": input_gap_local_void_sweep,
+        "input_gap_local_void_sweep_roi_mm": local_gap_roi,
         "output_pin_bridge_sections": output_pin_bridge_sections,
         "pin_hole_entry_plane_z_mm": 17.1,
         "pin_hole_envelope": {"center_xy_mm": [28.0, 0.0], "radius_mm": 0.9, "z_range_mm": [17.1, 20.9]},
