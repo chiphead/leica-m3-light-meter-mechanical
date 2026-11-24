@@ -1950,6 +1950,149 @@ def main():
                 ],
             })
 
+    # Next-stage exploratory geometry: root collar/gusset proxies and a
+    # re-cut cover blank using a finer sampled rotational envelope. The source
+    # STEP solids remain untouched; the cover result is a diagnostic candidate.
+    input_bridge_root_transition_scan = []
+    root_transition_bridge_widths_mm = [0.6, 1.0]
+    root_transition_shaft_diameter_mm = 1.8
+    root_transition_collar_radii_mm = [1.2, 1.5, 1.8]
+    for bridge_width_mm in root_transition_bridge_widths_mm:
+        bridge = cq.Solid.makeBox(
+            bridge_width_mm, bridge_span_y_mm, bridge_thickness_z_mm,
+            cq.Vector(bridge_center_x_mm - bridge_width_mm / 2.0,
+                      bridge_center_y_mm - bridge_span_y_mm / 2.0,
+                      bridge_z_min_mm),
+        )
+        shaft = cq.Solid.makeCylinder(
+            root_transition_shaft_diameter_mm / 2.0,
+            input_hub_shaft_z_max_mm - input_hub_shaft_z_min_mm,
+            cq.Vector(bridge_center_x_mm, bridge_center_y_mm, input_hub_shaft_z_min_mm),
+            cq.Vector(0, 0, 1),
+        )
+        gear_blank = cq.Solid.makeCylinder(
+            input_hub_gear_diameter_mm / 2.0, input_hub_gear_width_mm,
+            cq.Vector(bridge_center_x_mm, bridge_center_y_mm, input_hub_gear_z_min_mm),
+            cq.Vector(0, 0, 1),
+        )
+        for collar_radius_mm in root_transition_collar_radii_mm:
+            collar = cq.Solid.makeCylinder(
+                collar_radius_mm, bridge_thickness_z_mm,
+                cq.Vector(bridge_center_x_mm, bridge_center_y_mm, bridge_z_min_mm),
+                cq.Vector(0, 0, 1),
+            )
+            try:
+                candidate = moved_shutter_dial.fuse(bridge).fuse(collar).fuse(shaft).fuse(gear_blank)
+                valid = bool(candidate.isValid())
+                solid_count = len(candidate.Solids())
+                fuse_error = None
+            except Exception as exc:
+                candidate = None
+                valid = False
+                solid_count = None
+                fuse_error = str(exc)
+            checks = []
+            if candidate is not None:
+                for obstacle_name, obstacle in bridge_fixed_obstacles + [("preserved_pin_hole_envelope", pin_envelope)]:
+                    try:
+                        volume = float(candidate.intersect(obstacle).Volume())
+                        error = None
+                    except Exception as exc:
+                        volume, error = None, str(exc)
+                    checks.append({"obstacle": obstacle_name,
+                                   "intersection_volume_mm3": round(volume, 9) if volume is not None else None,
+                                   "error": error})
+            input_bridge_root_transition_scan.append({
+                "bridge_width_x_mm": bridge_width_mm,
+                "shaft_diameter_mm": root_transition_shaft_diameter_mm,
+                "collar_radius_mm": collar_radius_mm,
+                "collar_z_range_mm": [bridge_z_min_mm, bridge_z_min_mm + bridge_thickness_z_mm],
+                "assembly_valid": valid,
+                "assembly_solid_count": solid_count,
+                "fuse_error": fuse_error,
+                "fixed_geometry_checks": checks,
+                "clear_of_checked_frozen_geometry": bool(candidate is not None) and all(
+                    x["error"] is None and x["intersection_volume_mm3"] is not None
+                    and x["intersection_volume_mm3"] <= 1e-6 for x in checks
+                ),
+                "collar_volume_mm3": round(float(collar.Volume()), 9),
+                "limitations": ["Cylindrical collar is a reinforcement proxy, not a true tangent fillet",
+                                "No stress, fatigue, print anisotropy or torque capacity analysis"],
+            })
+
+    input_cover_relief_candidate_scan = []
+    cover_relief_rotation_step_deg = 10
+    cover_relief_bridge_widths_mm = [0.6, 0.8, 1.0]
+    cover_relief_shaft_diameter_mm = 1.8
+    for bridge_width_mm in cover_relief_bridge_widths_mm:
+        bridge = cq.Solid.makeBox(
+            bridge_width_mm, bridge_span_y_mm, bridge_thickness_z_mm,
+            cq.Vector(bridge_center_x_mm - bridge_width_mm / 2.0,
+                      bridge_center_y_mm - bridge_span_y_mm / 2.0,
+                      bridge_z_min_mm),
+        )
+        shaft = cq.Solid.makeCylinder(
+            cover_relief_shaft_diameter_mm / 2.0,
+            input_hub_shaft_z_max_mm - input_hub_shaft_z_min_mm,
+            cq.Vector(bridge_center_x_mm, bridge_center_y_mm, input_hub_shaft_z_min_mm),
+            cq.Vector(0, 0, 1),
+        )
+        gear_blank = cq.Solid.makeCylinder(
+            input_hub_gear_diameter_mm / 2.0, input_hub_gear_width_mm,
+            cq.Vector(bridge_center_x_mm, bridge_center_y_mm, input_hub_gear_z_min_mm),
+            cq.Vector(0, 0, 1),
+        )
+        try:
+            moving_candidate = moved_shutter_dial.fuse(bridge).fuse(shaft).fuse(gear_blank)
+            moving_candidate_valid = bool(moving_candidate.isValid())
+            moving_candidate_solids = len(moving_candidate.Solids())
+            cover_candidate = solids[4]
+            cut_errors = []
+            cut_samples = 0
+            for angle_deg in range(0, 360, cover_relief_rotation_step_deg):
+                rotated = moving_candidate.rotate(
+                    (bridge_center_x_mm, bridge_center_y_mm, 0.0),
+                    (bridge_center_x_mm, bridge_center_y_mm, 1.0), float(angle_deg))
+                cover_candidate = cover_candidate.cut(rotated)
+                cut_samples += 1
+                if not cover_candidate.isValid():
+                    cut_errors.append({"angle_deg": angle_deg, "error": "cover candidate invalid after cut"})
+                    break
+            cover_valid = bool(cover_candidate.isValid())
+            cover_solids = len(cover_candidate.Solids())
+            cover_remaining_volume = float(cover_candidate.Volume())
+            cover_cut_volume = float(solids[4].Volume()) - cover_remaining_volume
+            cover_error = None
+        except Exception as exc:
+            moving_candidate_valid = False
+            moving_candidate_solids = None
+            cut_samples = 0
+            cut_errors = [{"error": str(exc)}]
+            cover_valid = False
+            cover_solids = None
+            cover_remaining_volume = None
+            cover_cut_volume = None
+            cover_error = str(exc)
+        input_cover_relief_candidate_scan.append({
+            "bridge_width_x_mm": bridge_width_mm,
+            "shaft_diameter_mm": cover_relief_shaft_diameter_mm,
+            "gear_blank_diameter_mm": input_hub_gear_diameter_mm,
+            "rotation_step_deg": cover_relief_rotation_step_deg,
+            "rotation_samples_applied": cut_samples,
+            "moving_assembly_valid": moving_candidate_valid,
+            "moving_assembly_solid_count": moving_candidate_solids,
+            "cover_candidate_valid": cover_valid,
+            "cover_candidate_solid_count": cover_solids,
+            "original_cover_volume_mm3": round(float(solids[4].Volume()), 9),
+            "remaining_cover_volume_mm3": round(cover_remaining_volume, 9) if cover_remaining_volume is not None else None,
+            "removed_cover_volume_mm3": round(cover_cut_volume, 9) if cover_cut_volume is not None else None,
+            "cut_errors": cut_errors,
+            "error": cover_error,
+            "limitations": ["Cover is only a subtractive relief diagnostic from the old cover blank",
+                            "10-degree discrete samples do not prove continuous swept clearance",
+                            "No wall-thickness, fastening, sealing, machining access or assembly validation"],
+        })
+
     gear_axial_analysis = {
         "gear_blank_diameter_mm": 11.0,
         "gear_face_width_mm": 2.0,
@@ -2023,6 +2166,9 @@ def main():
         "high_gear_input_stub_checks": high_gear_input_stub_checks,
         "input_bridge_hub_candidate_scan": input_bridge_hub_candidate_scan,
         "input_bridge_sweep_by_bridge_width": input_bridge_sweep_by_bridge_width,
+        "input_bridge_root_transition_scan": input_bridge_root_transition_scan,
+        "input_cover_relief_candidate_scan": input_cover_relief_candidate_scan,
+        "input_cover_relief_candidate_scan_parameters": {"rotation_step_deg": cover_relief_rotation_step_deg, "bridge_widths_mm": cover_relief_bridge_widths_mm, "shaft_diameter_mm": cover_relief_shaft_diameter_mm, "method": "subtract sampled rotating dial+bridge+shaft+gear blank from current cover as diagnostic only"},
         "input_bridge_cover_and_engagement_scan_parameters": {
             "rotation_step_deg": 15,
             "bridge_only_cover_checked_separately": True,
