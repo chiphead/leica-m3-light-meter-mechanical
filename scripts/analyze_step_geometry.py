@@ -2093,6 +2093,209 @@ def main():
                             "No wall-thickness, fastening, sealing, machining access or assembly validation"],
         })
 
+    # True edge-fillet candidates at the upper bridge/shaft junction. Unlike the
+    # previous cylindrical collar proxy, these use OpenCascade's actual edge fillet.
+    input_bridge_true_fillet_scan = []
+    true_fillet_bridge_widths_mm = [0.6, 1.0]
+    true_fillet_radii_mm = [0.10, 0.15, 0.20]
+    true_fillet_shaft_diameter_mm = 1.8
+    target_bridge_top_z_mm = bridge_z_min_mm + bridge_thickness_z_mm
+    for bridge_width_mm in true_fillet_bridge_widths_mm:
+        bridge = cq.Solid.makeBox(
+            bridge_width_mm, bridge_span_y_mm, bridge_thickness_z_mm,
+            cq.Vector(bridge_center_x_mm - bridge_width_mm / 2.0,
+                      bridge_center_y_mm - bridge_span_y_mm / 2.0,
+                      bridge_z_min_mm),
+        )
+        shaft = cq.Solid.makeCylinder(
+            true_fillet_shaft_diameter_mm / 2.0,
+            input_hub_shaft_z_max_mm - input_hub_shaft_z_min_mm,
+            cq.Vector(bridge_center_x_mm, bridge_center_y_mm, input_hub_shaft_z_min_mm),
+            cq.Vector(0, 0, 1),
+        )
+        gear_blank = cq.Solid.makeCylinder(
+            input_hub_gear_diameter_mm / 2.0, input_hub_gear_width_mm,
+            cq.Vector(bridge_center_x_mm, bridge_center_y_mm, input_hub_gear_z_min_mm),
+            cq.Vector(0, 0, 1),
+        )
+        try:
+            unfilleted = moved_shutter_dial.fuse(bridge).fuse(shaft).fuse(gear_blank)
+            base_valid = bool(unfilleted.isValid())
+            base_solids = len(unfilleted.Solids())
+            base_error = None
+        except Exception as exc:
+            unfilleted = None
+            base_valid = False
+            base_solids = None
+            base_error = str(exc)
+        target_edges = []
+        if unfilleted is not None:
+            for edge in unfilleted.Edges():
+                try:
+                    if edge.geomType() != "CIRCLE":
+                        continue
+                    center = edge.Center()
+                    radius = float(edge.radius())
+                    if (abs(center.x - bridge_center_x_mm) <= 1e-4
+                        and abs(center.y - bridge_center_y_mm) <= 1e-4
+                        and abs(center.z - target_bridge_top_z_mm) <= 1e-4
+                        and abs(radius - true_fillet_shaft_diameter_mm / 2.0) <= 1e-4):
+                        target_edges.append(edge)
+                except Exception:
+                    continue
+        for fillet_radius_mm in true_fillet_radii_mm:
+            try:
+                if unfilleted is None:
+                    raise RuntimeError(base_error or "Base bridge assembly unavailable")
+                if len(target_edges) != 1:
+                    raise RuntimeError(f"Expected one bridge/shaft junction edge, found {len(target_edges)}")
+                filleted = unfilleted.fillet(fillet_radius_mm, target_edges)
+                valid = bool(filleted.isValid())
+                solid_count = len(filleted.Solids())
+                fillet_error = None
+            except Exception as exc:
+                filleted = None
+                valid = False
+                solid_count = None
+                fillet_error = str(exc)
+            checks = []
+            if filleted is not None:
+                for obstacle_name, obstacle in bridge_fixed_obstacles + [("preserved_pin_hole_envelope", pin_envelope)]:
+                    try:
+                        overlap = float(filleted.intersect(obstacle).Volume())
+                        error = None
+                    except Exception as exc:
+                        overlap, error = None, str(exc)
+                    checks.append({
+                        "obstacle": obstacle_name,
+                        "intersection_volume_mm3": round(overlap, 9) if overlap is not None else None,
+                        "error": error,
+                    })
+            input_bridge_true_fillet_scan.append({
+                "bridge_width_x_mm": bridge_width_mm,
+                "shaft_diameter_mm": true_fillet_shaft_diameter_mm,
+                "fillet_radius_mm": fillet_radius_mm,
+                "target_edge_count": len(target_edges),
+                "base_assembly_valid": base_valid,
+                "base_assembly_solid_count": base_solids,
+                "filleted_assembly_valid": valid,
+                "filleted_assembly_solid_count": solid_count,
+                "fillet_error": fillet_error,
+                "fixed_geometry_checks": checks,
+                "clear_of_checked_frozen_geometry": bool(filleted is not None) and all(
+                    x["error"] is None and x["intersection_volume_mm3"] is not None
+                    and x["intersection_volume_mm3"] <= 1e-6 for x in checks
+                ),
+                "limitations": [
+                    "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
+                    "A successful fillet is local geometric validity, not stress or fatigue validation",
+                    "No print anisotropy, torque, bearing support, fastener or assembly analysis",
+                ],
+            })
+
+    # Reconstruct a clean annular perimeter-frame concept around the full-turn
+    # radial envelope. This is deliberately independent of the old cover topology.
+    # The radial envelope is conservatively derived from all vertices and circular
+    # edge center/radius pairs of the moving input assembly.
+    input_new_cover_ring_candidate_scan = []
+    cover_ring_bridge_width_mm = 1.0
+    cover_ring_shaft_diameter_mm = 1.8
+    cover_ring_clearances_mm = [0.5, 0.75, 1.0]
+    cover_ring_radial_width_mm = 1.5
+    cover_ring_moving_bridge = cq.Solid.makeBox(
+        cover_ring_bridge_width_mm, bridge_span_y_mm, bridge_thickness_z_mm,
+        cq.Vector(bridge_center_x_mm - cover_ring_bridge_width_mm / 2.0,
+                  bridge_center_y_mm - bridge_span_y_mm / 2.0, bridge_z_min_mm),
+    )
+    cover_ring_moving_shaft = cq.Solid.makeCylinder(
+        cover_ring_shaft_diameter_mm / 2.0,
+        input_hub_shaft_z_max_mm - input_hub_shaft_z_min_mm,
+        cq.Vector(bridge_center_x_mm, bridge_center_y_mm, input_hub_shaft_z_min_mm),
+        cq.Vector(0, 0, 1),
+    )
+    cover_ring_moving_gear = cq.Solid.makeCylinder(
+        input_hub_gear_diameter_mm / 2.0, input_hub_gear_width_mm,
+        cq.Vector(bridge_center_x_mm, bridge_center_y_mm, input_hub_gear_z_min_mm),
+        cq.Vector(0, 0, 1),
+    )
+    cover_ring_moving_assembly = moved_shutter_dial.fuse(cover_ring_moving_bridge).fuse(
+        cover_ring_moving_shaft).fuse(cover_ring_moving_gear)
+    radial_extent_candidates = []
+    for vertex in cover_ring_moving_assembly.Vertices():
+        point = vertex.Center()
+        radial_extent_candidates.append(math.hypot(point.x - bridge_center_x_mm, point.y - bridge_center_y_mm))
+    for edge in cover_ring_moving_assembly.Edges():
+        try:
+            if edge.geomType() == "CIRCLE":
+                center = edge.Center()
+                radial_extent_candidates.append(
+                    math.hypot(center.x - bridge_center_x_mm, center.y - bridge_center_y_mm)
+                    + float(edge.radius())
+                )
+        except Exception:
+            pass
+    moving_sweep_radius_mm = max(radial_extent_candidates) if radial_extent_candidates else None
+    old_cover_bbox = solids[4].BoundingBox()
+    cover_ring_z_min_mm = float(old_cover_bbox.zmin)
+    cover_ring_height_mm = float(old_cover_bbox.zlen)
+    for radial_clearance_mm in cover_ring_clearances_mm:
+        row = {
+            "radial_clearance_mm": radial_clearance_mm,
+            "radial_frame_width_mm": cover_ring_radial_width_mm,
+            "moving_sweep_radius_mm": round(moving_sweep_radius_mm, 6) if moving_sweep_radius_mm is not None else None,
+            "inner_radius_mm": None,
+            "outer_radius_mm": None,
+            "z_range_mm": [round(cover_ring_z_min_mm, 6), round(cover_ring_z_min_mm + cover_ring_height_mm, 6)],
+            "candidate_valid": False,
+            "candidate_solid_count": None,
+            "moving_assembly_intersection_mm3": None,
+            "fixed_geometry_checks": [],
+            "error": None,
+            "limitations": [
+                "New annular perimeter frame is a topology/layout prototype, not a complete cover",
+                "Z span is borrowed from the old cover bounding box only as an exploratory envelope",
+                "No mounting tabs, screw holes, locating features, sealing, wall thickness optimization or tool access",
+                "The circular radial envelope is conservative and does not establish a final cover outline",
+            ],
+        }
+        try:
+            if moving_sweep_radius_mm is None:
+                raise RuntimeError("Could not derive moving assembly radial envelope")
+            inner_radius_mm = moving_sweep_radius_mm + radial_clearance_mm
+            outer_radius_mm = inner_radius_mm + cover_ring_radial_width_mm
+            outer = cq.Solid.makeCylinder(
+                outer_radius_mm, cover_ring_height_mm,
+                cq.Vector(bridge_center_x_mm, bridge_center_y_mm, cover_ring_z_min_mm),
+                cq.Vector(0, 0, 1),
+            )
+            inner = cq.Solid.makeCylinder(
+                inner_radius_mm, cover_ring_height_mm,
+                cq.Vector(bridge_center_x_mm, bridge_center_y_mm, cover_ring_z_min_mm),
+                cq.Vector(0, 0, 1),
+            )
+            ring = outer.cut(inner)
+            row.update({
+                "inner_radius_mm": round(inner_radius_mm, 6),
+                "outer_radius_mm": round(outer_radius_mm, 6),
+                "candidate_valid": bool(ring.isValid()),
+                "candidate_solid_count": len(ring.Solids()),
+                "moving_assembly_intersection_mm3": round(float(ring.intersect(cover_ring_moving_assembly).Volume()), 9),
+            })
+            for obstacle_name, obstacle in bridge_fixed_obstacles:
+                try:
+                    overlap = float(ring.intersect(obstacle).Volume())
+                    error = None
+                except Exception as exc:
+                    overlap, error = None, str(exc)
+                row["fixed_geometry_checks"].append({
+                    "obstacle": obstacle_name,
+                    "intersection_volume_mm3": round(overlap, 9) if overlap is not None else None,
+                    "error": error,
+                })
+        except Exception as exc:
+            row["error"] = str(exc)
+        input_new_cover_ring_candidate_scan.append(row)
+
     gear_axial_analysis = {
         "gear_blank_diameter_mm": 11.0,
         "gear_face_width_mm": 2.0,
@@ -2169,6 +2372,10 @@ def main():
         "input_bridge_root_transition_scan": input_bridge_root_transition_scan,
         "input_cover_relief_candidate_scan": input_cover_relief_candidate_scan,
         "input_cover_relief_candidate_scan_parameters": {"rotation_step_deg": cover_relief_rotation_step_deg, "bridge_widths_mm": cover_relief_bridge_widths_mm, "shaft_diameter_mm": cover_relief_shaft_diameter_mm, "method": "subtract sampled rotating dial+bridge+shaft+gear blank from current cover as diagnostic only"},
+        "input_bridge_true_fillet_scan": input_bridge_true_fillet_scan,
+        "input_bridge_true_fillet_scan_parameters": {"bridge_widths_mm": true_fillet_bridge_widths_mm, "fillet_radii_mm": true_fillet_radii_mm, "shaft_diameter_mm": true_fillet_shaft_diameter_mm, "filleted_edge": "upper circular bridge/shaft junction at bridge top Z"},
+        "input_new_cover_ring_candidate_scan": input_new_cover_ring_candidate_scan,
+        "input_new_cover_ring_candidate_scan_parameters": {"bridge_width_mm": cover_ring_bridge_width_mm, "shaft_diameter_mm": cover_ring_shaft_diameter_mm, "radial_clearances_mm": cover_ring_clearances_mm, "radial_frame_width_mm": cover_ring_radial_width_mm, "z_height_source": "current cover bounding-box height and lower Z only; exploratory"},
         "input_bridge_cover_and_engagement_scan_parameters": {
             "rotation_step_deg": 15,
             "bridge_only_cover_checked_separately": True,
@@ -2296,6 +2503,14 @@ def main():
               "- STEP 实体编号和装配语义需结合原始 CAD 视图人工映射。",
               "- 本报告不自动修改或覆盖 source/ 中的原始 STEP。",
               "- 接触、嵌套、重叠的设计意图必须结合机构关系判断；不能仅凭 AABB 或单一距离指标判定故障。", ""]
+    lines += [
+        "", "## 桥根真实圆角与独立上盖环框候选扫描", "",
+        "- 桥根圆角使用 OpenCascade 对桥接条上表面与中心轴交界处的圆形边执行真实 edge fillet；结果字段为 input_bridge_true_fillet_scan。",
+        "- 新上盖初筛不再修剪旧盖，而是围绕运动总成完整旋转半径构造独立环形边框；结果字段为 input_new_cover_ring_candidate_scan。",
+        "- 环框仅用于验证单件拓扑、运动净空及冻结结构避让，不包含安装耳、螺钉孔、密封和最终外形。",
+        "", "### 桥根圆角候选", "", json.dumps(input_bridge_true_fillet_scan, ensure_ascii=False, indent=2),
+        "", "### 独立上盖环框候选", "", json.dumps(input_new_cover_ring_candidate_scan, ensure_ascii=False, indent=2),
+    ]
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text("\n".join(lines), encoding="utf-8")
     print(f"Wrote {OUT}")
