@@ -2163,8 +2163,10 @@ def main():
             try:
                 if unfilleted is None:
                     raise RuntimeError(base_error or "Base bridge assembly unavailable")
-                if len(target_edges) != 1:
-                    raise RuntimeError(f"Expected one bridge/shaft junction edge, found {len(target_edges)}")
+                if not target_edges:
+                    raise RuntimeError("No bridge/shaft junction arc edges were found")
+                # The bridge intersects the shaft and splits the nominal circular
+                # junction into two arc edges. Fillet both arcs as one edge set.
                 filleted = unfilleted.fillet(fillet_radius_mm, target_edges)
                 valid = bool(filleted.isValid())
                 solid_count = len(filleted.Solids())
@@ -2317,7 +2319,7 @@ def main():
     # coexist with the immutable main body. Each 10-degree sector is checked
     # independently; this is a layout diagnostic, not a final cover design.
     input_new_cover_ring_sector_scan = []
-    cover_ring_sector_step_deg = 10
+    cover_ring_sector_step_deg = 5
     for sector_start_deg in range(0, 360, cover_ring_sector_step_deg):
         try:
             outer_sector = cq.Solid.makeCylinder(
