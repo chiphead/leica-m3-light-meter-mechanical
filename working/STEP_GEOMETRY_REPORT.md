@@ -1,6 +1,6 @@
 # STEP 几何内核检查报告
 
-- 生成时间（UTC）：2026-11-24T11:04:48.399439+00:00
+- 生成时间（UTC）：2026-11-24T11:16:08.052487+00:00
 - 输入文件：source/leica_m3_light_meter.stp
 - 文件大小：565011 bytes
 - CadQuery：2.5.2
@@ -7960,7 +7960,7 @@
 ## 原始数据
 
 {
-  "generated_utc": "2026-11-24T11:04:48.399439+00:00",
+  "generated_utc": "2026-11-24T11:16:08.052487+00:00",
   "source": "source/leica_m3_light_meter.stp",
   "source_bytes": 565011,
   "cadquery_version": "2.5.2",
@@ -124040,6 +124040,271 @@
       "shaft_diameter_mm": 1.8,
       "method": "subtract sampled rotating dial+bridge+shaft+gear blank from current cover as diagnostic only"
     },
+    "input_bridge_true_fillet_scan": [
+      {
+        "bridge_width_x_mm": 0.6,
+        "shaft_diameter_mm": 1.8,
+        "fillet_radius_mm": 0.1,
+        "target_edge_count": 0,
+        "base_assembly_valid": true,
+        "base_assembly_solid_count": 1,
+        "filleted_assembly_valid": false,
+        "filleted_assembly_solid_count": null,
+        "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+        "fixed_geometry_checks": [],
+        "clear_of_checked_frozen_geometry": false,
+        "limitations": [
+          "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
+          "A successful fillet is local geometric validity, not stress or fatigue validation",
+          "No print anisotropy, torque, bearing support, fastener or assembly analysis"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 0.6,
+        "shaft_diameter_mm": 1.8,
+        "fillet_radius_mm": 0.15,
+        "target_edge_count": 0,
+        "base_assembly_valid": true,
+        "base_assembly_solid_count": 1,
+        "filleted_assembly_valid": false,
+        "filleted_assembly_solid_count": null,
+        "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+        "fixed_geometry_checks": [],
+        "clear_of_checked_frozen_geometry": false,
+        "limitations": [
+          "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
+          "A successful fillet is local geometric validity, not stress or fatigue validation",
+          "No print anisotropy, torque, bearing support, fastener or assembly analysis"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 0.6,
+        "shaft_diameter_mm": 1.8,
+        "fillet_radius_mm": 0.2,
+        "target_edge_count": 0,
+        "base_assembly_valid": true,
+        "base_assembly_solid_count": 1,
+        "filleted_assembly_valid": false,
+        "filleted_assembly_solid_count": null,
+        "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+        "fixed_geometry_checks": [],
+        "clear_of_checked_frozen_geometry": false,
+        "limitations": [
+          "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
+          "A successful fillet is local geometric validity, not stress or fatigue validation",
+          "No print anisotropy, torque, bearing support, fastener or assembly analysis"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 1.0,
+        "shaft_diameter_mm": 1.8,
+        "fillet_radius_mm": 0.1,
+        "target_edge_count": 0,
+        "base_assembly_valid": true,
+        "base_assembly_solid_count": 1,
+        "filleted_assembly_valid": false,
+        "filleted_assembly_solid_count": null,
+        "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+        "fixed_geometry_checks": [],
+        "clear_of_checked_frozen_geometry": false,
+        "limitations": [
+          "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
+          "A successful fillet is local geometric validity, not stress or fatigue validation",
+          "No print anisotropy, torque, bearing support, fastener or assembly analysis"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 1.0,
+        "shaft_diameter_mm": 1.8,
+        "fillet_radius_mm": 0.15,
+        "target_edge_count": 0,
+        "base_assembly_valid": true,
+        "base_assembly_solid_count": 1,
+        "filleted_assembly_valid": false,
+        "filleted_assembly_solid_count": null,
+        "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+        "fixed_geometry_checks": [],
+        "clear_of_checked_frozen_geometry": false,
+        "limitations": [
+          "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
+          "A successful fillet is local geometric validity, not stress or fatigue validation",
+          "No print anisotropy, torque, bearing support, fastener or assembly analysis"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 1.0,
+        "shaft_diameter_mm": 1.8,
+        "fillet_radius_mm": 0.2,
+        "target_edge_count": 0,
+        "base_assembly_valid": true,
+        "base_assembly_solid_count": 1,
+        "filleted_assembly_valid": false,
+        "filleted_assembly_solid_count": null,
+        "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+        "fixed_geometry_checks": [],
+        "clear_of_checked_frozen_geometry": false,
+        "limitations": [
+          "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
+          "A successful fillet is local geometric validity, not stress or fatigue validation",
+          "No print anisotropy, torque, bearing support, fastener or assembly analysis"
+        ]
+      }
+    ],
+    "input_bridge_true_fillet_scan_parameters": {
+      "bridge_widths_mm": [
+        0.6,
+        1.0
+      ],
+      "fillet_radii_mm": [
+        0.1,
+        0.15,
+        0.2
+      ],
+      "shaft_diameter_mm": 1.8,
+      "filleted_edge": "upper circular bridge/shaft junction at bridge top Z"
+    },
+    "input_new_cover_ring_candidate_scan": [
+      {
+        "radial_clearance_mm": 0.5,
+        "radial_frame_width_mm": 1.5,
+        "moving_sweep_radius_mm": 31.996925,
+        "inner_radius_mm": 32.496925,
+        "outer_radius_mm": 33.996925,
+        "z_range_mm": [
+          14.9,
+          20.9
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "moving_assembly_intersection_mm3": 0.0,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 21.268651905,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "error": null,
+        "limitations": [
+          "New annular perimeter frame is a topology/layout prototype, not a complete cover",
+          "Z span is borrowed from the old cover bounding box only as an exploratory envelope",
+          "No mounting tabs, screw holes, locating features, sealing, wall thickness optimization or tool access",
+          "The circular radial envelope is conservative and does not establish a final cover outline"
+        ]
+      },
+      {
+        "radial_clearance_mm": 0.75,
+        "radial_frame_width_mm": 1.5,
+        "moving_sweep_radius_mm": 31.996925,
+        "inner_radius_mm": 32.746925,
+        "outer_radius_mm": 34.246925,
+        "z_range_mm": [
+          14.9,
+          20.9
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "moving_assembly_intersection_mm3": 0.0,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 21.233620975,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "error": null,
+        "limitations": [
+          "New annular perimeter frame is a topology/layout prototype, not a complete cover",
+          "Z span is borrowed from the old cover bounding box only as an exploratory envelope",
+          "No mounting tabs, screw holes, locating features, sealing, wall thickness optimization or tool access",
+          "The circular radial envelope is conservative and does not establish a final cover outline"
+        ]
+      },
+      {
+        "radial_clearance_mm": 1.0,
+        "radial_frame_width_mm": 1.5,
+        "moving_sweep_radius_mm": 31.996925,
+        "inner_radius_mm": 32.996925,
+        "outer_radius_mm": 34.496925,
+        "z_range_mm": [
+          14.9,
+          20.9
+        ],
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "moving_assembly_intersection_mm3": 0.0,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 21.199535588,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "error": null,
+        "limitations": [
+          "New annular perimeter frame is a topology/layout prototype, not a complete cover",
+          "Z span is borrowed from the old cover bounding box only as an exploratory envelope",
+          "No mounting tabs, screw holes, locating features, sealing, wall thickness optimization or tool access",
+          "The circular radial envelope is conservative and does not establish a final cover outline"
+        ]
+      }
+    ],
+    "input_new_cover_ring_candidate_scan_parameters": {
+      "bridge_width_mm": 1.0,
+      "shaft_diameter_mm": 1.8,
+      "radial_clearances_mm": [
+        0.5,
+        0.75,
+        1.0
+      ],
+      "radial_frame_width_mm": 1.5,
+      "z_height_source": "current cover bounding-box height and lower Z only; exploratory"
+    },
     "input_bridge_cover_and_engagement_scan_parameters": {
       "rotation_step_deg": 15,
       "bridge_only_cover_checked_separately": true,
@@ -140515,3 +140780,257 @@
 - STEP 实体编号和装配语义需结合原始 CAD 视图人工映射。
 - 本报告不自动修改或覆盖 source/ 中的原始 STEP。
 - 接触、嵌套、重叠的设计意图必须结合机构关系判断；不能仅凭 AABB 或单一距离指标判定故障。
+
+
+## 桥根真实圆角与独立上盖环框候选扫描
+
+- 桥根圆角使用 OpenCascade 对桥接条上表面与中心轴交界处的圆形边执行真实 edge fillet；结果字段为 input_bridge_true_fillet_scan。
+- 新上盖初筛不再修剪旧盖，而是围绕运动总成完整旋转半径构造独立环形边框；结果字段为 input_new_cover_ring_candidate_scan。
+- 环框仅用于验证单件拓扑、运动净空及冻结结构避让，不包含安装耳、螺钉孔、密封和最终外形。
+
+### 桥根圆角候选
+
+[
+  {
+    "bridge_width_x_mm": 0.6,
+    "shaft_diameter_mm": 1.8,
+    "fillet_radius_mm": 0.1,
+    "target_edge_count": 0,
+    "base_assembly_valid": true,
+    "base_assembly_solid_count": 1,
+    "filleted_assembly_valid": false,
+    "filleted_assembly_solid_count": null,
+    "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+    "fixed_geometry_checks": [],
+    "clear_of_checked_frozen_geometry": false,
+    "limitations": [
+      "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
+      "A successful fillet is local geometric validity, not stress or fatigue validation",
+      "No print anisotropy, torque, bearing support, fastener or assembly analysis"
+    ]
+  },
+  {
+    "bridge_width_x_mm": 0.6,
+    "shaft_diameter_mm": 1.8,
+    "fillet_radius_mm": 0.15,
+    "target_edge_count": 0,
+    "base_assembly_valid": true,
+    "base_assembly_solid_count": 1,
+    "filleted_assembly_valid": false,
+    "filleted_assembly_solid_count": null,
+    "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+    "fixed_geometry_checks": [],
+    "clear_of_checked_frozen_geometry": false,
+    "limitations": [
+      "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
+      "A successful fillet is local geometric validity, not stress or fatigue validation",
+      "No print anisotropy, torque, bearing support, fastener or assembly analysis"
+    ]
+  },
+  {
+    "bridge_width_x_mm": 0.6,
+    "shaft_diameter_mm": 1.8,
+    "fillet_radius_mm": 0.2,
+    "target_edge_count": 0,
+    "base_assembly_valid": true,
+    "base_assembly_solid_count": 1,
+    "filleted_assembly_valid": false,
+    "filleted_assembly_solid_count": null,
+    "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+    "fixed_geometry_checks": [],
+    "clear_of_checked_frozen_geometry": false,
+    "limitations": [
+      "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
+      "A successful fillet is local geometric validity, not stress or fatigue validation",
+      "No print anisotropy, torque, bearing support, fastener or assembly analysis"
+    ]
+  },
+  {
+    "bridge_width_x_mm": 1.0,
+    "shaft_diameter_mm": 1.8,
+    "fillet_radius_mm": 0.1,
+    "target_edge_count": 0,
+    "base_assembly_valid": true,
+    "base_assembly_solid_count": 1,
+    "filleted_assembly_valid": false,
+    "filleted_assembly_solid_count": null,
+    "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+    "fixed_geometry_checks": [],
+    "clear_of_checked_frozen_geometry": false,
+    "limitations": [
+      "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
+      "A successful fillet is local geometric validity, not stress or fatigue validation",
+      "No print anisotropy, torque, bearing support, fastener or assembly analysis"
+    ]
+  },
+  {
+    "bridge_width_x_mm": 1.0,
+    "shaft_diameter_mm": 1.8,
+    "fillet_radius_mm": 0.15,
+    "target_edge_count": 0,
+    "base_assembly_valid": true,
+    "base_assembly_solid_count": 1,
+    "filleted_assembly_valid": false,
+    "filleted_assembly_solid_count": null,
+    "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+    "fixed_geometry_checks": [],
+    "clear_of_checked_frozen_geometry": false,
+    "limitations": [
+      "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
+      "A successful fillet is local geometric validity, not stress or fatigue validation",
+      "No print anisotropy, torque, bearing support, fastener or assembly analysis"
+    ]
+  },
+  {
+    "bridge_width_x_mm": 1.0,
+    "shaft_diameter_mm": 1.8,
+    "fillet_radius_mm": 0.2,
+    "target_edge_count": 0,
+    "base_assembly_valid": true,
+    "base_assembly_solid_count": 1,
+    "filleted_assembly_valid": false,
+    "filleted_assembly_solid_count": null,
+    "fillet_error": "Expected one bridge/shaft junction edge, found 0",
+    "fixed_geometry_checks": [],
+    "clear_of_checked_frozen_geometry": false,
+    "limitations": [
+      "OpenCascade edge fillet is applied only to the upper circular bridge/shaft junction",
+      "A successful fillet is local geometric validity, not stress or fatigue validation",
+      "No print anisotropy, torque, bearing support, fastener or assembly analysis"
+    ]
+  }
+]
+
+### 独立上盖环框候选
+
+[
+  {
+    "radial_clearance_mm": 0.5,
+    "radial_frame_width_mm": 1.5,
+    "moving_sweep_radius_mm": 31.996925,
+    "inner_radius_mm": 32.496925,
+    "outer_radius_mm": 33.996925,
+    "z_range_mm": [
+      14.9,
+      20.9
+    ],
+    "candidate_valid": true,
+    "candidate_solid_count": 1,
+    "moving_assembly_intersection_mm3": 0.0,
+    "fixed_geometry_checks": [
+      {
+        "obstacle": "main_body",
+        "intersection_volume_mm3": 21.268651905,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_button",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_dial",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_bracket",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      }
+    ],
+    "error": null,
+    "limitations": [
+      "New annular perimeter frame is a topology/layout prototype, not a complete cover",
+      "Z span is borrowed from the old cover bounding box only as an exploratory envelope",
+      "No mounting tabs, screw holes, locating features, sealing, wall thickness optimization or tool access",
+      "The circular radial envelope is conservative and does not establish a final cover outline"
+    ]
+  },
+  {
+    "radial_clearance_mm": 0.75,
+    "radial_frame_width_mm": 1.5,
+    "moving_sweep_radius_mm": 31.996925,
+    "inner_radius_mm": 32.746925,
+    "outer_radius_mm": 34.246925,
+    "z_range_mm": [
+      14.9,
+      20.9
+    ],
+    "candidate_valid": true,
+    "candidate_solid_count": 1,
+    "moving_assembly_intersection_mm3": 0.0,
+    "fixed_geometry_checks": [
+      {
+        "obstacle": "main_body",
+        "intersection_volume_mm3": 21.233620975,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_button",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_dial",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_bracket",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      }
+    ],
+    "error": null,
+    "limitations": [
+      "New annular perimeter frame is a topology/layout prototype, not a complete cover",
+      "Z span is borrowed from the old cover bounding box only as an exploratory envelope",
+      "No mounting tabs, screw holes, locating features, sealing, wall thickness optimization or tool access",
+      "The circular radial envelope is conservative and does not establish a final cover outline"
+    ]
+  },
+  {
+    "radial_clearance_mm": 1.0,
+    "radial_frame_width_mm": 1.5,
+    "moving_sweep_radius_mm": 31.996925,
+    "inner_radius_mm": 32.996925,
+    "outer_radius_mm": 34.496925,
+    "z_range_mm": [
+      14.9,
+      20.9
+    ],
+    "candidate_valid": true,
+    "candidate_solid_count": 1,
+    "moving_assembly_intersection_mm3": 0.0,
+    "fixed_geometry_checks": [
+      {
+        "obstacle": "main_body",
+        "intersection_volume_mm3": 21.199535588,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_button",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_dial",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_bracket",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      }
+    ],
+    "error": null,
+    "limitations": [
+      "New annular perimeter frame is a topology/layout prototype, not a complete cover",
+      "Z span is borrowed from the old cover bounding box only as an exploratory envelope",
+      "No mounting tabs, screw holes, locating features, sealing, wall thickness optimization or tool access",
+      "The circular radial envelope is conservative and does not establish a final cover outline"
+    ]
+  }
+]
