@@ -1,6 +1,6 @@
 # STEP 几何内核检查报告
 
-- 生成时间（UTC）：2026-11-24T09:03:33.809779+00:00
+- 生成时间（UTC）：2026-11-24T09:19:58.548192+00:00
 - 输入文件：source/leica_m3_light_meter.stp
 - 文件大小：565011 bytes
 - CadQuery：2.5.2
@@ -67,9 +67,9 @@
 ### Z=23.0…25.0 mm
 ### Z=23.25…25.25 mm
 ### Z=23.5…25.5 mm
-- output齿轮中心[24.5, 0.0]：固定几何净空=是；平移快门盘净空=否；当前盖子净空=是；交叠详情：[{"obstacle": "translated_shutter_dial", "intersection_volume_mm3": 9.398775807, "error": null}]
+- output齿轮中心[24.5, 0.0]：固定几何净空=是；平移快门盘净空=否；当前盖子净空=是；交叠详情：[{"obstacle": "translated_shutter_dial", "intersection_volume_mm3": 9.398775807, "error": null}, {"obstacle": "preserved_pin_hole_envelope", "intersection_volume_mm3": 1.01787602, "error": null}]
 - input齿轮中心[34.5, 0.0]：固定几何净空=是；平移快门盘净空=否；当前盖子净空=否；交叠详情：[{"obstacle": "translated_shutter_dial", "intersection_volume_mm3": 38.013271108, "error": null}, {"obstacle": "current_cover", "intersection_volume_mm3": 2.438463733, "error": null}]
-- output齿轮中心[24.5, 0.0]：固定几何净空=是；平移快门盘净空=否；当前盖子净空=是；交叠详情：[{"obstacle": "translated_shutter_dial", "intersection_volume_mm3": 3.524540927, "error": null}]
+- output齿轮中心[24.5, 0.0]：固定几何净空=是；平移快门盘净空=否；当前盖子净空=是；交叠详情：[{"obstacle": "translated_shutter_dial", "intersection_volume_mm3": 3.524540927, "error": null}, {"obstacle": "preserved_pin_hole_envelope", "intersection_volume_mm3": 0.381703507, "error": null}]
 - input齿轮中心[34.5, 0.0]：固定几何净空=是；平移快门盘净空=否；当前盖子净空=否；交叠详情：[{"obstacle": "translated_shutter_dial", "intersection_volume_mm3": 14.254976666, "error": null}, {"obstacle": "current_cover", "intersection_volume_mm3": 0.363353397, "error": null}]
 - output齿轮中心[24.5, 0.0]：固定几何净空=是；平移快门盘净空=是；当前盖子净空=是；交叠详情：[]
 - input齿轮中心[34.5, 0.0]：固定几何净空=是；平移快门盘净空=是；当前盖子净空=是；交叠详情：[]
@@ -4485,7 +4485,7 @@
 ## 原始数据
 
 {
-  "generated_utc": "2026-11-24T09:03:33.809779+00:00",
+  "generated_utc": "2026-11-24T09:19:58.548192+00:00",
   "source": "source/leica_m3_light_meter.stp",
   "source_bytes": 565011,
   "cadquery_version": "2.5.2",
@@ -106362,6 +106362,11 @@
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.0,
                 "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 1.01787602,
+                "error": null
               }
             ],
             "clear_of_fixed_geometry": true,
@@ -106408,6 +106413,11 @@
               {
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 2.438463733,
+                "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.0,
                 "error": null
               }
             ],
@@ -106464,6 +106474,11 @@
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.0,
                 "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.381703507,
+                "error": null
               }
             ],
             "clear_of_fixed_geometry": true,
@@ -106510,6 +106525,11 @@
               {
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.363353397,
+                "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.0,
                 "error": null
               }
             ],
@@ -106566,6 +106586,11 @@
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.0,
                 "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.0,
+                "error": null
               }
             ],
             "clear_of_fixed_geometry": true,
@@ -106611,6 +106636,11 @@
               },
               {
                 "obstacle": "current_cover",
+                "intersection_volume_mm3": 0.0,
+                "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
                 "intersection_volume_mm3": 0.0,
                 "error": null
               }
@@ -106668,6 +106698,11 @@
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.0,
                 "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.0,
+                "error": null
               }
             ],
             "clear_of_fixed_geometry": true,
@@ -106713,6 +106748,11 @@
               },
               {
                 "obstacle": "current_cover",
+                "intersection_volume_mm3": 0.0,
+                "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
                 "intersection_volume_mm3": 0.0,
                 "error": null
               }
@@ -106770,6 +106810,11 @@
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.0,
                 "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.0,
+                "error": null
               }
             ],
             "clear_of_fixed_geometry": true,
@@ -106815,6 +106860,11 @@
               },
               {
                 "obstacle": "current_cover",
+                "intersection_volume_mm3": 0.0,
+                "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
                 "intersection_volume_mm3": 0.0,
                 "error": null
               }
@@ -106872,6 +106922,11 @@
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.0,
                 "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.0,
+                "error": null
               }
             ],
             "clear_of_fixed_geometry": true,
@@ -106917,6 +106972,11 @@
               },
               {
                 "obstacle": "current_cover",
+                "intersection_volume_mm3": 0.0,
+                "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
                 "intersection_volume_mm3": 0.0,
                 "error": null
               }
@@ -106974,6 +107034,11 @@
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.0,
                 "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.0,
+                "error": null
               }
             ],
             "clear_of_fixed_geometry": true,
@@ -107019,6 +107084,11 @@
               },
               {
                 "obstacle": "current_cover",
+                "intersection_volume_mm3": 0.0,
+                "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
                 "intersection_volume_mm3": 0.0,
                 "error": null
               }
@@ -107076,6 +107146,11 @@
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.0,
                 "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.0,
+                "error": null
               }
             ],
             "clear_of_fixed_geometry": true,
@@ -107121,6 +107196,11 @@
               },
               {
                 "obstacle": "current_cover",
+                "intersection_volume_mm3": 0.0,
+                "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
                 "intersection_volume_mm3": 0.0,
                 "error": null
               }
@@ -107178,6 +107258,11 @@
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.0,
                 "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.0,
+                "error": null
               }
             ],
             "clear_of_fixed_geometry": true,
@@ -107223,6 +107308,11 @@
               },
               {
                 "obstacle": "current_cover",
+                "intersection_volume_mm3": 0.0,
+                "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
                 "intersection_volume_mm3": 0.0,
                 "error": null
               }
@@ -107280,6 +107370,11 @@
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.0,
                 "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.0,
+                "error": null
               }
             ],
             "clear_of_fixed_geometry": true,
@@ -107325,6 +107420,11 @@
               },
               {
                 "obstacle": "current_cover",
+                "intersection_volume_mm3": 0.0,
+                "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
                 "intersection_volume_mm3": 0.0,
                 "error": null
               }
@@ -107382,6 +107482,11 @@
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.0,
                 "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.0,
+                "error": null
               }
             ],
             "clear_of_fixed_geometry": true,
@@ -107427,6 +107532,11 @@
               },
               {
                 "obstacle": "current_cover",
+                "intersection_volume_mm3": 0.0,
+                "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
                 "intersection_volume_mm3": 0.0,
                 "error": null
               }
@@ -107484,6 +107594,11 @@
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.0,
                 "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.0,
+                "error": null
               }
             ],
             "clear_of_fixed_geometry": true,
@@ -107529,6 +107644,11 @@
               },
               {
                 "obstacle": "current_cover",
+                "intersection_volume_mm3": 0.0,
+                "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
                 "intersection_volume_mm3": 0.0,
                 "error": null
               }
@@ -107586,6 +107706,11 @@
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.0,
                 "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.0,
+                "error": null
               }
             ],
             "clear_of_fixed_geometry": true,
@@ -107633,6 +107758,11 @@
                 "obstacle": "current_cover",
                 "intersection_volume_mm3": 0.0,
                 "error": null
+              },
+              {
+                "obstacle": "preserved_pin_hole_envelope",
+                "intersection_volume_mm3": 0.0,
+                "error": null
               }
             ],
             "clear_of_fixed_geometry": true,
@@ -107640,6 +107770,425 @@
             "clear_of_current_cover": true
           }
         ]
+      }
+    ],
+    "high_gear_output_shaft_checks": [
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          0.0,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.785398163,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 1.570796327,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 1.727875959,
+            "error": null
+          }
+        ],
+        "clear_of_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          0.0,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 1.767145868,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 3.534291735,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 3.887720909,
+            "error": null
+          }
+        ],
+        "clear_of_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          0.0,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 3.141592654,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 6.283185307,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 6.911503838,
+            "error": null
+          }
+        ],
+        "clear_of_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          0.0,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 4.908738521,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 9.817477042,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 10.799224747,
+            "error": null
+          }
+        ],
+        "clear_of_checked_geometry": false
+      },
+      {
+        "axis_xy_mm": [
+          24.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          0.0,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 7.068583471,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 14.137166941,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 15.550883635,
+            "error": null
+          }
+        ],
+        "clear_of_checked_geometry": false
+      }
+    ],
+    "high_gear_input_stub_checks": [
+      {
+        "axis_xy_mm": [
+          34.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.0,
+        "z_range_mm": [
+          20.9,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          34.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 1.5,
+        "z_range_mm": [
+          20.9,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          34.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.0,
+        "z_range_mm": [
+          20.9,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          34.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 2.5,
+        "z_range_mm": [
+          20.9,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_geometry": true
+      },
+      {
+        "axis_xy_mm": [
+          34.5,
+          0.0
+        ],
+        "shaft_diameter_mm": 3.0,
+        "z_range_mm": [
+          20.9,
+          21.5
+        ],
+        "checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "clear_of_checked_geometry": true
       }
     ],
     "high_gear_layer_scan_parameters": {
