@@ -1,6 +1,6 @@
 # STEP 几何内核检查报告
 
-- 生成时间（UTC）：2026-11-24T12:23:54.712809+00:00
+- 生成时间（UTC）：2026-11-24T12:37:53.960748+00:00
 - 输入文件：source/leica_m3_light_meter.stp
 - 文件大小：565011 bytes
 - CadQuery：2.5.2
@@ -7960,7 +7960,7 @@
 ## 原始数据
 
 {
-  "generated_utc": "2026-11-24T12:23:54.712809+00:00",
+  "generated_utc": "2026-11-24T12:37:53.960748+00:00",
   "source": "source/leica_m3_light_meter.stp",
   "source_bytes": 565011,
   "cadquery_version": "2.5.2",
@@ -125627,6 +125627,200 @@
         ]
       }
     ],
+    "input_new_cover_open_ring_bridge_scan": [
+      {
+        "gap_margin_deg": 2.5,
+        "gap_ranges_deg": [
+          [
+            147.5,
+            162.5
+          ],
+          [
+            197.5,
+            212.5
+          ]
+        ],
+        "bridge_outer_offset_mm": 1.0,
+        "bridge_overlap_into_ring_mm": 0.5,
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "candidate_volume_mm3": 1882.944495853,
+        "main_body_intersection_mm3": 21.051540173,
+        "moving_assembly_intersection_mm3": 0.0,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 21.051540173,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "error": null,
+        "limitations": [
+          "Exploratory annular frame with two local gaps and external polygonal bridges",
+          "Bridge overlap is a Boolean-fuse aid, not a specified manufacturing joint",
+          "No mounting tabs, fasteners, wall-thickness, stiffness, sealing or tool-access validation"
+        ]
+      },
+      {
+        "gap_margin_deg": 2.5,
+        "gap_ranges_deg": [
+          [
+            147.5,
+            162.5
+          ],
+          [
+            197.5,
+            212.5
+          ]
+        ],
+        "bridge_outer_offset_mm": 2.0,
+        "bridge_overlap_into_ring_mm": 0.5,
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "candidate_volume_mm3": 1993.191859038,
+        "main_body_intersection_mm3": 35.085900288,
+        "moving_assembly_intersection_mm3": 0.0,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 35.085900288,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "error": null,
+        "limitations": [
+          "Exploratory annular frame with two local gaps and external polygonal bridges",
+          "Bridge overlap is a Boolean-fuse aid, not a specified manufacturing joint",
+          "No mounting tabs, fasteners, wall-thickness, stiffness, sealing or tool-access validation"
+        ]
+      },
+      {
+        "gap_margin_deg": 5.0,
+        "gap_ranges_deg": [
+          [
+            145.0,
+            165.0
+          ],
+          [
+            195.0,
+            215.0
+          ]
+        ],
+        "bridge_outer_offset_mm": 1.0,
+        "bridge_overlap_into_ring_mm": 0.5,
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "candidate_volume_mm3": 1882.00922005,
+        "main_body_intersection_mm3": 20.91061317,
+        "moving_assembly_intersection_mm3": 0.0,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 20.91061317,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "error": null,
+        "limitations": [
+          "Exploratory annular frame with two local gaps and external polygonal bridges",
+          "Bridge overlap is a Boolean-fuse aid, not a specified manufacturing joint",
+          "No mounting tabs, fasteners, wall-thickness, stiffness, sealing or tool-access validation"
+        ]
+      },
+      {
+        "gap_margin_deg": 5.0,
+        "gap_ranges_deg": [
+          [
+            145.0,
+            165.0
+          ],
+          [
+            195.0,
+            215.0
+          ]
+        ],
+        "bridge_outer_offset_mm": 2.0,
+        "bridge_overlap_into_ring_mm": 0.5,
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "candidate_volume_mm3": 2027.697181084,
+        "main_body_intersection_mm3": 34.851021949,
+        "moving_assembly_intersection_mm3": 0.0,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 34.851021949,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "error": null,
+        "limitations": [
+          "Exploratory annular frame with two local gaps and external polygonal bridges",
+          "Bridge overlap is a Boolean-fuse aid, not a specified manufacturing joint",
+          "No mounting tabs, fasteners, wall-thickness, stiffness, sealing or tool-access validation"
+        ]
+      }
+    ],
     "input_new_cover_ring_sector_scan_parameters": {
       "sector_step_deg": 5,
       "radial_clearance_mm": 0.5,
@@ -142795,6 +142989,203 @@
       "Z span is borrowed from the old cover bounding box only as an exploratory envelope",
       "No mounting tabs, screw holes, locating features, sealing, wall thickness optimization or tool access",
       "The circular radial envelope is conservative and does not establish a final cover outline"
+    ]
+  }
+]
+
+### 双开口环框与外侧桥接候选
+
+[
+  {
+    "gap_margin_deg": 2.5,
+    "gap_ranges_deg": [
+      [
+        147.5,
+        162.5
+      ],
+      [
+        197.5,
+        212.5
+      ]
+    ],
+    "bridge_outer_offset_mm": 1.0,
+    "bridge_overlap_into_ring_mm": 0.5,
+    "candidate_valid": true,
+    "candidate_solid_count": 1,
+    "candidate_volume_mm3": 1882.944495853,
+    "main_body_intersection_mm3": 21.051540173,
+    "moving_assembly_intersection_mm3": 0.0,
+    "fixed_geometry_checks": [
+      {
+        "obstacle": "main_body",
+        "intersection_volume_mm3": 21.051540173,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_button",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_dial",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_bracket",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      }
+    ],
+    "error": null,
+    "limitations": [
+      "Exploratory annular frame with two local gaps and external polygonal bridges",
+      "Bridge overlap is a Boolean-fuse aid, not a specified manufacturing joint",
+      "No mounting tabs, fasteners, wall-thickness, stiffness, sealing or tool-access validation"
+    ]
+  },
+  {
+    "gap_margin_deg": 2.5,
+    "gap_ranges_deg": [
+      [
+        147.5,
+        162.5
+      ],
+      [
+        197.5,
+        212.5
+      ]
+    ],
+    "bridge_outer_offset_mm": 2.0,
+    "bridge_overlap_into_ring_mm": 0.5,
+    "candidate_valid": true,
+    "candidate_solid_count": 1,
+    "candidate_volume_mm3": 1993.191859038,
+    "main_body_intersection_mm3": 35.085900288,
+    "moving_assembly_intersection_mm3": 0.0,
+    "fixed_geometry_checks": [
+      {
+        "obstacle": "main_body",
+        "intersection_volume_mm3": 35.085900288,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_button",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_dial",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_bracket",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      }
+    ],
+    "error": null,
+    "limitations": [
+      "Exploratory annular frame with two local gaps and external polygonal bridges",
+      "Bridge overlap is a Boolean-fuse aid, not a specified manufacturing joint",
+      "No mounting tabs, fasteners, wall-thickness, stiffness, sealing or tool-access validation"
+    ]
+  },
+  {
+    "gap_margin_deg": 5.0,
+    "gap_ranges_deg": [
+      [
+        145.0,
+        165.0
+      ],
+      [
+        195.0,
+        215.0
+      ]
+    ],
+    "bridge_outer_offset_mm": 1.0,
+    "bridge_overlap_into_ring_mm": 0.5,
+    "candidate_valid": true,
+    "candidate_solid_count": 1,
+    "candidate_volume_mm3": 1882.00922005,
+    "main_body_intersection_mm3": 20.91061317,
+    "moving_assembly_intersection_mm3": 0.0,
+    "fixed_geometry_checks": [
+      {
+        "obstacle": "main_body",
+        "intersection_volume_mm3": 20.91061317,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_button",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_dial",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_bracket",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      }
+    ],
+    "error": null,
+    "limitations": [
+      "Exploratory annular frame with two local gaps and external polygonal bridges",
+      "Bridge overlap is a Boolean-fuse aid, not a specified manufacturing joint",
+      "No mounting tabs, fasteners, wall-thickness, stiffness, sealing or tool-access validation"
+    ]
+  },
+  {
+    "gap_margin_deg": 5.0,
+    "gap_ranges_deg": [
+      [
+        145.0,
+        165.0
+      ],
+      [
+        195.0,
+        215.0
+      ]
+    ],
+    "bridge_outer_offset_mm": 2.0,
+    "bridge_overlap_into_ring_mm": 0.5,
+    "candidate_valid": true,
+    "candidate_solid_count": 1,
+    "candidate_volume_mm3": 2027.697181084,
+    "main_body_intersection_mm3": 34.851021949,
+    "moving_assembly_intersection_mm3": 0.0,
+    "fixed_geometry_checks": [
+      {
+        "obstacle": "main_body",
+        "intersection_volume_mm3": 34.851021949,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_button",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_dial",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      },
+      {
+        "obstacle": "encoder_bracket",
+        "intersection_volume_mm3": 0.0,
+        "error": null
+      }
+    ],
+    "error": null,
+    "limitations": [
+      "Exploratory annular frame with two local gaps and external polygonal bridges",
+      "Bridge overlap is a Boolean-fuse aid, not a specified manufacturing joint",
+      "No mounting tabs, fasteners, wall-thickness, stiffness, sealing or tool-access validation"
     ]
   }
 ]
