@@ -1,6 +1,6 @@
 # STEP 几何内核检查报告
 
-- 生成时间（UTC）：2026-11-24T10:13:21.252488+00:00
+- 生成时间（UTC）：2026-11-24T10:35:44.783371+00:00
 - 输入文件：source/leica_m3_light_meter.stp
 - 文件大小：565011 bytes
 - CadQuery：2.5.2
@@ -7960,7 +7960,7 @@
 ## 原始数据
 
 {
-  "generated_utc": "2026-11-24T10:13:21.252488+00:00",
+  "generated_utc": "2026-11-24T10:35:44.783371+00:00",
   "source": "source/leica_m3_light_meter.stp",
   "source_bytes": 565011,
   "cadquery_version": "2.5.2",
@@ -120053,6 +120053,1945 @@
         "clear_of_checked_geometry": true
       }
     ],
+    "input_bridge_hub_candidate_scan": [
+      {
+        "bridge_width_x_mm": 0.6,
+        "bridge_span_y_mm": 6.0,
+        "bridge_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "shaft_diameter_mm": 1.5,
+        "shaft_z_range_mm": [
+          18.0,
+          21.2
+        ],
+        "gear_blank_diameter_mm": 11.0,
+        "gear_blank_z_range_mm": [
+          21.0,
+          23.0
+        ],
+        "bridge_dial_intentional_overlap_mm3": 0.72,
+        "shaft_bridge_overlap_mm3": 0.525232959,
+        "gear_shaft_overlap_mm3": 0.353429174,
+        "shaft_dial_overlap_mm3": 1.413716694,
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "assembly_fuse_error": null,
+        "shaft_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 1.413716694,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "gear_blank_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "current_cover",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "shaft_clear_of_checked_fixed_geometry": true,
+        "gear_blank_clear_of_checked_fixed_geometry": true,
+        "rotation_sweep_clear_of_frozen_geometry_all_angles": true,
+        "rotation_sweep_clear_of_current_cover_all_angles": false,
+        "limitations": [
+          "Exploratory additive bridge and shaft geometry only; not a production design",
+          "Gear is an 11 mm cylindrical blank; involute teeth and mesh are not modeled",
+          "15-degree sweep samples are discrete and do not prove continuous swept clearance",
+          "Strength, fatigue, bearing support, fasteners, tolerances and assembly tooling are not assessed",
+          "The bridge-to-dial overlap is intentional; the preserved source dial is never cut or modified"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 0.6,
+        "bridge_span_y_mm": 6.0,
+        "bridge_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "shaft_diameter_mm": 1.8,
+        "shaft_z_range_mm": [
+          18.0,
+          21.2
+        ],
+        "gear_blank_diameter_mm": 11.0,
+        "gear_blank_z_range_mm": [
+          21.0,
+          23.0
+        ],
+        "bridge_dial_intentional_overlap_mm3": 0.72,
+        "shaft_bridge_overlap_mm3": 0.635791605,
+        "gear_shaft_overlap_mm3": 0.50893801,
+        "shaft_dial_overlap_mm3": 2.03575204,
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "assembly_fuse_error": null,
+        "shaft_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 2.03575204,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "gear_blank_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "current_cover",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "shaft_clear_of_checked_fixed_geometry": true,
+        "gear_blank_clear_of_checked_fixed_geometry": true,
+        "rotation_sweep_clear_of_frozen_geometry_all_angles": true,
+        "rotation_sweep_clear_of_current_cover_all_angles": false,
+        "limitations": [
+          "Exploratory additive bridge and shaft geometry only; not a production design",
+          "Gear is an 11 mm cylindrical blank; involute teeth and mesh are not modeled",
+          "15-degree sweep samples are discrete and do not prove continuous swept clearance",
+          "Strength, fatigue, bearing support, fasteners, tolerances and assembly tooling are not assessed",
+          "The bridge-to-dial overlap is intentional; the preserved source dial is never cut or modified"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 0.6,
+        "bridge_span_y_mm": 6.0,
+        "bridge_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "shaft_diameter_mm": 2.0,
+        "shaft_z_range_mm": [
+          18.0,
+          21.2
+        ],
+        "gear_blank_diameter_mm": 11.0,
+        "gear_blank_z_range_mm": [
+          21.0,
+          23.0
+        ],
+        "bridge_dial_intentional_overlap_mm3": 0.72,
+        "shaft_bridge_overlap_mm3": 0.709049297,
+        "gear_shaft_overlap_mm3": 0.628318531,
+        "shaft_dial_overlap_mm3": 2.513274123,
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "assembly_fuse_error": null,
+        "shaft_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 2.513274123,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "gear_blank_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "current_cover",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "shaft_clear_of_checked_fixed_geometry": true,
+        "gear_blank_clear_of_checked_fixed_geometry": true,
+        "rotation_sweep_clear_of_frozen_geometry_all_angles": true,
+        "rotation_sweep_clear_of_current_cover_all_angles": false,
+        "limitations": [
+          "Exploratory additive bridge and shaft geometry only; not a production design",
+          "Gear is an 11 mm cylindrical blank; involute teeth and mesh are not modeled",
+          "15-degree sweep samples are discrete and do not prove continuous swept clearance",
+          "Strength, fatigue, bearing support, fasteners, tolerances and assembly tooling are not assessed",
+          "The bridge-to-dial overlap is intentional; the preserved source dial is never cut or modified"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 0.8,
+        "bridge_span_y_mm": 6.0,
+        "bridge_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "shaft_diameter_mm": 1.5,
+        "shaft_z_range_mm": [
+          18.0,
+          21.2
+        ],
+        "gear_blank_diameter_mm": 11.0,
+        "gear_blank_z_range_mm": [
+          21.0,
+          23.0
+        ],
+        "bridge_dial_intentional_overlap_mm3": 0.96,
+        "shaft_bridge_overlap_mm3": 0.684237826,
+        "gear_shaft_overlap_mm3": 0.353429174,
+        "shaft_dial_overlap_mm3": 1.413716694,
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "assembly_fuse_error": null,
+        "shaft_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 1.413716694,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "gear_blank_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "current_cover",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "shaft_clear_of_checked_fixed_geometry": true,
+        "gear_blank_clear_of_checked_fixed_geometry": true,
+        "rotation_sweep_clear_of_frozen_geometry_all_angles": true,
+        "rotation_sweep_clear_of_current_cover_all_angles": false,
+        "limitations": [
+          "Exploratory additive bridge and shaft geometry only; not a production design",
+          "Gear is an 11 mm cylindrical blank; involute teeth and mesh are not modeled",
+          "15-degree sweep samples are discrete and do not prove continuous swept clearance",
+          "Strength, fatigue, bearing support, fasteners, tolerances and assembly tooling are not assessed",
+          "The bridge-to-dial overlap is intentional; the preserved source dial is never cut or modified"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 0.8,
+        "bridge_span_y_mm": 6.0,
+        "bridge_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "shaft_diameter_mm": 1.8,
+        "shaft_z_range_mm": [
+          18.0,
+          21.2
+        ],
+        "gear_blank_diameter_mm": 11.0,
+        "gear_blank_z_range_mm": [
+          21.0,
+          23.0
+        ],
+        "bridge_dial_intentional_overlap_mm3": 0.96,
+        "shaft_bridge_overlap_mm3": 0.834646852,
+        "gear_shaft_overlap_mm3": 0.50893801,
+        "shaft_dial_overlap_mm3": 2.03575204,
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "assembly_fuse_error": null,
+        "shaft_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 2.03575204,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "gear_blank_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "current_cover",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "shaft_clear_of_checked_fixed_geometry": true,
+        "gear_blank_clear_of_checked_fixed_geometry": true,
+        "rotation_sweep_clear_of_frozen_geometry_all_angles": true,
+        "rotation_sweep_clear_of_current_cover_all_angles": false,
+        "limitations": [
+          "Exploratory additive bridge and shaft geometry only; not a production design",
+          "Gear is an 11 mm cylindrical blank; involute teeth and mesh are not modeled",
+          "15-degree sweep samples are discrete and do not prove continuous swept clearance",
+          "Strength, fatigue, bearing support, fasteners, tolerances and assembly tooling are not assessed",
+          "The bridge-to-dial overlap is intentional; the preserved source dial is never cut or modified"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 0.8,
+        "bridge_span_y_mm": 6.0,
+        "bridge_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "shaft_diameter_mm": 2.0,
+        "shaft_z_range_mm": [
+          18.0,
+          21.2
+        ],
+        "gear_blank_diameter_mm": 11.0,
+        "gear_blank_z_range_mm": [
+          21.0,
+          23.0
+        ],
+        "bridge_dial_intentional_overlap_mm3": 0.96,
+        "shaft_bridge_overlap_mm3": 0.933747482,
+        "gear_shaft_overlap_mm3": 0.628318531,
+        "shaft_dial_overlap_mm3": 2.513274123,
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "assembly_fuse_error": null,
+        "shaft_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 2.513274123,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "gear_blank_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "current_cover",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "shaft_clear_of_checked_fixed_geometry": true,
+        "gear_blank_clear_of_checked_fixed_geometry": true,
+        "rotation_sweep_clear_of_frozen_geometry_all_angles": true,
+        "rotation_sweep_clear_of_current_cover_all_angles": false,
+        "limitations": [
+          "Exploratory additive bridge and shaft geometry only; not a production design",
+          "Gear is an 11 mm cylindrical blank; involute teeth and mesh are not modeled",
+          "15-degree sweep samples are discrete and do not prove continuous swept clearance",
+          "Strength, fatigue, bearing support, fasteners, tolerances and assembly tooling are not assessed",
+          "The bridge-to-dial overlap is intentional; the preserved source dial is never cut or modified"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 1.0,
+        "bridge_span_y_mm": 6.0,
+        "bridge_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "shaft_diameter_mm": 1.5,
+        "shaft_z_range_mm": [
+          18.0,
+          21.2
+        ],
+        "gear_blank_diameter_mm": 11.0,
+        "gear_blank_z_range_mm": [
+          21.0,
+          23.0
+        ],
+        "bridge_dial_intentional_overlap_mm3": 1.2,
+        "shaft_bridge_overlap_mm3": 0.827976365,
+        "gear_shaft_overlap_mm3": 0.353429174,
+        "shaft_dial_overlap_mm3": 1.413716694,
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "assembly_fuse_error": null,
+        "shaft_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 1.413716694,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "gear_blank_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "current_cover",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "shaft_clear_of_checked_fixed_geometry": true,
+        "gear_blank_clear_of_checked_fixed_geometry": true,
+        "rotation_sweep_clear_of_frozen_geometry_all_angles": true,
+        "rotation_sweep_clear_of_current_cover_all_angles": false,
+        "limitations": [
+          "Exploratory additive bridge and shaft geometry only; not a production design",
+          "Gear is an 11 mm cylindrical blank; involute teeth and mesh are not modeled",
+          "15-degree sweep samples are discrete and do not prove continuous swept clearance",
+          "Strength, fatigue, bearing support, fasteners, tolerances and assembly tooling are not assessed",
+          "The bridge-to-dial overlap is intentional; the preserved source dial is never cut or modified"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 1.0,
+        "bridge_span_y_mm": 6.0,
+        "bridge_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "shaft_diameter_mm": 1.8,
+        "shaft_z_range_mm": [
+          18.0,
+          21.2
+        ],
+        "gear_blank_diameter_mm": 11.0,
+        "gear_blank_z_range_mm": [
+          21.0,
+          23.0
+        ],
+        "bridge_dial_intentional_overlap_mm3": 1.2,
+        "shaft_bridge_overlap_mm3": 1.021536989,
+        "gear_shaft_overlap_mm3": 0.50893801,
+        "shaft_dial_overlap_mm3": 2.03575204,
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "assembly_fuse_error": null,
+        "shaft_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 2.03575204,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "gear_blank_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "current_cover",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "shaft_clear_of_checked_fixed_geometry": true,
+        "gear_blank_clear_of_checked_fixed_geometry": true,
+        "rotation_sweep_clear_of_frozen_geometry_all_angles": true,
+        "rotation_sweep_clear_of_current_cover_all_angles": false,
+        "limitations": [
+          "Exploratory additive bridge and shaft geometry only; not a production design",
+          "Gear is an 11 mm cylindrical blank; involute teeth and mesh are not modeled",
+          "15-degree sweep samples are discrete and do not prove continuous swept clearance",
+          "Strength, fatigue, bearing support, fasteners, tolerances and assembly tooling are not assessed",
+          "The bridge-to-dial overlap is intentional; the preserved source dial is never cut or modified"
+        ]
+      },
+      {
+        "bridge_width_x_mm": 1.0,
+        "bridge_span_y_mm": 6.0,
+        "bridge_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "shaft_diameter_mm": 2.0,
+        "shaft_z_range_mm": [
+          18.0,
+          21.2
+        ],
+        "gear_blank_diameter_mm": 11.0,
+        "gear_blank_z_range_mm": [
+          21.0,
+          23.0
+        ],
+        "bridge_dial_intentional_overlap_mm3": 1.2,
+        "shaft_bridge_overlap_mm3": 1.147933773,
+        "gear_shaft_overlap_mm3": 0.628318531,
+        "shaft_dial_overlap_mm3": 2.513274123,
+        "assembly_valid": true,
+        "assembly_solid_count": 1,
+        "assembly_fuse_error": null,
+        "shaft_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 2.513274123,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "gear_blank_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "current_cover",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "translated_shutter_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "preserved_pin_hole_envelope",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "shaft_clear_of_checked_fixed_geometry": true,
+        "gear_blank_clear_of_checked_fixed_geometry": true,
+        "rotation_sweep_clear_of_frozen_geometry_all_angles": true,
+        "rotation_sweep_clear_of_current_cover_all_angles": false,
+        "limitations": [
+          "Exploratory additive bridge and shaft geometry only; not a production design",
+          "Gear is an 11 mm cylindrical blank; involute teeth and mesh are not modeled",
+          "15-degree sweep samples are discrete and do not prove continuous swept clearance",
+          "Strength, fatigue, bearing support, fasteners, tolerances and assembly tooling are not assessed",
+          "The bridge-to-dial overlap is intentional; the preserved source dial is never cut or modified"
+        ]
+      }
+    ],
+    "input_bridge_sweep_by_bridge_width": {
+      "0.6": {
+        "bridge_width_x_mm": 0.6,
+        "bridge_span_y_mm": 6.0,
+        "bridge_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "bridge_dial_overlap_mm3": 0.72,
+        "dial_bridge_fuse_valid": true,
+        "dial_bridge_fuse_solid_count": 1,
+        "fuse_error": null,
+        "rotation_step_deg": 15,
+        "rotation_samples": 24,
+        "rotation_sweep": [
+          {
+            "angle_deg": 0,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.043213757,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 15,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.085721444,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 30,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.696321946,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 45,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 188.323381839,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 60,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 185.106316793,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 75,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 183.191011609,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 90,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 184.580440787,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 105,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 185.585728585,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 120,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 186.417453692,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 135,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.760235086,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 150,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.696327311,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 165,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.085726189,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 180,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.043218357,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 195,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.085726189,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 210,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.696327311,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 225,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.76023937,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 240,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 186.41745315,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 255,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 185.585728569,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 270,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 184.580440894,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 285,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 183.191011647,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 300,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 185.106316379,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 315,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 188.323381839,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 330,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.696321946,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 345,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.085721445,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          }
+        ],
+        "clear_of_frozen_geometry_all_angles": true,
+        "clear_of_current_cover_all_angles": false
+      },
+      "0.8": {
+        "bridge_width_x_mm": 0.8,
+        "bridge_span_y_mm": 6.0,
+        "bridge_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "bridge_dial_overlap_mm3": 0.96,
+        "dial_bridge_fuse_valid": true,
+        "dial_bridge_fuse_solid_count": 1,
+        "fuse_error": null,
+        "rotation_step_deg": 15,
+        "rotation_samples": 24,
+        "rotation_sweep": [
+          {
+            "angle_deg": 0,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.283213757,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 15,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.325721444,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 30,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.936321946,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 45,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 188.549792214,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 60,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 185.319528227,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 75,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 183.392690225,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 90,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 184.778866231,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 105,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 185.787407202,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 120,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 186.630665127,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 135,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.986645464,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 150,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.936327311,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 165,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.325726189,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 180,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.283218357,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 195,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.325726189,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 210,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.936327311,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 225,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.986649745,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 240,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 186.630664585,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 255,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 185.787407186,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 270,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 184.778866338,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 285,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 183.392690264,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 300,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 185.319527814,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 315,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 188.549792214,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 330,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.936321946,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 345,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.325721445,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          }
+        ],
+        "clear_of_frozen_geometry_all_angles": true,
+        "clear_of_current_cover_all_angles": false
+      },
+      "1.0": {
+        "bridge_width_x_mm": 1.0,
+        "bridge_span_y_mm": 6.0,
+        "bridge_z_range_mm": [
+          18.0,
+          18.6
+        ],
+        "bridge_dial_overlap_mm3": 1.2,
+        "dial_bridge_fuse_valid": true,
+        "dial_bridge_fuse_solid_count": 1,
+        "fuse_error": null,
+        "rotation_step_deg": 15,
+        "rotation_samples": 24,
+        "rotation_sweep": [
+          {
+            "angle_deg": 0,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.523213757,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 15,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.565721444,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 30,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 188.176306581,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 45,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 188.772618199,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 60,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 185.533245874,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 75,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 183.594686401,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 90,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 184.977567838,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 105,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 185.989403378,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 120,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 186.844382774,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 135,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 188.20947145,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 150,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 188.176311946,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 165,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.565726189,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 180,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.523218357,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 195,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.565726189,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 210,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 188.176311946,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 225,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 188.209475729,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 240,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 186.844382232,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 255,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 185.989403362,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 270,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 184.977567945,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 285,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 183.59468644,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 300,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 185.533245461,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 315,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 188.772618199,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 330,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 188.176306581,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          },
+          {
+            "angle_deg": 345,
+            "collision_count": 1,
+            "collisions": [
+              {
+                "obstacle": "current_cover",
+                "intersection_volume_mm3": 187.565721445,
+                "error": null
+              }
+            ],
+            "clear_of_frozen_geometry": true,
+            "clear_of_current_cover": false
+          }
+        ],
+        "clear_of_frozen_geometry_all_angles": true,
+        "clear_of_current_cover_all_angles": false
+      }
+    },
     "high_gear_layer_scan_parameters": {
       "z_starts_mm": [
         20.5,
