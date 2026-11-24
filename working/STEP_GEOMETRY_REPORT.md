@@ -1,7 +1,7 @@
 # STEP 几何内核检查报告
 
-- 生成时间（UTC）：2026-11-24T08:44:31.254163+00:00
-- 输入文件：mechanical_design/source/leica_m3_light_meter.stp
+- 生成时间（UTC）：2026-11-24T09:03:33.809779+00:00
+- 输入文件：source/leica_m3_light_meter.stp
 - 文件大小：565011 bytes
 - CadQuery：2.5.2
 - 实体数量：7
@@ -4485,8 +4485,8 @@
 ## 原始数据
 
 {
-  "generated_utc": "2026-11-24T08:44:31.254163+00:00",
-  "source": "mechanical_design/source/leica_m3_light_meter.stp",
+  "generated_utc": "2026-11-24T09:03:33.809779+00:00",
+  "source": "source/leica_m3_light_meter.stp",
   "source_bytes": 565011,
   "cadquery_version": "2.5.2",
   "overall_valid": true,
