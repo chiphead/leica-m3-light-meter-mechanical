@@ -13,6 +13,7 @@ on:
       - "scripts/analyze_shutter_multi_component_scan.py"
       - "scripts/analyze_original_cover_local_relief.py"
       - "scripts/analyze_cover_relief_topology.py"
+      - "scripts/analyze_cover_body_interface.py"
       - "scripts/analysis_cache.py"
       - ".github/workflows/cad-step-analysis.yml"
 permissions:
@@ -52,13 +53,14 @@ jobs:
           python scripts/analyze_shutter_multi_component_scan.py
           python scripts/analyze_original_cover_local_relief.py
           python scripts/analyze_cover_relief_topology.py
+          python scripts/analyze_cover_body_interface.py
       - name: Commit geometry reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           git reset --soft origin/main
-          git add working/STEP_GEOMETRY_REPORT.md working/OPEN_COVER_BODY_RELIEF_REPORT.md working/ORIGINAL_COVER_REVISION_AUDIT.md working/COVER_SHUTTER_INTERFERENCE_SECTIONS.md working/SHUTTER_VERTICAL_CLEARANCE_SCAN.md working/SHUTTER_MULTI_COMPONENT_SCAN.md working/ORIGINAL_COVER_LOCAL_RELIEF_SCREEN.md working/COVER_RELIEF_TOPOLOGY_DIAGNOSTIC.md
+          git add working/STEP_GEOMETRY_REPORT.md working/OPEN_COVER_BODY_RELIEF_REPORT.md working/ORIGINAL_COVER_REVISION_AUDIT.md working/COVER_SHUTTER_INTERFERENCE_SECTIONS.md working/SHUTTER_VERTICAL_CLEARANCE_SCAN.md working/SHUTTER_MULTI_COMPONENT_SCAN.md working/ORIGINAL_COVER_LOCAL_RELIEF_SCREEN.md working/COVER_RELIEF_TOPOLOGY_DIAGNOSTIC.md working/COVER_BODY_INTERFACE_AUDIT.md
           if git diff --cached --quiet; then echo "Geometry reports unchanged"; exit 0; fi
-          git commit -m "Diagnose cover relief boolean topology"
+          git commit -m "Audit original cover body mating interface"
           git push origin HEAD:main
