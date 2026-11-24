@@ -11,6 +11,7 @@ on:
       - "scripts/analyze_cover_interference_sections.py"
       - "scripts/analyze_shutter_vertical_clearance.py"
       - "scripts/analyze_shutter_multi_component_scan.py"
+      - "scripts/analyze_original_cover_local_relief.py"
       - "scripts/analysis_cache.py"
       - ".github/workflows/cad-step-analysis.yml"
 permissions:
@@ -44,25 +45,18 @@ jobs:
       - name: Analyze source STEP
         run: |
           python scripts/analyze_step_geometry.py
-          python scripts/analyze_open_cover_body_relief.py
           python scripts/analyze_original_cover_revision.py
           python scripts/analyze_cover_interference_sections.py
           python scripts/analyze_shutter_vertical_clearance.py
           python scripts/analyze_shutter_multi_component_scan.py
-      - name: Upload open-cover STEP and STL candidates
-        uses: actions/upload-artifact@v4
-        with:
-          name: open-cover-cad-candidates
-          path: working/open_cover_candidates/
-          if-no-files-found: error
-          retention-days: 14
+          python scripts/analyze_original_cover_local_relief.py
       - name: Commit geometry reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           git reset --soft origin/main
-          git add working/STEP_GEOMETRY_REPORT.md working/OPEN_COVER_BODY_RELIEF_REPORT.md working/ORIGINAL_COVER_REVISION_AUDIT.md working/COVER_SHUTTER_INTERFERENCE_SECTIONS.md working/SHUTTER_VERTICAL_CLEARANCE_SCAN.md working/SHUTTER_MULTI_COMPONENT_SCAN.md
+          git add working/STEP_GEOMETRY_REPORT.md working/OPEN_COVER_BODY_RELIEF_REPORT.md working/ORIGINAL_COVER_REVISION_AUDIT.md working/COVER_SHUTTER_INTERFERENCE_SECTIONS.md working/SHUTTER_VERTICAL_CLEARANCE_SCAN.md working/SHUTTER_MULTI_COMPONENT_SCAN.md working/ORIGINAL_COVER_LOCAL_RELIEF_SCREEN.md
           if git diff --cached --quiet; then echo "Geometry reports unchanged"; exit 0; fi
           git commit -m "Add multi-component shutter clearance scan"
           git push origin HEAD:main
