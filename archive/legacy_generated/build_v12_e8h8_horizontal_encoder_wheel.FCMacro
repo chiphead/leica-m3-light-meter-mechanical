@@ -1,0 +1,112 @@
+# -*- coding: utf-8 -*-
+# FreeCAD macro: V1.2 F-SWITCH E8H8 horizontal encoder + axial push wheel
+# Drawing-derived dimensions are distinguished from layout assumptions below.
+import os
+import FreeCAD as App
+import Part
+
+# -------- Drawing-derived dimensions (mm; see linked manufacturer drawing) --------
+ENC_BODY_X = 7.8
+ENC_BODY_Y = 7.15
+ENC_SHAFT_D = 3.0
+ENC_TOTAL_HEIGHT = 7.5
+ENC_PRESS_TRAVEL = 0.2
+ENC_PRESS_FORCE_GF = 200.0
+ENC_ROTATING_TORQUE_GF_CM = 30.0
+ENC_PULSES_PER_REV = 9
+ENC_DETENTS_PER_REV = 18
+ENC_LIFE_CYCLES = 100000
+PCB_THICKNESS = 1.0  # drawing footprint indicates PCB t=1.0 or 1.2
+
+# -------- Layout assumptions; verify against purchased sample --------
+PCB_X, PCB_Y = 10.3, 10.0
+ENC_BODY_HEIGHT = 4.4
+SHAFT_PROJECTION = 2.5
+SHAFT_AXIS_Z = PCB_THICKNESS + ENC_BODY_HEIGHT - 1.2
+WHEEL_D, WHEEL_T = 20.0, 1.5
+HUB_OD, HUB_LENGTH = 5.0, 2.0
+HUB_BORE_D = 3.1
+SUPPORT_PLATE_X, SUPPORT_PLATE_Y, SUPPORT_PLATE_T = 16.0, 14.0, 1.6
+SUPPORT_CLEARANCE = 0.25
+REAR_STOP_GAP = 0.25
+
+# Coordinate: PCB lies in XY; encoder shaft axis is +Y; wheel lies in XZ plane.
+PCB_Z = 0.0
+BODY_Z = PCB_Z + PCB_THICKNESS
+BODY_Y0 = 0.0
+SHAFT_Y0 = ENC_BODY_Y
+SHAFT_Y1 = SHAFT_Y0 + SHAFT_PROJECTION
+WHEEL_Y0 = SHAFT_Y1 - WHEEL_T/2.0
+WHEEL_CENTER_Z = SHAFT_AXIS_Z
+
+doc_name='V12_E8H8_Horizontal_Encoder_Wheel'
+if App.getDocument(doc_name): App.closeDocument(doc_name)
+doc=App.newDocument(doc_name)
+root=doc.addObject('App::DocumentObjectGroup','EncoderWheelAssembly')
+root.Label='V1.2 E8H8 horizontal encoder + axial push wheel'
+
+def add(name,label,shape,color):
+    o=doc.addObject('PartDesign::Feature',name)
+    o.Label=label; o.Shape=shape; o.ViewObject.ShapeColor=color
+    root.addObject(o); return o
+
+# PCB footprint board: mechanical support is separate; PCB is not the load-bearing bracket.
+pcb=Part.makeBox(PCB_X,PCB_Y,PCB_THICKNESS,App.Vector(-PCB_X/2,-PCB_Y/2,PCB_Z))
+pcb_obj=add('EncoderPCB','Encoder PCB footprint envelope; not a structural bracket',pcb,(0.35,0.58,0.42))
+
+# Encoder body fixed on PCB; body envelope uses drawing plan dimensions and assumed height.
+body=Part.makeBox(ENC_BODY_X,ENC_BODY_Y,ENC_BODY_HEIGHT,App.Vector(-ENC_BODY_X/2,BODY_Y0,BODY_Z))
+body_obj=add('E8H8EncoderBody','E8H8 body envelope 7.8 x 7.15 mm; height is a layout assumption',body,(0.28,0.42,0.78))
+
+# Shaft projects parallel to PCB plane. Axis along +Y.
+shaft=Part.makeCylinder(ENC_SHAFT_D/2,SHAFT_PROJECTION,App.Vector(0,SHAFT_Y0,SHAFT_AXIS_Z),App.Vector(0,1,0))
+shaft_obj=add('E8H8Shaft','Ø3 mm shaft; horizontal axis parallel to PCB',shaft,(0.22,0.26,0.34))
+
+# Thin external wheel mounted on shaft; the same wheel is pressed axially to actuate the encoder click switch.
+wheel=Part.makeCylinder(WHEEL_D/2,WHEEL_T,App.Vector(0,WHEEL_Y0,WHEEL_CENTER_Z),App.Vector(0,1,0))
+wheel_obj=add('UserWheel','Existing approx. Ø20 mm thin operating wheel; rotation and axial press share this wheel',wheel,(0.82,0.48,0.22))
+
+# Hub is fused to wheel and has a clearance bore over the 3 mm shaft; this is a concept coupling.
+hub_outer=Part.makeCylinder(HUB_OD/2,HUB_LENGTH,App.Vector(0,WHEEL_Y0-HUB_LENGTH,WHEEL_CENTER_Z),App.Vector(0,1,0))
+hub_inner=Part.makeCylinder(HUB_BORE_D/2,HUB_LENGTH+0.2,App.Vector(0,WHEEL_Y0-HUB_LENGTH-0.1,WHEEL_CENTER_Z),App.Vector(0,1,0))
+hub=hub_outer.cut(hub_inner)
+hub_obj=add('WheelHub','Replaceable wheel hub; Ø3.1 bore is provisional clearance, retention method unresolved',hub,(0.72,0.38,0.18))
+
+# Support plate under the PCB and encoder body; attach plate to enclosure bosses, not to PCB alone.
+plate=Part.makeBox(SUPPORT_PLATE_X,SUPPORT_PLATE_Y,SUPPORT_PLATE_T,App.Vector(-SUPPORT_PLATE_X/2,-SUPPORT_PLATE_Y/2,PCB_Z-SUPPORT_PLATE_T))
+plate_obj=add('IndependentMountingPlate','Independent support plate below PCB; must fasten to enclosure structure',plate,(0.55,0.55,0.58))
+
+# Rear reaction stop behind encoder body. It must contact the encoder housing only, not terminals.
+stop=Part.makeBox(ENC_BODY_X+2*SUPPORT_CLEARANCE,1.0,ENC_BODY_HEIGHT+2*SUPPORT_CLEARANCE,App.Vector(-ENC_BODY_X/2-SUPPORT_CLEARANCE,-1.0,BODY_Z-SUPPORT_CLEARANCE))
+stop_obj=add('HousingReactionStop','Housing reaction stop; leave terminal and solder access clear in detailed design',stop,(0.62,0.62,0.66))
+
+# Axial push travel witness: two translucent-position markers show rest and pressed wheel planes.
+rest_mark=Part.makeCylinder(WHEEL_D/2,0.12,App.Vector(0,WHEEL_Y0,WHEEL_CENTER_Z),App.Vector(0,1,0))
+press_mark=Part.makeCylinder(WHEEL_D/2,0.12,App.Vector(0,WHEEL_Y0-ENC_PRESS_TRAVEL,WHEEL_CENTER_Z),App.Vector(0,1,0))
+rest_obj=add('WheelRestPosition','Wheel rest-position witness',rest_mark,(0.20,0.78,0.88))
+press_obj=add('WheelPressedPosition','Wheel pressed-position witness; 0.2 mm axial travel from drawing',press_mark,(0.90,0.28,0.22))
+
+# Property metadata
+p=doc.addObject('App::FeaturePython','E8H8Parameters'); p.Label='E8H8 drawing values and layout assumptions'
+for n,v in [('EncoderBodyWidth',ENC_BODY_X),('EncoderBodyPlanLength',ENC_BODY_Y),('ShaftDiameter',ENC_SHAFT_D),('TotalMountingHeight',ENC_TOTAL_HEIGHT),('PushTravel',ENC_PRESS_TRAVEL),('PcbThickness',PCB_THICKNESS),('WheelDiameter',WHEEL_D),('WheelThickness',WHEEL_T),('HubBoreDiameter',HUB_BORE_D),('ShaftProjectionAssumption',SHAFT_PROJECTION)]:
+    p.addProperty('App::PropertyLength',n,'Dimensions'); setattr(p,n,v)
+p.addProperty('App::PropertyInteger','PulsesPerRevolution','Electrical/mechanical rating'); p.PulsesPerRevolution=ENC_PULSES_PER_REV
+p.addProperty('App::PropertyInteger','DetentsPerRevolution','Electrical/mechanical rating'); p.DetentsPerRevolution=ENC_DETENTS_PER_REV
+p.addProperty('App::PropertyFloat','PushForceGramForce','Electrical/mechanical rating'); p.PushForceGramForce=ENC_PRESS_FORCE_GF
+p.addProperty('App::PropertyFloat','RotationalTorqueGramForceCm','Electrical/mechanical rating'); p.RotationalTorqueGramForceCm=ENC_ROTATING_TORQUE_GF_CM
+p.addProperty('App::PropertyInteger','RatedLifeCycles','Electrical/mechanical rating'); p.RatedLifeCycles=ENC_LIFE_CYCLES
+root.addObject(p); p.Visibility=False
+doc.recompute()
+try:
+    import FreeCADGui as Gui
+    Gui.activeDocument().activeView().viewAxonometric(); Gui.activeDocument().activeView().fitAll()
+except Exception: pass
+try: out=os.path.dirname(os.path.abspath(__file__))
+except Exception: out=os.getcwd()
+fcstd=os.path.join(out,'V1.2_E8H8_Horizontal_Encoder_Wheel.FCStd')
+step=os.path.join(out,'V1.2_E8H8_Horizontal_Encoder_Wheel.step')
+doc.recompute(); doc.saveAs(fcstd)
+Part.export([pcb_obj,body_obj,shaft_obj,wheel_obj,hub_obj,plate_obj,stop_obj,rest_obj,press_obj],step)
+print('Saved:',fcstd,step)
+print('Drawing-derived: body plan, Ø3 shaft, 7.5 total height, 0.2 press travel, 9 pulses, 18 detents.')
+print('Assumptions: body height, shaft projection, PCB outline, wheel/hub and support dimensions. Verify against physical sample.')

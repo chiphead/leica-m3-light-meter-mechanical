@@ -1,0 +1,153 @@
+# -*- coding: utf-8 -*-
+# FreeCAD macro: V0.6 interface-reference assembly
+# Reference envelopes plus a local left-wall coupon with a true USB-C through-cut.
+# Not a complete enclosure or manufacturing-ready assembly.
+
+import os
+import FreeCAD as App
+import Part
+
+# ------------------------- Editable parameters (mm) -------------------------
+BOARD_X = 37.0
+BOARD_Y = 21.0
+BOARD_Z = 8.0
+
+LCD_GLASS_X = 34.0
+LCD_GLASS_Y = 18.0
+LCD_GLASS_THICKNESS = 0.6
+LCD_GLASS_Z = 0.0
+
+# Provisional USB-C metal-shell envelope; replace with physical measurements.
+USB_SHELL_WIDTH_Y = 9.0
+USB_SHELL_HEIGHT_Z = 3.2
+USB_SHELL_DEPTH_X = 3.5
+USB_CLEARANCE = 0.3
+USB_CUTOUT_WIDTH_Y = USB_SHELL_WIDTH_Y + 2.0 * USB_CLEARANCE
+USB_CUTOUT_HEIGHT_Z = USB_SHELL_HEIGHT_Z + 2.0 * USB_CLEARANCE
+
+# User-measured: LCD glass outer surface to FAR-SIDE LOWER EDGE of metal shell.
+LCD_TO_USB_FAR_LOWER_EDGE_Z = 7.55
+USB_SHELL_LOWER_Z = LCD_GLASS_Z - LCD_TO_USB_FAR_LOWER_EDGE_Z
+USB_SHELL_UPPER_Z = USB_SHELL_LOWER_Z + USB_SHELL_HEIGHT_Z
+
+# Placement assumptions pending measurement of the actual board.
+USB_SHELL_CENTER_Y = BOARD_Y / 2.0
+USB_SHELL_X_MAX = 0.0
+USB_SHELL_X_MIN = USB_SHELL_X_MAX - USB_SHELL_DEPTH_X
+SIDE_WALL_THICKNESS = 2.0
+SIDE_WALL_X = USB_SHELL_X_MIN - 0.5
+SIDE_WALL_Y_MARGIN = 8.0
+SIDE_WALL_Z_MIN = -13.0
+SIDE_WALL_Z_MAX = 3.0
+
+BOARD_TOP_Z = -LCD_GLASS_THICKNESS
+BOARD_BOTTOM_Z = BOARD_TOP_Z - BOARD_Z
+
+doc_name = "V06_Interface_Reference"
+if App.getDocument(doc_name):
+    App.closeDocument(doc_name)
+doc = App.newDocument(doc_name)
+
+def add_shape(name, label, shape, group):
+    obj = doc.addObject("PartDesign::Feature", name)
+    obj.Label = label
+    obj.Shape = shape
+    group.addObject(obj)
+    return obj
+
+root = doc.addObject("App::DocumentObjectGroup", "V06_Reference")
+root.Label = "V0.6 Interface Reference (not production geometry)"
+
+board_shape = Part.makeBox(BOARD_X, BOARD_Y, BOARD_Z,
+                           App.Vector(0, 0, BOARD_BOTTOM_Z))
+board = add_shape("BoardEnvelope",
+                  "ESP32-S3-LCD-1.47B board envelope (provisional)",
+                  board_shape, root)
+
+lcd_shape = Part.makeBox(
+    LCD_GLASS_X, LCD_GLASS_Y, LCD_GLASS_THICKNESS,
+    App.Vector((BOARD_X-LCD_GLASS_X)/2.0,
+               (BOARD_Y-LCD_GLASS_Y)/2.0,
+               LCD_GLASS_Z-LCD_GLASS_THICKNESS))
+lcd = add_shape("LCDGlass",
+                "LCD glass reference (size provisional; outer face Z=0)",
+                lcd_shape, root)
+
+usb_shape = Part.makeBox(
+    USB_SHELL_DEPTH_X, USB_SHELL_WIDTH_Y, USB_SHELL_HEIGHT_Z,
+    App.Vector(USB_SHELL_X_MIN,
+               USB_SHELL_CENTER_Y-USB_SHELL_WIDTH_Y/2.0,
+               USB_SHELL_LOWER_Z))
+usb = add_shape("USBCShell",
+                "USB-C metal shell envelope (provisional)",
+                usb_shape, root)
+
+plug_shape = Part.makeBox(
+    14.0, USB_SHELL_WIDTH_Y+4.0, 8.0,
+    App.Vector(USB_SHELL_X_MIN-14.0,
+               USB_SHELL_CENTER_Y-(USB_SHELL_WIDTH_Y+4.0)/2.0,
+               USB_SHELL_LOWER_Z-2.4))
+plug = add_shape("USBPlugClearance",
+                 "USB-C plug insertion/service envelope (placeholder)",
+                 plug_shape, root)
+
+wall_y0 = USB_SHELL_CENTER_Y - SIDE_WALL_Y_MARGIN
+wall = Part.makeBox(
+    SIDE_WALL_THICKNESS, SIDE_WALL_Y_MARGIN*2.0,
+    SIDE_WALL_Z_MAX-SIDE_WALL_Z_MIN,
+    App.Vector(SIDE_WALL_X, wall_y0, SIDE_WALL_Z_MIN))
+cut = Part.makeBox(
+    SIDE_WALL_THICKNESS+2.0, USB_CUTOUT_WIDTH_Y, USB_CUTOUT_HEIGHT_Z,
+    App.Vector(SIDE_WALL_X-1.0,
+               USB_SHELL_CENTER_Y-USB_CUTOUT_WIDTH_Y/2.0,
+               USB_SHELL_LOWER_Z-USB_CLEARANCE))
+wall_obj = add_shape(
+    "LeftWallWithUSBCutout",
+    "Left wall coupon with real USB-C aperture (provisional)",
+    wall.cut(cut), root)
+
+meta = doc.addObject("App::FeaturePython", "V06Parameters")
+meta.Label = "V0.6 editable parameter reference"
+for prop, value in [
+    ("LCDToUSBFarLowerEdge", LCD_TO_USB_FAR_LOWER_EDGE_Z),
+    ("USBShellWidth", USB_SHELL_WIDTH_Y),
+    ("USBShellHeight", USB_SHELL_HEIGHT_Z),
+    ("USBShellDepth", USB_SHELL_DEPTH_X),
+    ("USBCutoutWidth", USB_CUTOUT_WIDTH_Y),
+    ("USBCutoutHeight", USB_CUTOUT_HEIGHT_Z),
+    ("BoardWidthX", BOARD_X),
+    ("BoardDepthY", BOARD_Y)]:
+    meta.addProperty("App::PropertyLength", prop, "V0.6 Parameters")
+    setattr(meta, prop, value)
+root.addObject(meta)
+
+board.ViewObject.ShapeColor = (0.72, 0.74, 0.78)
+lcd.ViewObject.ShapeColor = (0.20, 0.55, 0.85)
+usb.ViewObject.ShapeColor = (0.78, 0.62, 0.30)
+plug.ViewObject.ShapeColor = (0.35, 0.75, 0.45)
+wall_obj.ViewObject.ShapeColor = (0.78, 0.78, 0.78)
+plug.Visibility = False
+meta.Visibility = False
+doc.recompute()
+
+try:
+    import FreeCADGui as Gui
+    Gui.activeDocument().activeView().viewAxonometric()
+    Gui.activeDocument().activeView().fitAll()
+except Exception:
+    pass
+
+try:
+    out_dir = os.path.dirname(os.path.abspath(__file__))
+except Exception:
+    out_dir = os.getcwd()
+
+fcstd_path = os.path.join(out_dir, "V0.6_Interface_Reference.FCStd")
+step_path = os.path.join(out_dir, "V0.6_Interface_Reference.step")
+doc.recompute()
+doc.saveAs(fcstd_path)
+Part.export([board, lcd, usb, wall_obj], step_path)
+print("Saved V0.6 interface reference:")
+print(fcstd_path)
+print(step_path)
+print("WARNING: provisional envelopes; verify against physical modules.")

@@ -1,0 +1,205 @@
+# -*- coding: utf-8 -*-
+# FreeCAD macro: V0.7 sensor-module reference
+# Independent reference envelopes for TSL2591 (front-facing) and AS5600 (chip-down).
+# Includes a front-wall aperture coupon and a placeholder tunnel ONLY; optical geometry is not validated.
+# See OPTICAL_REFERENCE_REVIEW.md before using or revising the TSL2591 optical path.
+# NOT an integrated enclosure or manufacturing-ready assembly.
+
+import os
+import FreeCAD as App
+import Part
+
+# ------------------------- Editable parameters (mm) -------------------------
+# TSL2591 module: approximate PCB envelope from current project notes.
+# IMPORTANT: aperture/tunnel dimensions below are neutral placeholders, not an optical design.
+TSL_PCB_WIDTH_X = 16.0
+TSL_PCB_HEIGHT_Z = 19.0
+TSL_PCB_THICKNESS_Y = 5.0
+TSL_SENSOR_PACKAGE_WIDTH = 3.0
+TSL_SENSOR_PACKAGE_HEIGHT = 2.0
+TSL_SENSOR_PACKAGE_PROJECTION_Y = 1.0
+TSL_OPTICAL_APERTURE_WIDTH_X = 4.0
+TSL_OPTICAL_APERTURE_HEIGHT_Z = 4.0
+TSL_BAFFLE_WALL = 1.0
+TSL_FRONT_WALL_THICKNESS = 2.0
+TSL_FRONT_WALL_Y = 30.0
+TSL_BOARD_FRONT_Y = 28.0
+TSL_BOARD_CENTER_X = 0.0
+TSL_BOARD_CENTER_Z = 12.0
+
+# AS5600 module envelope: provisional, confirm actual PCB and package orientation.
+AS_PCB_X = 23.0
+AS_PCB_Y = 23.0
+AS_PCB_THICKNESS = 8.0
+AS_PCB_BOTTOM_Z = 20.0
+AS_PACKAGE_X = 2.0
+AS_PACKAGE_Y = 2.0
+AS_PACKAGE_PROJECTION = 1.5
+AS_MAGNET_DIAMETER = 6.0
+AS_MAGNET_THICKNESS = 2.0
+AS_SENSOR_TO_MAGNET_GAP = 1.0  # provisional layout value; measure package-to-magnet
+AS_AXIS_X = 0.0
+AS_AXIS_Y = 0.0
+
+# Magnet is below the downward-facing sensor package.
+AS_PACKAGE_BOTTOM_Z = AS_PCB_BOTTOM_Z - AS_PACKAGE_PROJECTION
+AS_MAGNET_TOP_Z = AS_PACKAGE_BOTTOM_Z - AS_SENSOR_TO_MAGNET_GAP
+
+# Front-wall coupon: +Y is the front direction.
+FRONT_WALL_WIDTH_X = 32.0
+FRONT_WALL_HEIGHT_Z = 26.0
+FRONT_WALL_Y = TSL_FRONT_WALL_Y
+FRONT_WALL_THICKNESS = TSL_FRONT_WALL_THICKNESS
+FRONT_WALL_CENTER_Z = TSL_BOARD_CENTER_Z
+TUNNEL_LENGTH_Y = FRONT_WALL_Y - TSL_BOARD_FRONT_Y
+TUNNEL_OUTER_X = TSL_OPTICAL_APERTURE_WIDTH_X + 2.0 * TSL_BAFFLE_WALL
+TUNNEL_OUTER_Z = TSL_OPTICAL_APERTURE_HEIGHT_Z + 2.0 * TSL_BAFFLE_WALL
+
+doc_name = "V07_Sensor_Module_Reference"
+if App.getDocument(doc_name):
+    App.closeDocument(doc_name)
+doc = App.newDocument(doc_name)
+root = doc.addObject("App::DocumentObjectGroup", "V07_SensorReferences")
+root.Label = "V0.7 sensor module references — provisional"
+
+def add_shape(name, label, shape, group):
+    obj = doc.addObject("PartDesign::Feature", name)
+    obj.Label = label
+    obj.Shape = shape
+    group.addObject(obj)
+    return obj
+
+# TSL2591 vertical PCB: plane X-Z; thickness along Y; sensor faces +Y.
+tsl_board = Part.makeBox(
+    TSL_PCB_WIDTH_X, TSL_PCB_THICKNESS_Y, TSL_PCB_HEIGHT_Z,
+    App.Vector(TSL_BOARD_CENTER_X-TSL_PCB_WIDTH_X/2.0,
+               TSL_BOARD_FRONT_Y-TSL_PCB_THICKNESS_Y,
+               TSL_BOARD_CENTER_Z-TSL_PCB_HEIGHT_Z/2.0))
+tsl_obj = add_shape("TSL2591Board", "TSL2591 vertical PCB envelope; sensor faces +Y",
+                    tsl_board, root)
+
+# Sensor package is placed on the +Y/front face of the board.
+tsl_pkg = Part.makeBox(
+    TSL_SENSOR_PACKAGE_WIDTH, TSL_SENSOR_PACKAGE_PROJECTION,
+    TSL_SENSOR_PACKAGE_HEIGHT,
+    App.Vector(TSL_BOARD_CENTER_X-TSL_SENSOR_PACKAGE_WIDTH/2.0,
+               TSL_BOARD_FRONT_Y,
+               TSL_BOARD_CENTER_Z-TSL_SENSOR_PACKAGE_HEIGHT/2.0))
+tsl_pkg_obj = add_shape("TSL2591Package", "TSL2591 optical package reference", tsl_pkg, root)
+
+# Front wall coupon with an actual through aperture.
+wall = Part.makeBox(
+    FRONT_WALL_WIDTH_X, FRONT_WALL_THICKNESS, FRONT_WALL_HEIGHT_Z,
+    App.Vector(-FRONT_WALL_WIDTH_X/2.0, FRONT_WALL_Y,
+               FRONT_WALL_CENTER_Z-FRONT_WALL_HEIGHT_Z/2.0))
+aperture = Part.makeBox(
+    TSL_OPTICAL_APERTURE_WIDTH_X, FRONT_WALL_THICKNESS+2.0,
+    TSL_OPTICAL_APERTURE_HEIGHT_Z,
+    App.Vector(-TSL_OPTICAL_APERTURE_WIDTH_X/2.0,
+               FRONT_WALL_Y-1.0,
+               TSL_BOARD_CENTER_Z-TSL_OPTICAL_APERTURE_HEIGHT_Z/2.0))
+wall_cut = wall.cut(aperture)
+wall_obj = add_shape("TSLFrontWallCoupon",
+                     "Front wall coupon with real optical aperture",
+                     wall_cut, root)
+
+# Rectangular baffle tunnel: hollow frame between sensor and inner face of wall.
+outer = Part.makeBox(
+    TUNNEL_OUTER_X, TUNNEL_LENGTH_Y, TUNNEL_OUTER_Z,
+    App.Vector(-TUNNEL_OUTER_X/2.0, TSL_BOARD_FRONT_Y,
+               TSL_BOARD_CENTER_Z-TUNNEL_OUTER_Z/2.0))
+inner = Part.makeBox(
+    TSL_OPTICAL_APERTURE_WIDTH_X, TUNNEL_LENGTH_Y+0.2,
+    TSL_OPTICAL_APERTURE_HEIGHT_Z,
+    App.Vector(-TSL_OPTICAL_APERTURE_WIDTH_X/2.0,
+               TSL_BOARD_FRONT_Y-0.1,
+               TSL_BOARD_CENTER_Z-TSL_OPTICAL_APERTURE_HEIGHT_Z/2.0))
+baffle = outer.cut(inner)
+baffle_obj = add_shape("TSLBaffleTunnel", "TSL2591 rectangular stray-light baffle (concept)",
+                       baffle, root)
+
+# AS5600 PCB horizontal. Chip/package is on underside (-Z) and faces downward.
+as_board = Part.makeBox(
+    AS_PCB_X, AS_PCB_Y, AS_PCB_THICKNESS,
+    App.Vector(AS_AXIS_X-AS_PCB_X/2.0,
+               AS_AXIS_Y-AS_PCB_Y/2.0,
+               AS_PCB_BOTTOM_Z))
+as_obj = add_shape("AS5600Board", "AS5600 PCB envelope; horizontal", as_board, root)
+
+as_pkg = Part.makeBox(
+    AS_PACKAGE_X, AS_PACKAGE_Y, AS_PACKAGE_PROJECTION,
+    App.Vector(AS_AXIS_X-AS_PACKAGE_X/2.0,
+               AS_AXIS_Y-AS_PACKAGE_Y/2.0,
+               AS_PACKAGE_BOTTOM_Z-AS_PACKAGE_PROJECTION))
+as_pkg_obj = add_shape("AS5600Package", "AS5600 package on underside; sensing face downward",
+                       as_pkg, root)
+
+magnet = Part.makeCylinder(
+    AS_MAGNET_DIAMETER/2.0, AS_MAGNET_THICKNESS,
+    App.Vector(AS_AXIS_X, AS_AXIS_Y,
+               AS_MAGNET_TOP_Z-AS_MAGNET_THICKNESS))
+mag_obj = add_shape("AS5600Magnet", "Magnet reference below AS5600 package",
+                    magnet, root)
+
+# A simple dimension witness for the package-to-magnet air gap.
+gap_witness = Part.makeBox(
+    0.35, 0.35, AS_SENSOR_TO_MAGNET_GAP,
+    App.Vector(AS_AXIS_X+AS_PACKAGE_X/2.0+1.0,
+               AS_AXIS_Y,
+               AS_MAGNET_TOP_Z))
+gap_obj = add_shape("SensorMagnetGapWitness",
+                    "Gap witness — provisional package-face to magnet-surface",
+                    gap_witness, root)
+
+meta = doc.addObject("App::FeaturePython", "V07Parameters")
+meta.Label = "V0.7 editable sensor parameters"
+for prop, value in [
+    ("TSLBoardWidth", TSL_PCB_WIDTH_X),
+    ("TSLBoardHeight", TSL_PCB_HEIGHT_Z),
+    ("TSLBoardThickness", TSL_PCB_THICKNESS_Y),
+    ("TSLApertureWidth", TSL_OPTICAL_APERTURE_WIDTH_X),
+    ("TSLApertureHeight", TSL_OPTICAL_APERTURE_HEIGHT_Z),
+    ("ASBoardWidth", AS_PCB_X),
+    ("ASBoardDepth", AS_PCB_Y),
+    ("ASBoardThickness", AS_PCB_THICKNESS),
+    ("ASPackageProjection", AS_PACKAGE_PROJECTION),
+    ("SensorMagnetGap", AS_SENSOR_TO_MAGNET_GAP),
+    ("MagnetDiameter", AS_MAGNET_DIAMETER),
+    ("MagnetThickness", AS_MAGNET_THICKNESS)]:
+    meta.addProperty("App::PropertyLength", prop, "V0.7 Parameters")
+    setattr(meta, prop, value)
+root.addObject(meta)
+
+tsl_obj.ViewObject.ShapeColor = (0.35, 0.65, 0.85)
+tsl_pkg_obj.ViewObject.ShapeColor = (0.15, 0.75, 0.90)
+wall_obj.ViewObject.ShapeColor = (0.75, 0.75, 0.75)
+baffle_obj.ViewObject.ShapeColor = (0.85, 0.65, 0.25)
+as_obj.ViewObject.ShapeColor = (0.55, 0.72, 0.55)
+as_pkg_obj.ViewObject.ShapeColor = (0.15, 0.85, 0.35)
+mag_obj.ViewObject.ShapeColor = (0.85, 0.25, 0.25)
+gap_obj.ViewObject.ShapeColor = (0.95, 0.75, 0.15)
+meta.Visibility = False
+doc.recompute()
+
+try:
+    import FreeCADGui as Gui
+    Gui.activeDocument().activeView().viewAxonometric()
+    Gui.activeDocument().activeView().fitAll()
+except Exception:
+    pass
+
+try:
+    out_dir = os.path.dirname(os.path.abspath(__file__))
+except Exception:
+    out_dir = os.getcwd()
+
+fcstd_path = os.path.join(out_dir, "V0.7_Sensor_Module_Reference.FCStd")
+step_path = os.path.join(out_dir, "V0.7_Sensor_Module_Reference.step")
+doc.recompute()
+doc.saveAs(fcstd_path)
+Part.export([tsl_obj, tsl_pkg_obj, wall_obj, baffle_obj,
+             as_obj, as_pkg_obj, mag_obj, gap_obj], step_path)
+print("Saved V0.7 sensor reference model:")
+print(fcstd_path)
+print(step_path)
+print("WARNING: all module envelopes and the 1.0 mm gap are provisional.")

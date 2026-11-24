@@ -1,0 +1,162 @@
+# -*- coding: utf-8 -*-
+# FreeCAD macro: V0.9 bottom stepped rotor mechanism reference
+# Layout/test fixture only. All dimensions are provisional, not manufacturing release.
+import os
+import FreeCAD as App
+import Part
+
+# ---------------- Editable provisional dimensions (mm) ----------------
+BASE_X = 36.0
+BASE_Y = 36.0
+BASE_THICKNESS = 2.0
+BASE_BORE_D = 8.4
+BASE_Z0 = 0.0
+
+ROTOR_DISC_D = 20.0
+ROTOR_DISC_T = 2.0
+ROTOR_JOURNAL_D = 6.0
+ROTOR_JOURNAL_LENGTH = 2.4
+ROTOR_FLANGE_D = 24.0
+ROTOR_FLANGE_T = 2.0
+MAGNET_CARRIER_D = 20.0
+MAGNET_CARRIER_T = 4.0
+
+BUSHING_OD = 8.2
+BUSHING_ID = 6.2
+BUSHING_LENGTH = 2.0
+THRUST_WASHER_OD = 10.0
+THRUST_WASHER_ID = 6.2
+THRUST_WASHER_T = 0.3
+RETAINER_OD = 28.0
+RETAINER_ID = 20.5
+RETAINER_T = 1.2
+RETAINER_SCREW_PCD = 23.0
+RETAINER_SCREW_D = 2.2
+
+LINK_ROD_D = 1.0
+LINK_ROD_LENGTH = 10.0
+LINK_ROD_OFFSET = 8.5
+
+# Axis is Z. Base underside is Z=0; base top is positive Z.
+# Rotor disc is below the base; the journal crosses the bushing.
+DISC_BOTTOM_Z = -ROTOR_DISC_T
+DISC_TOP_Z = 0.0
+JOURNAL_BOTTOM_Z = DISC_TOP_Z
+JOURNAL_TOP_Z = JOURNAL_BOTTOM_Z + ROTOR_JOURNAL_LENGTH
+FLANGE_BOTTOM_Z = JOURNAL_TOP_Z
+FLANGE_TOP_Z = FLANGE_BOTTOM_Z + ROTOR_FLANGE_T
+CARRIER_BOTTOM_Z = FLANGE_TOP_Z
+CARRIER_TOP_Z = CARRIER_BOTTOM_Z + MAGNET_CARRIER_T
+
+doc_name = 'V09_Bottom_Stepped_Rotor_Reference'
+if App.getDocument(doc_name):
+    App.closeDocument(doc_name)
+doc = App.newDocument(doc_name)
+root = doc.addObject('App::DocumentObjectGroup', 'RotorAssembly')
+root.Label = 'V0.9 bottom stepped rotor — provisional assembly'
+
+def feature(name, label, shape, color):
+    obj = doc.addObject('PartDesign::Feature', name)
+    obj.Label = label
+    obj.Shape = shape
+    obj.ViewObject.ShapeColor = color
+    root.addObject(obj)
+    return obj
+
+# Base shell coupon with a real through-bore.
+base = Part.makeBox(BASE_X, BASE_Y, BASE_THICKNESS,
+    App.Vector(-BASE_X/2.0, -BASE_Y/2.0, BASE_Z0))
+bore = Part.makeCylinder(BASE_BORE_D/2.0, BASE_THICKNESS+0.2,
+    App.Vector(0, 0, BASE_Z0-0.1))
+base_obj = feature('BottomShellCoupon', 'Bottom shell wall coupon; through-bore',
+                   base.cut(bore), (0.72, 0.72, 0.72))
+
+# Replaceable sleeve bushing, concentric with the rotor axis.
+bush_outer = Part.makeCylinder(BUSHING_OD/2.0, BUSHING_LENGTH,
+    App.Vector(0, 0, BASE_Z0))
+bush_inner = Part.makeCylinder(BUSHING_ID/2.0, BUSHING_LENGTH+0.2,
+    App.Vector(0, 0, BASE_Z0-0.1))
+bushing_obj = feature('ReplaceableBushing', 'Separate replaceable sleeve bushing',
+                      bush_outer.cut(bush_inner), (0.25, 0.55, 0.80))
+
+# Single-piece rotor: external disc + journal + internal flange + magnet carrier.
+disc = Part.makeCylinder(ROTOR_DISC_D/2.0, ROTOR_DISC_T,
+    App.Vector(0, 0, DISC_BOTTOM_Z))
+journal = Part.makeCylinder(ROTOR_JOURNAL_D/2.0, ROTOR_JOURNAL_LENGTH,
+    App.Vector(0, 0, JOURNAL_BOTTOM_Z))
+flange = Part.makeCylinder(ROTOR_FLANGE_D/2.0, ROTOR_FLANGE_T,
+    App.Vector(0, 0, FLANGE_BOTTOM_Z))
+carrier = Part.makeCylinder(MAGNET_CARRIER_D/2.0, MAGNET_CARRIER_T,
+    App.Vector(0, 0, CARRIER_BOTTOM_Z))
+rotor_shape = disc.fuse(journal).fuse(flange).fuse(carrier)
+# Ø1 mm vertical linkage rod is physically fused to the outer edge of the disc.
+rod = Part.makeCylinder(LINK_ROD_D/2.0, LINK_ROD_LENGTH,
+    App.Vector(LINK_ROD_OFFSET, 0, DISC_BOTTOM_Z-LINK_ROD_LENGTH))
+rotor_shape = rotor_shape.fuse(rod)
+rotor_obj = feature('OnePieceSteppedRotor',
+    'Single-piece rotor: operating disc, journal, retaining flange, magnet carrier and vertical rod',
+    rotor_shape, (0.82, 0.42, 0.22))
+
+# Thrust washer sits between the inner flange and the stationary retainer/support plane.
+washer_outer = Part.makeCylinder(THRUST_WASHER_OD/2.0, THRUST_WASHER_T,
+    App.Vector(0, 0, FLANGE_TOP_Z))
+washer_inner = Part.makeCylinder(THRUST_WASHER_ID/2.0, THRUST_WASHER_T+0.2,
+    App.Vector(0, 0, FLANGE_TOP_Z-0.1))
+washer_obj = feature('ThrustWasher', 'Separate thrust washer; provisional axial interface',
+                     washer_outer.cut(washer_inner), (0.85, 0.78, 0.30))
+
+# Stationary annular retainer overlaps the flange rim while clearing the carrier.
+# It is a concept; screw seats and actual mounting bosses must be adapted to the enclosure.
+ret_outer = Part.makeCylinder(RETAINER_OD/2.0, RETAINER_T,
+    App.Vector(0, 0, FLANGE_TOP_Z+THRUST_WASHER_T))
+ret_inner = Part.makeCylinder(RETAINER_ID/2.0, RETAINER_T+0.2,
+    App.Vector(0, 0, FLANGE_TOP_Z+THRUST_WASHER_T-0.1))
+retainer_shape = ret_outer.cut(ret_inner)
+for angle in (0, 90, 180, 270):
+    import math
+    a = math.radians(angle)
+    x = (RETAINER_SCREW_PCD/2.0)*math.cos(a)
+    y = (RETAINER_SCREW_PCD/2.0)*math.sin(a)
+    hole = Part.makeCylinder(RETAINER_SCREW_D/2.0, RETAINER_T+0.2,
+        App.Vector(x, y, FLANGE_TOP_Z+THRUST_WASHER_T-0.1))
+    retainer_shape = retainer_shape.cut(hole)
+retainer_obj = feature('StationaryRetainer',
+    'Separate screw-fixed annular retainer; overlaps flange rim with running clearance',
+    retainer_shape, (0.35, 0.65, 0.38))
+
+# Parameter metadata for quick inspection in the property editor.
+meta = doc.addObject('App::FeaturePython', 'RotorParameters')
+meta.Label = 'V0.9 editable provisional dimensions'
+for prop, value in [
+    ('BaseBoreDiameter', BASE_BORE_D), ('RotorDiscDiameter', ROTOR_DISC_D),
+    ('RotorDiscThickness', ROTOR_DISC_T), ('JournalDiameter', ROTOR_JOURNAL_D),
+    ('JournalLength', ROTOR_JOURNAL_LENGTH), ('RetainingFlangeDiameter', ROTOR_FLANGE_D),
+    ('FlangeThickness', ROTOR_FLANGE_T), ('MagnetCarrierDiameter', MAGNET_CARRIER_D),
+    ('MagnetCarrierThickness', MAGNET_CARRIER_T), ('BushingOuterDiameter', BUSHING_OD),
+    ('BushingInnerDiameter', BUSHING_ID), ('BushingLength', BUSHING_LENGTH),
+    ('ThrustWasherThickness', THRUST_WASHER_T), ('RetainerThickness', RETAINER_T),
+    ('LinkageRodDiameter', LINK_ROD_D), ('LinkageRodOffset', LINK_ROD_OFFSET)]:
+    meta.addProperty('App::PropertyLength', prop, 'Provisional dimensions')
+    setattr(meta, prop, value)
+root.addObject(meta)
+meta.Visibility = False
+doc.recompute()
+
+try:
+    import FreeCADGui as Gui
+    Gui.activeDocument().activeView().viewAxonometric()
+    Gui.activeDocument().activeView().fitAll()
+except Exception:
+    pass
+
+try:
+    out_dir = os.path.dirname(os.path.abspath(__file__))
+except Exception:
+    out_dir = os.getcwd()
+fcstd = os.path.join(out_dir, 'V0.9_Bottom_Stepped_Rotor_Reference.FCStd')
+step = os.path.join(out_dir, 'V0.9_Bottom_Stepped_Rotor_Reference.step')
+doc.recompute()
+doc.saveAs(fcstd)
+Part.export([base_obj, bushing_obj, rotor_obj, washer_obj, retainer_obj], step)
+print('Saved V0.9 rotor reference:', fcstd, step)
+print('WARNING: provisional geometry only; inspect clearances and verify actual materials/components.')

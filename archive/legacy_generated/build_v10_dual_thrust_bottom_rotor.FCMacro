@@ -1,0 +1,107 @@
+# -*- coding: utf-8 -*-
+# FreeCAD macro: V1.0 bottom stepped rotor with dual thrust interfaces
+# Provisional assembly study only. Not a manufacturing release.
+import os, math
+import FreeCAD as App
+import Part
+
+# Editable provisional dimensions, mm.
+BASE_X, BASE_Y, BASE_T = 36.0, 36.0, 2.0
+BASE_BORE_D = 8.4
+DISC_D, DISC_T = 20.0, 2.0
+JOURNAL_D = 6.0
+BUSH_OD, BUSH_ID, BUSH_LEN = 8.2, 6.2, 2.0
+LOWER_WASHER_OD, LOWER_WASHER_ID, LOWER_WASHER_T = 24.0, 8.4, 0.3
+FLANGE_D, FLANGE_T = 24.0, 2.0
+CARRIER_D, CARRIER_T = 20.0, 4.0
+UPPER_WASHER_OD, UPPER_WASHER_ID, UPPER_WASHER_T = 22.0, 20.5, 0.3
+RETAINER_OD, RETAINER_ID, RETAINER_T = 28.0, 20.5, 1.2
+SCREW_PCD, SCREW_D = 25.5, 2.2
+ROD_D, ROD_LENGTH, ROD_OFFSET = 1.0, 10.0, 8.5
+
+# Datum: shell underside Z=0; shell top Z=2; rotor axis Z.
+BASE_BOTTOM = 0.0
+BASE_TOP = BASE_T
+LOWER_WASHER_BOTTOM = -LOWER_WASHER_T
+DISC_TOP = LOWER_WASHER_BOTTOM
+DISC_BOTTOM = DISC_TOP - DISC_T
+JOURNAL_BOTTOM = LOWER_WASHER_BOTTOM
+JOURNAL_TOP = BASE_TOP + BUSH_LEN*0.0 + 0.3
+# Journal spans the complete bushing and base wall, with 0.3 mm axial allowance.
+JOURNAL_LENGTH = JOURNAL_TOP - JOURNAL_BOTTOM
+FLANGE_BOTTOM = JOURNAL_TOP
+FLANGE_TOP = FLANGE_BOTTOM + FLANGE_T
+CARRIER_BOTTOM = FLANGE_TOP
+CARRIER_TOP = CARRIER_BOTTOM + CARRIER_T
+UPPER_WASHER_BOTTOM = FLANGE_TOP
+RETAINER_BOTTOM = UPPER_WASHER_BOTTOM + UPPER_WASHER_T
+
+doc_name='V10_Dual_Thrust_Bottom_Rotor'
+if App.getDocument(doc_name): App.closeDocument(doc_name)
+doc=App.newDocument(doc_name)
+root=doc.addObject('App::DocumentObjectGroup','Assembly')
+root.Label='V1.0 dual-thrust rotor stack — provisional'
+
+def add(name,label,shape,color):
+    o=doc.addObject('PartDesign::Feature',name)
+    o.Label=label; o.Shape=shape; o.ViewObject.ShapeColor=color
+    root.addObject(o); return o
+
+# Fixed shell coupon and replaceable bushing.
+base=Part.makeBox(BASE_X,BASE_Y,BASE_T,App.Vector(-BASE_X/2,-BASE_Y/2,0))
+hole=Part.makeCylinder(BASE_BORE_D/2,BASE_T+0.2,App.Vector(0,0,-0.1))
+base_obj=add('BottomShellCoupon','Stationary shell coupon with through-bore',base.cut(hole),(0.72,0.72,0.72))
+bo=Part.makeCylinder(BUSH_OD/2,BUSH_LEN,App.Vector(0,0,0))
+bi=Part.makeCylinder(BUSH_ID/2,BUSH_LEN+0.2,App.Vector(0,0,-0.1))
+bush_obj=add('SleeveBushing','Replaceable radial sleeve bushing',bo.cut(bi),(0.25,0.55,0.82))
+
+# One-piece rotor body.
+disc=Part.makeCylinder(DISC_D/2,DISC_T,App.Vector(0,0,DISC_BOTTOM))
+journal=Part.makeCylinder(JOURNAL_D/2,JOURNAL_LENGTH,App.Vector(0,0,JOURNAL_BOTTOM))
+flange=Part.makeCylinder(FLANGE_D/2,FLANGE_T,App.Vector(0,0,FLANGE_BOTTOM))
+carrier=Part.makeCylinder(CARRIER_D/2,CARRIER_T,App.Vector(0,0,CARRIER_BOTTOM))
+rotor=disc.fuse(journal).fuse(flange).fuse(carrier)
+rod=Part.makeCylinder(ROD_D/2,ROD_LENGTH,App.Vector(ROD_OFFSET,0,DISC_BOTTOM-ROD_LENGTH))
+rotor=rotor.fuse(rod)
+rotor_obj=add('OnePieceSteppedRotor','Single rotor: outer disc + journal + inner flange + magnet carrier + vertical rod',rotor,(0.82,0.42,0.22))
+
+# Lower thrust washer: between shell underside and external operating disc.
+lo=Part.makeCylinder(LOWER_WASHER_OD/2,LOWER_WASHER_T,App.Vector(0,0,LOWER_WASHER_BOTTOM))
+li=Part.makeCylinder(LOWER_WASHER_ID/2,LOWER_WASHER_T+0.2,App.Vector(0,0,LOWER_WASHER_BOTTOM-0.1))
+lower_obj=add('LowerThrustWasher','Lower thrust washer — shell underside to operating disc',lo.cut(li),(0.88,0.78,0.32))
+
+# Upper thrust washer supports the retainer over the flange perimeter.
+uo=Part.makeCylinder(UPPER_WASHER_OD/2,UPPER_WASHER_T,App.Vector(0,0,UPPER_WASHER_BOTTOM))
+ui=Part.makeCylinder(UPPER_WASHER_ID/2,UPPER_WASHER_T+0.2,App.Vector(0,0,UPPER_WASHER_BOTTOM-0.1))
+upper_obj=add('UpperThrustWasher','Upper thrust washer — flange perimeter to stationary retainer',uo.cut(ui),(0.88,0.78,0.32))
+
+# Stationary retaining ring; center clears magnet carrier, outer annulus overlaps flange.
+ro=Part.makeCylinder(RETAINER_OD/2,RETAINER_T,App.Vector(0,0,RETAINER_BOTTOM))
+ri=Part.makeCylinder(RETAINER_ID/2,RETAINER_T+0.2,App.Vector(0,0,RETAINER_BOTTOM-0.1))
+ring=ro.cut(ri)
+for a in (0,90,180,270):
+    rad=math.radians(a)
+    x=SCREW_PCD/2*math.cos(rad); y=SCREW_PCD/2*math.sin(rad)
+    h=Part.makeCylinder(SCREW_D/2,RETAINER_T+0.2,App.Vector(x,y,RETAINER_BOTTOM-0.1))
+    ring=ring.cut(h)
+ret_obj=add('StationaryRetainer','Screw-fixed retainer ring; overlaps flange rim',ring,(0.35,0.65,0.38))
+
+# Parameter object records the stack-up assumptions in the document.
+p=doc.addObject('App::FeaturePython','StackParameters')
+p.Label='V1.0 editable stack parameters'
+for n,v in [('BaseThickness',BASE_T),('BaseBoreDiameter',BASE_BORE_D),('JournalDiameter',JOURNAL_D),('JournalLength',JOURNAL_LENGTH),('LowerWasherThickness',LOWER_WASHER_T),('UpperWasherThickness',UPPER_WASHER_T),('RetainerThickness',RETAINER_T),('RadialJournalClearance',BUSH_ID-JOURNAL_D),('BushingToShellRadialClearance',(BASE_BORE_D-BUSH_OD)/2.0)]:
+    p.addProperty('App::PropertyLength',n,'Provisional stack'); setattr(p,n,v)
+root.addObject(p); p.Visibility=False
+doc.recompute()
+try:
+    import FreeCADGui as Gui
+    Gui.activeDocument().activeView().viewAxonometric(); Gui.activeDocument().activeView().fitAll()
+except Exception: pass
+try: out=os.path.dirname(os.path.abspath(__file__))
+except Exception: out=os.getcwd()
+fcstd=os.path.join(out,'V1.0_Dual_Thrust_Bottom_Rotor.FCStd')
+step=os.path.join(out,'V1.0_Dual_Thrust_Bottom_Rotor.step')
+doc.recompute(); doc.saveAs(fcstd)
+Part.export([base_obj,bush_obj,rotor_obj,lower_obj,upper_obj,ret_obj],step)
+print('Saved:',fcstd,step)
+print('Check axial endplay in the actual assembled housing; this model is a nominal touching stack, not a tolerance analysis.')

@@ -1,0 +1,90 @@
+# -*- coding: utf-8 -*-
+# FreeCAD macro: V0.8 interchangeable TSL2591 optical test coupons
+# Independently authored comparison fixture; not copied reference CAD.
+import os
+import FreeCAD as App
+import Part
+
+# Experimental dimensions in mm; measure the actual module before use.
+COUPON_X = 18.0
+COUPON_Z = 18.0
+PLATE_THICKNESS = 2.0
+APERTURE_X = 4.0
+APERTURE_Z = 4.0
+COUNTERBORE_X = 7.0
+COUNTERBORE_Z = 7.0
+COUNTERBORE_DEPTH = 1.5
+REAR_BAFFLE_LENGTH = 4.0
+BAFFLE_WALL = 1.5
+SPACING_X = 24.0
+CENTER_Z = 0.0
+SENSOR_ACTIVE_PLANE_Y = 8.0
+# Coordinates: front face Y=0; light travels -Y to +Y; plate is Y=0..2.
+# Sensor active-plane reference is Y=8 mm for all three coupons.
+
+doc_name = "V08_TSL2591_Optical_Test_Coupons"
+if App.getDocument(doc_name):
+    App.closeDocument(doc_name)
+doc = App.newDocument(doc_name)
+root = doc.addObject("App::DocumentObjectGroup", "OpticalTestCoupons")
+root.Label = "TSL2591 optical test coupons — experimental"
+
+def add_feature(name, label, shape):
+    obj = doc.addObject("PartDesign::Feature", name)
+    obj.Label = label
+    obj.Shape = shape
+    root.addObject(obj)
+    return obj
+
+def plate(x):
+    return Part.makeBox(COUPON_X, PLATE_THICKNESS, COUPON_Z,
+        App.Vector(x-COUPON_X/2.0, 0, CENTER_Z-COUPON_Z/2.0))
+
+def through_hole(x):
+    return Part.makeBox(APERTURE_X, PLATE_THICKNESS+0.2, APERTURE_Z,
+        App.Vector(x-APERTURE_X/2.0, -0.1, CENTER_Z-APERTURE_Z/2.0))
+
+def make_flush(x):
+    return plate(x).cut(through_hole(x))
+
+def make_counterbore(x):
+    body = plate(x).cut(through_hole(x))
+    recess = Part.makeBox(COUNTERBORE_X, COUNTERBORE_DEPTH+0.1, COUNTERBORE_Z,
+        App.Vector(x-COUNTERBORE_X/2.0, -0.1, CENTER_Z-COUNTERBORE_Z/2.0))
+    return body.cut(recess)
+
+def make_rear_baffle(x):
+    body = plate(x).cut(through_hole(x))
+    ox = APERTURE_X + 2.0*BAFFLE_WALL
+    oz = APERTURE_Z + 2.0*BAFFLE_WALL
+    outer = Part.makeBox(ox, REAR_BAFFLE_LENGTH, oz,
+        App.Vector(x-ox/2.0, PLATE_THICKNESS, CENTER_Z-oz/2.0))
+    inner = Part.makeBox(APERTURE_X, REAR_BAFFLE_LENGTH+0.2, APERTURE_Z,
+        App.Vector(x-APERTURE_X/2.0, PLATE_THICKNESS-0.1, CENTER_Z-APERTURE_Z/2.0))
+    return body.fuse(outer.cut(inner))
+
+flush = add_feature("FlushAperture", "A — flush through-aperture baseline", make_flush(-SPACING_X))
+counter = add_feature("FrontCounterbore", "B — incident-side shallow counterbore", make_counterbore(0))
+ba = add_feature("RearBaffle", "C — rearward baffle toward sensor", make_rear_baffle(SPACING_X))
+flush.ViewObject.ShapeColor = (0.75, 0.75, 0.75)
+counter.ViewObject.ShapeColor = (0.35, 0.65, 0.85)
+ba.ViewObject.ShapeColor = (0.85, 0.60, 0.25)
+doc.recompute()
+try:
+    import FreeCADGui as Gui
+    Gui.activeDocument().activeView().viewAxonometric()
+    Gui.activeDocument().activeView().fitAll()
+except Exception:
+    pass
+try:
+    out_dir = os.path.dirname(os.path.abspath(__file__))
+except Exception:
+    out_dir = os.getcwd()
+fcstd = os.path.join(out_dir, "V0.8_TSL2591_Optical_Test_Coupons.FCStd")
+step = os.path.join(out_dir, "V0.8_TSL2591_Optical_Test_Coupons.step")
+doc.recompute()
+doc.saveAs(fcstd)
+Part.export([flush, counter, ba], step)
+print("Saved V0.8 optical coupons:", fcstd, step)
+print("Incident light: -Y to +Y; sensor active-plane datum: Y=8 mm.")
+print("All dimensions are experimental; validate geometry and angular response.")

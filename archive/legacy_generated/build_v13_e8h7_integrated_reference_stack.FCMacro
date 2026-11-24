@@ -1,0 +1,193 @@
+# -*- coding: utf-8 -*-
+# FreeCAD macro: V1.3 integrated reference stack
+# Actual top encoder: F-SWITCH E8H7-6.5J30-9B15-F200.
+# Coarse envelope only: pins/PCB footprint and exact body datum intentionally omitted.
+import os
+import FreeCAD as App
+import Part
+
+# ---------------- Confirmed / project-known dimensions (mm) ----------------
+ENC_MODEL = "E8H7-6.5J30-9B15-F200"
+ENC_INSTALL_HEIGHT = 6.5       # manufacturer model designation; datum to be verified
+ENC_SHAFT_D = 3.0              # series-level nominal; verify drawing/sample
+ENC_PRESS_TRAVEL = 0.2         # provisional carry-over pending exact E8H7 drawing
+ENC_PULSES = 9
+ENC_DETENTS = 18
+ENC_PRESS_FORCE_GF = 200.0
+ENC_TORQUE_GF_CM = 30.0
+WHEEL_D = 20.0                 # user's existing printed wheel, approximate
+WHEEL_T = 1.5                  # layout assumption
+STACK_TARGET = 15.0            # target envelope only; measurement datums not yet fixed
+
+# ---------------- Layout assumptions; all editable ----------------
+# Shared coordinate convention: XY is horizontal; +Z is toward top of enclosure.
+AS_PCB_X, AS_PCB_Y, AS_PCB_T = 23.0, 23.0, 1.6
+AS_PCB_BOTTOM_Z = 0.0
+AS_PACKAGE_XY = 2.0
+AS_PACKAGE_DROP = 1.5          # package extends down from PCB underside
+AS_MAGNET_D, AS_MAGNET_T = 6.0, 2.0
+AS_PACKAGE_TO_MAGNET_GAP = 1.0 # package-face to magnet-face, provisional
+ROTOR_DISC_D, ROTOR_DISC_T = 20.0, 2.0
+ROTOR_FLANGE_D, ROTOR_FLANGE_T = 24.0, 2.0
+ROTOR_JOURNAL_D, ROTOR_JOURNAL_L = 6.0, 2.4
+ROTOR_EXTERNAL_DISC_D, ROTOR_EXTERNAL_DISC_T = 20.0, 2.0
+LINK_ROD_D, LINK_ROD_L, LINK_ROD_OFFSET = 1.0, 10.0, 8.5
+
+ENC_PCB_X, ENC_PCB_Y, ENC_PCB_T = 12.0, 12.0, 1.2
+ENC_BOARD_BOTTOM_Z = STACK_TARGET - ENC_INSTALL_HEIGHT - ENC_PCB_T
+ENC_BODY_X, ENC_BODY_Y = 7.8, 6.9
+ENC_BODY_Z = ENC_INSTALL_HEIGHT
+ENC_SHAFT_PROJECTION = 2.5     # rough placeholder; not drawing-confirmed
+ENC_SHAFT_AXIS_Z = ENC_BOARD_BOTTOM_Z + ENC_PCB_T + ENC_BODY_Z * 0.65
+ENC_SHAFT_AXIS_Y = 0.0
+ENC_WHEEL_CENTER_X = 0.0
+ENC_WHEEL_CENTER_Y = ENC_SHAFT_AXIS_Y + ENC_BODY_Y/2.0 + ENC_SHAFT_PROJECTION
+ENC_WHEEL_CENTER_Z = ENC_SHAFT_AXIS_Z
+SUPPORT_T = 1.6
+SUPPORT_X, SUPPORT_Y = 16.0, 16.0
+
+# Screen board is a separate lateral envelope; no enclosure length/width is fixed.
+DISPLAY_X, DISPLAY_Y, DISPLAY_Z = 37.0, 21.0, 8.0
+DISPLAY_CENTER_X, DISPLAY_CENTER_Y = 32.0, -4.0
+DISPLAY_BOTTOM_Z = 0.0
+
+# TSL2591 vertical board at front (+Y), sensor faces forward.
+TSL_X, TSL_Z, TSL_T = 16.0, 19.0, 5.0
+TSL_CENTER_X, TSL_CENTER_Z = -22.0, 8.0
+TSL_BOARD_FRONT_Y = 28.0
+
+doc_name = "V13_E8H7_Integrated_Reference_Stack"
+if App.getDocument(doc_name):
+    App.closeDocument(doc_name)
+doc = App.newDocument(doc_name)
+root = doc.addObject("App::DocumentObjectGroup", "V13IntegratedAssembly")
+root.Label = "V1.3 integrated E8H7 / AS5600 / magnet rotor / display / TSL2591 reference"
+
+def add(name, label, shape, color, group=root):
+    obj = doc.addObject("PartDesign::Feature", name)
+    obj.Label = label
+    obj.Shape = shape
+    obj.ViewObject.ShapeColor = color
+    group.addObject(obj)
+    return obj
+
+# AS5600: horizontal PCB, sensing package on underside, facing -Z.
+as_board = Part.makeBox(AS_PCB_X, AS_PCB_Y, AS_PCB_T,
+    App.Vector(-AS_PCB_X/2, -AS_PCB_Y/2, AS_PCB_BOTTOM_Z))
+as_obj = add("AS5600PCB", "AS5600 horizontal PCB envelope; chip faces downward", as_board, (0.35,0.68,0.42))
+pkg_bottom = AS_PCB_BOTTOM_Z - AS_PACKAGE_DROP
+as_pkg = Part.makeBox(AS_PACKAGE_XY, AS_PACKAGE_XY, AS_PACKAGE_DROP,
+    App.Vector(-AS_PACKAGE_XY/2, -AS_PACKAGE_XY/2, pkg_bottom))
+pkg_obj = add("AS5600Package", "AS5600 package envelope on PCB underside", as_pkg, (0.15,0.82,0.32))
+
+mag_top = pkg_bottom - AS_PACKAGE_TO_MAGNET_GAP
+magnet = Part.makeCylinder(AS_MAGNET_D/2, AS_MAGNET_T,
+    App.Vector(0,0,mag_top-AS_MAGNET_T))
+mag_obj = add("Magnet", "Magnet below AS5600; package-face gap is provisional", magnet, (0.82,0.25,0.22))
+
+# Bottom rotor is one conceptual stepped part; geometry is deliberately simplified.
+# Rotor magnet carrier is centered on the AS5600 axis.
+carrier_z = mag_top-AS_MAGNET_T-ROTOR_DISC_T
+flange_z = carrier_z-ROTOR_FLANGE_T+0.1
+journal_z = flange_z-ROTOR_JOURNAL_L+0.1
+external_disc_z = journal_z-ROTOR_EXTERNAL_DISC_T+0.1
+carrier = Part.makeCylinder(ROTOR_DISC_D/2, ROTOR_DISC_T,
+    App.Vector(0,0,carrier_z))
+flange = Part.makeCylinder(ROTOR_FLANGE_D/2, ROTOR_FLANGE_T,
+    App.Vector(0,0,flange_z))
+journal = Part.makeCylinder(ROTOR_JOURNAL_D/2, ROTOR_JOURNAL_L,
+    App.Vector(0,0,journal_z))
+rotor_inner = carrier.fuse(flange).fuse(journal)
+external_disc = Part.makeCylinder(ROTOR_EXTERNAL_DISC_D/2, ROTOR_EXTERNAL_DISC_T,
+    App.Vector(0,0,external_disc_z))
+# Slight geometric overlap avoids face-only contact between stepped sections.
+rod = Part.makeCylinder(LINK_ROD_D/2, LINK_ROD_L,
+    App.Vector(LINK_ROD_OFFSET,0,external_disc_z-LINK_ROD_L+0.2))
+rotor_complete = rotor_inner.fuse(external_disc).fuse(rod)
+rotor_obj = add("OnePieceBottomRotor", "One-piece rotor concept: magnet carrier + flange + journal + external disc + linkage rod", rotor_complete, (0.72,0.48,0.22))
+
+# Independent AS5600 support frame: it must react encoder wheel push load into enclosure,
+# and must not load the AS5600 PCB.
+support = Part.makeBox(SUPPORT_X, SUPPORT_Y, SUPPORT_T,
+    App.Vector(-SUPPORT_X/2,-SUPPORT_Y/2,ENC_BOARD_BOTTOM_Z-SUPPORT_T))
+support_obj = add("EncoderIndependentSupport", "Independent enclosure-mounted encoder support; not supported by AS5600 PCB", support, (0.58,0.58,0.62))
+
+# E8H7 rough envelope. Do not model pins or claim a validated footprint.
+enc_pcb = Part.makeBox(ENC_PCB_X, ENC_PCB_Y, ENC_PCB_T,
+    App.Vector(-ENC_PCB_X/2,-ENC_PCB_Y/2,ENC_BOARD_BOTTOM_Z))
+enc_pcb_obj = add("E8H7ReferenceBoard", "E8H7 reference mounting plane only; pins/footprint omitted", enc_pcb, (0.32,0.56,0.44))
+enc_body = Part.makeBox(ENC_BODY_X, ENC_BODY_Y, ENC_BODY_Z,
+    App.Vector(-ENC_BODY_X/2,-ENC_BODY_Y/2,ENC_BOARD_BOTTOM_Z+ENC_PCB_T))
+enc_body_obj = add("E8H7BodyEnvelope", "E8H7-6.5J30-9B15-F200 coarse body envelope; exact datum pending", enc_body, (0.28,0.42,0.78))
+shaft = Part.makeCylinder(ENC_SHAFT_D/2, ENC_SHAFT_PROJECTION,
+    App.Vector(0,ENC_BODY_Y/2,ENC_SHAFT_AXIS_Z), App.Vector(0,1,0))
+shaft_obj = add("E8H7ShaftEnvelope", "Ø3 mm horizontal shaft; projection is provisional", shaft, (0.2,0.24,0.32))
+wheel = Part.makeCylinder(WHEEL_D/2, WHEEL_T,
+    App.Vector(ENC_WHEEL_CENTER_X,ENC_WHEEL_CENTER_Y-WHEEL_T/2,ENC_WHEEL_CENTER_Z),
+    App.Vector(0,1,0))
+wheel_obj = add("TopOperatingWheel", "Existing approx. Ø20 mm wheel; rotates and presses axially", wheel, (0.86,0.48,0.18))
+hub_outer = Part.makeCylinder(5.0/2, 2.0,
+    App.Vector(0,ENC_WHEEL_CENTER_Y-WHEEL_T/2-1.8,ENC_WHEEL_CENTER_Z), App.Vector(0,1,0))
+hub_inner = Part.makeCylinder(3.2/2, 2.2,
+    App.Vector(0,ENC_WHEEL_CENTER_Y-WHEEL_T/2-1.9,ENC_WHEEL_CENTER_Z), App.Vector(0,1,0))
+hub = hub_outer.cut(hub_inner)
+wheel_hub = wheel.fuse(hub)
+wheel_hub_obj = add("WheelAndHubConcept", "Wheel + hub are geometrically fused; shaft retention method unresolved", wheel_hub, (0.70,0.36,0.16))
+wheel_obj.Visibility = False
+
+# Display board lateral reference; screen faces +Z.
+display = Part.makeBox(DISPLAY_X, DISPLAY_Y, DISPLAY_Z,
+    App.Vector(DISPLAY_CENTER_X-DISPLAY_X/2,DISPLAY_CENTER_Y-DISPLAY_Y/2,DISPLAY_BOTTOM_Z))
+display_obj = add("WaveshareLCD147B", "Waveshare ESP32-S3-LCD-1.47B board envelope; screen faces upward", display, (0.28,0.48,0.72))
+
+# TSL2591 vertical PCB; sensor side faces +Y. Keep optical path unobstructed.
+tsl = Part.makeBox(TSL_X, TSL_T, TSL_Z,
+    App.Vector(TSL_CENTER_X-TSL_X/2,TSL_BOARD_FRONT_Y-TSL_T,TSL_CENTER_Z-TSL_Z/2))
+tsl_obj = add("TSL2591VerticalPCB", "TSL2591 vertical PCB reference; sensing face points +Y", tsl, (0.30,0.62,0.78))
+tsl_sensor = Part.makeBox(3.0,1.0,2.0,
+    App.Vector(TSL_CENTER_X-1.5,TSL_BOARD_FRONT_Y,TSL_CENTER_Z-1.0))
+tsl_sensor_obj = add("TSL2591Package", "TSL2591 optical package; forward-facing", tsl_sensor, (0.15,0.78,0.86))
+
+# Transparent nominal 15 mm stack witness: bottom datum at AS PCB underside, top at Z=15.
+witness = Part.makeBox(0.35,0.35,STACK_TARGET,App.Vector(AS_PCB_X/2+1.0,0,0))
+witness_obj = add("15mmStackWitness", "15 mm target witness only; user measurement datums require confirmation", witness, (0.92,0.72,0.16))
+
+# Metadata
+meta = doc.addObject("App::FeaturePython","V13Parameters")
+meta.Label = "V1.3 model parameters / assumptions"
+for name,value in [
+    ("EncoderInstallHeight",ENC_INSTALL_HEIGHT),("EncoderShaftDiameter",ENC_SHAFT_D),
+    ("EncoderPressTravel",ENC_PRESS_TRAVEL),("WheelDiameter",WHEEL_D),
+    ("StackTarget",STACK_TARGET),("AS5600BoardThickness",AS_PCB_T),
+    ("SensorMagnetGap",AS_PACKAGE_TO_MAGNET_GAP),("MagnetDiameter",AS_MAGNET_D),
+    ("MagnetThickness",AS_MAGNET_T),("RotorJournalDiameter",ROTOR_JOURNAL_D),
+    ("DisplayBoardWidth",DISPLAY_X),("DisplayBoardHeight",DISPLAY_Y),("DisplayBoardThickness",DISPLAY_Z)]:
+    meta.addProperty("App::PropertyLength",name,"Reference dimensions")
+    setattr(meta,name,value)
+meta.addProperty("App::PropertyString","EncoderModel","Reference")
+meta.EncoderModel = ENC_MODEL
+meta.addProperty("App::PropertyInteger","EncoderPulsesPerRev","Reference"); meta.EncoderPulsesPerRev=ENC_PULSES
+meta.addProperty("App::PropertyInteger","EncoderDetentsPerRev","Reference"); meta.EncoderDetentsPerRev=ENC_DETENTS
+root.addObject(meta); meta.Visibility=False
+
+doc.recompute()
+try:
+    import FreeCADGui as Gui
+    Gui.activeDocument().activeView().viewAxonometric()
+    Gui.activeDocument().activeView().fitAll()
+except Exception:
+    pass
+try:
+    out_dir = os.path.dirname(os.path.abspath(__file__))
+except Exception:
+    out_dir = os.getcwd()
+fcstd = os.path.join(out_dir,"V1.3_E8H7_Integrated_Reference_Stack.FCStd")
+step = os.path.join(out_dir,"V1.3_E8H7_Integrated_Reference_Stack.step")
+doc.recompute()
+doc.saveAs(fcstd)
+Part.export([as_obj,pkg_obj,mag_obj,rotor_obj,support_obj,
+             enc_pcb_obj,enc_body_obj,shaft_obj,wheel_hub_obj,display_obj,tsl_obj,
+             tsl_sensor_obj,witness_obj],step)
+print("Saved:",fcstd,step)
+print("E8H7 pins and detailed footprint intentionally omitted.")
+print("15 mm is a reference target, not a verified closed stack dimension.")

@@ -1,0 +1,293 @@
+# -*- coding: utf-8 -*-
+# FreeCAD macro: V2.0 full internal layout reference
+# Coarse assembly reference only. All dimensions remain provisional unless noted.
+import os, math
+import FreeCAD as App
+import Part
+
+# Encoder selection retained from V1.3
+ENC_MODEL = "E8H7-6.5J30-9B15-F200"
+ENC_INSTALL_HEIGHT = 6.5
+ENC_SHAFT_D = 3.0
+ENC_PULSES, ENC_DETENTS = 9, 18
+ENC_PRESS_TRAVEL = 0.2
+WHEEL_D, WHEEL_T = 20.0, 1.5
+
+# AS5600 / magnet placeholders
+AS_PCB_X, AS_PCB_Y, AS_PCB_T = 23.0, 23.0, 1.6
+AS_PCB_BOTTOM_Z = 0.0
+AS_PACKAGE_XY, AS_PACKAGE_DROP = 2.0, 1.5
+AS_MAGNET_D, AS_MAGNET_T = 6.0, 2.0
+AS_PACKAGE_TO_MAGNET_GAP = 1.0
+
+# Rotor dimensions carried from V1.0; provisional
+ROTOR_DISC_D, ROTOR_DISC_T = 20.0, 2.0
+ROTOR_FLANGE_D, ROTOR_FLANGE_T = 24.0, 2.0
+ROTOR_JOURNAL_D, ROTOR_JOURNAL_L = 6.0, 2.4
+ROTOR_EXTERNAL_DISC_D, ROTOR_EXTERNAL_DISC_T = 20.0, 2.0
+LINK_ROD_D, LINK_ROD_L, LINK_ROD_OFFSET = 1.0, 10.0, 8.5
+
+# Dual-thrust stationary hardware; nominal reference dimensions
+BASE_X, BASE_Y, BASE_T = 96.0, 61.0, 2.0
+BASE_CENTER_X, BASE_CENTER_Y = 10.0, 1.5
+CHASSIS_RAIL_T, CHASSIS_RAIL_H = 2.0, 20.0
+FRONT_WALL_Y = 30.0
+OPTICAL_APERTURE_X, OPTICAL_APERTURE_Z = 4.0, 4.0
+BASE_BORE_D = 8.4
+BUSH_OD, BUSH_ID, BUSH_LEN = 8.2, 6.2, 2.0
+LOWER_WASHER_OD, LOWER_WASHER_ID, LOWER_WASHER_T = 24.0, 8.4, 0.3
+UPPER_WASHER_OD, UPPER_WASHER_ID, UPPER_WASHER_T = 22.0, 20.5, 0.3
+RETAINER_OD, RETAINER_ID, RETAINER_T = 32.0, 20.5, 1.2
+# Provisional fastening study only; confirm actual hardware before manufacture.
+HEAD_SEAT_D, HEAD_SEAT_DEPTH = 4.2, 0.65
+SCREW_HEAD_D, SCREW_HEAD_H = 3.8, 0.60
+DRIVER_ENVELOPE_D, DRIVER_ENVELOPE_H = 5.5, 8.0
+UPPER_WASHER_POCKET_DEPTH = 0.15  # shallow locating recess in rotating flange
+WASHER_KEY_WIDTH = 1.0
+WASHER_KEY_CLEARANCE = 0.15
+LOWER_WASHER_COLLAR_OD, LOWER_WASHER_COLLAR_ID, LOWER_WASHER_COLLAR_H = 26.4, 24.2, 0.3
+TARGET_AXIAL_ENDPLAY = 0.20  # provisional design target; verify by measurement
+SCREW_PCD, SCREW_D = 25.5, 2.2
+BOSS_OD = 4.5
+# Encoder coarse reference envelope
+ENC_BOARD_T = 1.2
+ENC_BODY_X, ENC_BODY_Y = 7.8, 6.9
+ENC_SHAFT_PROJECTION = 2.5
+
+# Existing V1.3 Z positions define the rotor stack. Stationary base is placed
+# around the journal; no enclosure overall thickness is inferred from this.
+pkg_bottom = AS_PCB_BOTTOM_Z - AS_PACKAGE_DROP
+mag_top = pkg_bottom - AS_PACKAGE_TO_MAGNET_GAP
+carrier_z = mag_top - AS_MAGNET_T - ROTOR_DISC_T
+flange_z = carrier_z - ROTOR_FLANGE_T + 0.1
+journal_z = flange_z - ROTOR_JOURNAL_L + 0.1
+external_disc_z = journal_z - ROTOR_EXTERNAL_DISC_T + 0.1
+BASE_BOTTOM_Z = external_disc_z + ROTOR_EXTERNAL_DISC_T + LOWER_WASHER_T
+BASE_TOP_Z = BASE_BOTTOM_Z + BASE_T
+BUSH_BOTTOM_Z = BASE_BOTTOM_Z
+BUSH_TOP_Z = BASE_TOP_Z
+LOWER_WASHER_BOTTOM_Z = external_disc_z + ROTOR_EXTERNAL_DISC_T
+UPPER_WASHER_BOTTOM_Z = flange_z + ROTOR_FLANGE_T - UPPER_WASHER_POCKET_DEPTH
+RETAINER_BOTTOM_Z = UPPER_WASHER_BOTTOM_Z + UPPER_WASHER_T + TARGET_AXIAL_ENDPLAY
+
+# E8H7 menu control is a separate axis/mechanism
+ENC_PCB_X, ENC_PCB_Y = 12.0, 12.0
+STACK_TARGET = 15.0
+ENC_BOARD_BOTTOM_Z = STACK_TARGET - ENC_INSTALL_HEIGHT - ENC_BOARD_T
+ENC_SHAFT_AXIS_Z = ENC_BOARD_BOTTOM_Z + ENC_BOARD_T + ENC_INSTALL_HEIGHT*0.65
+ENC_WHEEL_CENTER_Y = ENC_BODY_Y/2.0 + ENC_SHAFT_PROJECTION + WHEEL_T/2.0
+
+# Other independent component envelopes
+DISPLAY_X, DISPLAY_Y, DISPLAY_Z = 37.0, 21.0, 8.0
+DISPLAY_CENTER_X, DISPLAY_CENTER_Y = 32.0, -4.0
+TSL_X, TSL_Z, TSL_T = 16.0, 19.0, 5.0
+TSL_CENTER_X, TSL_CENTER_Z, TSL_BOARD_FRONT_Y = -22.0, 8.0, 28.0
+
+doc_name="V20_Full_Internal_Layout"
+if App.getDocument(doc_name): App.closeDocument(doc_name)
+doc=App.newDocument(doc_name)
+root=doc.addObject("App::DocumentObjectGroup","V20Assembly")
+root.Label="V2.0 full internal component layout and open chassis"
+
+def add(name,label,shape,color):
+    o=doc.addObject("PartDesign::Feature",name)
+    o.Label=label
+    o.Shape=shape
+    o.ViewObject.ShapeColor=color
+    root.addObject(o)
+    return o
+
+# AS5600 PCB and downward-facing sensor package
+as_board=Part.makeBox(AS_PCB_X,AS_PCB_Y,AS_PCB_T,App.Vector(-AS_PCB_X/2,-AS_PCB_Y/2,AS_PCB_BOTTOM_Z))
+as_obj=add("AS5600PCB","AS5600 horizontal PCB; sensing package faces -Z",as_board,(0.35,0.68,0.42))
+as_pkg=Part.makeBox(AS_PACKAGE_XY,AS_PACKAGE_XY,AS_PACKAGE_DROP,App.Vector(-AS_PACKAGE_XY/2,-AS_PACKAGE_XY/2,pkg_bottom))
+pkg_obj=add("AS5600Package","AS5600 package envelope; underside datum provisional",as_pkg,(0.15,0.82,0.32))
+magnet=Part.makeCylinder(AS_MAGNET_D/2,AS_MAGNET_T,App.Vector(0,0,mag_top-AS_MAGNET_T))
+mag_obj=add("Magnet","Magnet centered below AS5600; gap is placeholder",magnet,(0.82,0.25,0.22))
+
+# One-piece rotating rotor: carrier, flange, journal, external disc and linkage rod.
+carrier=Part.makeCylinder(ROTOR_DISC_D/2,ROTOR_DISC_T,App.Vector(0,0,carrier_z))
+flange=Part.makeCylinder(ROTOR_FLANGE_D/2,ROTOR_FLANGE_T,App.Vector(0,0,flange_z))
+# Recess the upper washer into the rotating flange; its top remains proud by T-pocket depth.
+pocket_outer=Part.makeCylinder(UPPER_WASHER_OD/2+0.1,UPPER_WASHER_POCKET_DEPTH+0.01,App.Vector(0,0,flange_z+ROTOR_FLANGE_T-UPPER_WASHER_POCKET_DEPTH))
+pocket_inner=Part.makeCylinder(UPPER_WASHER_ID/2-0.1,UPPER_WASHER_POCKET_DEPTH+0.03,App.Vector(0,0,flange_z+ROTOR_FLANGE_T-UPPER_WASHER_POCKET_DEPTH-0.01))
+flange=flange.cut(pocket_outer.cut(pocket_inner))
+# Integral key engages the notch in the upper washer.
+upper_key=Part.makeBox(1.2,WASHER_KEY_WIDTH,UPPER_WASHER_T+0.01,App.Vector(10.0,-WASHER_KEY_WIDTH/2,flange_z+ROTOR_FLANGE_T-UPPER_WASHER_POCKET_DEPTH-0.01))
+flange=flange.fuse(upper_key)
+journal=Part.makeCylinder(ROTOR_JOURNAL_D/2,ROTOR_JOURNAL_L,App.Vector(0,0,journal_z))
+external_disc=Part.makeCylinder(ROTOR_EXTERNAL_DISC_D/2,ROTOR_EXTERNAL_DISC_T,App.Vector(0,0,external_disc_z))
+rod=Part.makeCylinder(LINK_ROD_D/2,LINK_ROD_L,App.Vector(LINK_ROD_OFFSET,0,external_disc_z-LINK_ROD_L+0.2))
+rotor_shape=carrier.fuse(flange).fuse(journal).fuse(external_disc).fuse(rod)
+rotor_obj=add("OnePieceBottomRotor","Rotating one-piece concept: carrier + flange + journal + external disc + rod",rotor_shape,(0.72,0.48,0.22))
+
+# Stationary bottom-shell coupon with central bore and four retainer screw bosses.
+base=Part.makeBox(BASE_X,BASE_Y,BASE_T,App.Vector(BASE_CENTER_X-BASE_X/2,BASE_CENTER_Y-BASE_Y/2,BASE_BOTTOM_Z))
+base=base.cut(Part.makeCylinder(BASE_BORE_D/2,BASE_T+0.4,App.Vector(0,0,BASE_BOTTOM_Z-0.2)))
+# Underside collar radially locates the lower washer; integral key prevents rotation.
+collar_outer=Part.makeCylinder(LOWER_WASHER_COLLAR_OD/2,LOWER_WASHER_COLLAR_H,App.Vector(0,0,BASE_BOTTOM_Z-LOWER_WASHER_COLLAR_H))
+collar_inner=Part.makeCylinder(LOWER_WASHER_COLLAR_ID/2,LOWER_WASHER_COLLAR_H+0.02,App.Vector(0,0,BASE_BOTTOM_Z-LOWER_WASHER_COLLAR_H-0.01))
+collar=collar_outer.cut(collar_inner)
+lower_key=Part.makeBox(1.2,WASHER_KEY_WIDTH,LOWER_WASHER_COLLAR_H,App.Vector(11.0,-WASHER_KEY_WIDTH/2,BASE_BOTTOM_Z-LOWER_WASHER_COLLAR_H))
+base=base.fuse(collar).fuse(lower_key)
+for angle in (45,135,225,315):
+    a=math.radians(angle)
+    x=(SCREW_PCD/2)*math.cos(a); y=(SCREW_PCD/2)*math.sin(a)
+    boss=Part.makeCylinder(BOSS_OD/2,RETAINER_BOTTOM_Z-BASE_TOP_Z,App.Vector(x,y,BASE_TOP_Z))
+    base=base.fuse(boss)
+    bore=Part.makeCylinder(SCREW_D/2,RETAINER_BOTTOM_Z-BASE_BOTTOM_Z+0.4,App.Vector(x,y,BASE_BOTTOM_Z-0.2))
+    base=base.cut(bore)
+base_obj=add("ChassisFloorReference","96x61x2 open chassis floor; overall envelope provisional",base,(0.68,0.68,0.70))
+# Open perimeter rails; front segments leave a TSL2591 optical opening.
+z_rail=BASE_TOP_Z
+x_min=BASE_CENTER_X-BASE_X/2
+x_max=BASE_CENTER_X+BASE_X/2
+y_min=BASE_CENTER_Y-BASE_Y/2
+y_max=FRONT_WALL_Y
+ap_left=TSL_CENTER_X-OPTICAL_APERTURE_X/2
+ap_right=TSL_CENTER_X+OPTICAL_APERTURE_X/2
+rail_shapes=[
+ Part.makeBox(CHASSIS_RAIL_T,y_max-y_min,CHASSIS_RAIL_H,App.Vector(x_min,y_min,z_rail)),
+ Part.makeBox(CHASSIS_RAIL_T,y_max-y_min,CHASSIS_RAIL_H,App.Vector(x_max-CHASSIS_RAIL_T,y_min,z_rail)),
+ Part.makeBox(BASE_X,CHASSIS_RAIL_T,CHASSIS_RAIL_H,App.Vector(x_min,y_min,z_rail)),
+]
+rails=rail_shapes[0]
+for rs in rail_shapes[1:]: rails=rails.fuse(rs)
+front_wall=Part.makeBox(BASE_X,CHASSIS_RAIL_T,CHASSIS_RAIL_H,App.Vector(x_min,FRONT_WALL_Y-CHASSIS_RAIL_T,z_rail))
+optical_cut=Part.makeBox(OPTICAL_APERTURE_X,CHASSIS_RAIL_T+0.4,OPTICAL_APERTURE_Z,App.Vector(TSL_CENTER_X-OPTICAL_APERTURE_X/2,FRONT_WALL_Y-CHASSIS_RAIL_T-0.2,TSL_CENTER_Z-OPTICAL_APERTURE_Z/2))
+front_wall=front_wall.cut(optical_cut)
+rails=rails.fuse(front_wall)
+rails_obj=add("OpenChassisPerimeterRails","Open rails with 4x4 mm front optical aperture; lid not modeled",rails,(0.48,0.50,0.54))
+
+# Replaceable radial sleeve bushing, independent of axial thrust stack.
+bo=Part.makeCylinder(BUSH_OD/2,BUSH_LEN,App.Vector(0,0,BUSH_BOTTOM_Z))
+bi=Part.makeCylinder(BUSH_ID/2,BUSH_LEN+0.4,App.Vector(0,0,BUSH_BOTTOM_Z-0.2))
+bush_obj=add("SleeveBushing","Replaceable radial guide bushing; Ø6.2 ID around Ø6 journal",bo.cut(bi),(0.25,0.55,0.82))
+
+# Lower thrust washer between stationary shell underside and rotating outer disc.
+lo=Part.makeCylinder(LOWER_WASHER_OD/2,LOWER_WASHER_T,App.Vector(0,0,LOWER_WASHER_BOTTOM_Z))
+li=Part.makeCylinder(LOWER_WASHER_ID/2,LOWER_WASHER_T+0.4,App.Vector(0,0,LOWER_WASHER_BOTTOM_Z-0.2))
+lower_washer=lo.cut(li)
+lower_notch=Part.makeBox(1.2,WASHER_KEY_WIDTH+WASHER_KEY_CLEARANCE,LOWER_WASHER_T+0.4,App.Vector(11.0,-(WASHER_KEY_WIDTH+WASHER_KEY_CLEARANCE)/2,LOWER_WASHER_BOTTOM_Z-0.2))
+lower_washer=lower_washer.cut(lower_notch)
+lower_obj=add("LowerThrustWasher","Lower washer with key notch; shell collar captures OD and fixes rotation",lower_washer,(0.88,0.78,0.32))
+
+# Upper thrust washer and stationary retainer ring. Ring ID clears carrier OD.
+uo=Part.makeCylinder(UPPER_WASHER_OD/2,UPPER_WASHER_T,App.Vector(0,0,UPPER_WASHER_BOTTOM_Z))
+ui=Part.makeCylinder(UPPER_WASHER_ID/2,UPPER_WASHER_T+0.4,App.Vector(0,0,UPPER_WASHER_BOTTOM_Z-0.2))
+upper_washer=uo.cut(ui)
+upper_notch=Part.makeBox(1.2,WASHER_KEY_WIDTH+WASHER_KEY_CLEARANCE,UPPER_WASHER_T+0.4,App.Vector(10.0,-(WASHER_KEY_WIDTH+WASHER_KEY_CLEARANCE)/2,UPPER_WASHER_BOTTOM_Z-0.2))
+upper_washer=upper_washer.cut(upper_notch)
+upper_obj=add("UpperThrustWasher","Upper washer with key notch; rotor flange key drives washer",upper_washer,(0.88,0.78,0.32))
+ro=Part.makeCylinder(RETAINER_OD/2,RETAINER_T,App.Vector(0,0,RETAINER_BOTTOM_Z))
+ri=Part.makeCylinder(RETAINER_ID/2,RETAINER_T+0.4,App.Vector(0,0,RETAINER_BOTTOM_Z-0.2))
+ring=ro.cut(ri)
+for angle in (45,135,225,315):
+    a=math.radians(angle)
+    x=(SCREW_PCD/2)*math.cos(a); y=(SCREW_PCD/2)*math.sin(a)
+    ring=ring.cut(Part.makeCylinder(SCREW_D/2,RETAINER_T+0.4,App.Vector(x,y,RETAINER_BOTTOM_Z-0.2)))
+# Shallow provisional seats and separate hardware/access envelopes.
+for angle in (45,135,225,315):
+    a=math.radians(angle)
+    x=(SCREW_PCD/2)*math.cos(a); y=(SCREW_PCD/2)*math.sin(a)
+    seat=Part.makeCylinder(HEAD_SEAT_D/2,HEAD_SEAT_DEPTH+0.01,App.Vector(x,y,RETAINER_BOTTOM_Z+RETAINER_T-HEAD_SEAT_DEPTH))
+    ring=ring.cut(seat)
+ret_obj=add("StationaryRetainer","Retainer with provisional screw-head seats",ring,(0.35,0.65,0.38))
+screw_objs=[]
+driver_objs=[]
+for idx,angle in enumerate((45,135,225,315)):
+    a=math.radians(angle)
+    x=(SCREW_PCD/2)*math.cos(a); y=(SCREW_PCD/2)*math.sin(a)
+    head=Part.makeCylinder(SCREW_HEAD_D/2,SCREW_HEAD_H,App.Vector(x,y,RETAINER_BOTTOM_Z+RETAINER_T-SCREW_HEAD_H))
+    screw_objs.append(add("ScrewHeadEnvelope%d"%idx,"Provisional screw head envelope %d"%idx,head,(0.72,0.72,0.74)))
+    tool=Part.makeCylinder(DRIVER_ENVELOPE_D/2,DRIVER_ENVELOPE_H,App.Vector(x,y,RETAINER_BOTTOM_Z+RETAINER_T))
+    tool_obj=add("DriverAccessEnvelope%d"%idx,"Driver access keep-out envelope %d"%idx,tool,(0.92,0.72,0.18))
+    tool_obj.ViewObject.Transparency=82
+    driver_objs.append(tool_obj)
+# 360-degree annular keep-out swept by the Ø1 mm linkage rod.
+sweep_z=external_disc_z-LINK_ROD_L+0.2
+sweep_outer=Part.makeCylinder(LINK_ROD_OFFSET+LINK_ROD_D/2,LINK_ROD_L,App.Vector(0,0,sweep_z))
+sweep_inner=Part.makeCylinder(LINK_ROD_OFFSET-LINK_ROD_D/2,LINK_ROD_L,App.Vector(0,0,sweep_z))
+rod_sweep_obj=add("LinkageRod360Sweep","360-degree linkage-rod keep-out envelope",sweep_outer.cut(sweep_inner),(0.92,0.35,0.20))
+rod_sweep_obj.ViewObject.Transparency=82
+
+# Independent E8H7 encoder support and simplified envelopes (pins intentionally omitted).
+enc_board=Part.makeBox(ENC_PCB_X,ENC_PCB_Y,ENC_BOARD_T,App.Vector(-ENC_PCB_X/2,-ENC_PCB_Y/2,ENC_BOARD_BOTTOM_Z))
+enc_board_obj=add("E8H7ReferenceBoard","E8H7 reference plane only; no pins or detailed footprint",enc_board,(0.32,0.56,0.44))
+enc_body=Part.makeBox(ENC_BODY_X,ENC_BODY_Y,ENC_INSTALL_HEIGHT,App.Vector(-ENC_BODY_X/2,-ENC_BODY_Y/2,ENC_BOARD_BOTTOM_Z+ENC_BOARD_T))
+enc_body_obj=add("E8H7BodyEnvelope","E8H7-6.5J30-9B15-F200 coarse envelope",enc_body,(0.28,0.42,0.78))
+shaft=Part.makeCylinder(ENC_SHAFT_D/2,ENC_SHAFT_PROJECTION,App.Vector(0,ENC_BODY_Y/2,ENC_SHAFT_AXIS_Z),App.Vector(0,1,0))
+shaft_obj=add("E8H7Shaft","Ø3 mm horizontal shaft; projection placeholder",shaft,(0.2,0.24,0.32))
+wheel=Part.makeCylinder(WHEEL_D/2,WHEEL_T,App.Vector(0,ENC_WHEEL_CENTER_Y-WHEEL_T/2,ENC_SHAFT_AXIS_Z),App.Vector(0,1,0))
+hub_o=Part.makeCylinder(2.5,2.0,App.Vector(0,ENC_WHEEL_CENTER_Y-WHEEL_T/2-1.8,ENC_SHAFT_AXIS_Z),App.Vector(0,1,0))
+hub_i=Part.makeCylinder(1.6,2.4,App.Vector(0,ENC_WHEEL_CENTER_Y-WHEEL_T/2-2.0,ENC_SHAFT_AXIS_Z),App.Vector(0,1,0))
+wheel_hub_obj=add("E8H7WheelAndHub","Ø20 wheel with fused hub; shaft retention unresolved",wheel.fuse(hub_o.cut(hub_i)),(0.70,0.36,0.16))
+
+# Separate display and forward-facing TSL2591 reference envelopes.
+display=Part.makeBox(DISPLAY_X,DISPLAY_Y,DISPLAY_Z,App.Vector(DISPLAY_CENTER_X-DISPLAY_X/2,DISPLAY_CENTER_Y-DISPLAY_Y/2,0))
+display_obj=add("WaveshareLCD147B","Waveshare ESP32-S3-LCD-1.47B board envelope; screen +Z",display,(0.28,0.48,0.72))
+tsl=Part.makeBox(TSL_X,TSL_T,TSL_Z,App.Vector(TSL_CENTER_X-TSL_X/2,TSL_BOARD_FRONT_Y-TSL_T,TSL_CENTER_Z-TSL_Z/2))
+tsl_obj=add("TSL2591PCB","TSL2591 vertical PCB; sensor side +Y",tsl,(0.30,0.62,0.78))
+tsl_pkg=Part.makeBox(3.0,1.0,2.0,App.Vector(TSL_CENTER_X-1.5,TSL_BOARD_FRONT_Y,TSL_CENTER_Z-1.0))
+tsl_pkg_obj=add("TSL2591Package","Forward-facing optical package envelope",tsl_pkg,(0.15,0.78,0.86))
+
+# Independent E8H7 support load path; posts are outside the AS5600 PCB outline.
+support_z=ENC_BOARD_BOTTOM_Z-1.6
+support_plate=Part.makeBox(18.0,18.0,1.6,App.Vector(-9.0,-9.0,support_z))
+support_obj=add("E8H7IndependentSupportPlate","Independent encoder support plate above AS5600 PCB",support_plate,(0.58,0.58,0.62))
+post_shapes=[]
+for px in (-14.0,14.0):
+ for py in (-14.0,14.0):
+  post_shapes.append(Part.makeBox(2.0,2.0,support_z-BASE_TOP_Z,App.Vector(px-1.0,py-1.0,BASE_TOP_Z)))
+posts=post_shapes[0]
+for ps in post_shapes[1:]: posts=posts.fuse(ps)
+posts_obj=add("E8H7ReactionPosts","Independent reaction posts outside AS5600 PCB perimeter",posts,(0.52,0.52,0.58))
+
+# Local LCD support pads; the PCB is not a structural member.
+display_pads=[]
+for px in (DISPLAY_CENTER_X-14.0,DISPLAY_CENTER_X+14.0):
+ for py in (DISPLAY_CENTER_Y-7.0,DISPLAY_CENTER_Y+7.0):
+  display_pads.append(Part.makeBox(4.0,4.0,-BASE_TOP_Z,App.Vector(px-2.0,py-2.0,BASE_TOP_Z)))
+pads=display_pads[0]
+for pd in display_pads[1:]: pads=pads.fuse(pd)
+display_pads_obj=add("DisplayLocalSupportPads","Four local LCD support pads; fastening unresolved",pads,(0.30,0.46,0.68))
+
+# Stack witness remains a target only, not a declared overall thickness.
+witness=Part.makeBox(0.35,0.35,STACK_TARGET,App.Vector(AS_PCB_X/2+1.0,0,0))
+witness_obj=add("15mmStackWitness","15 mm target witness from AS PCB underside datum; interpretation unconfirmed",witness,(0.92,0.72,0.16))
+
+# Editable parameter record for the mechanical stack.
+meta=doc.addObject("App::FeaturePython","V17Parameters")
+meta.Label="V1.5 dimensions and provisional axial endplay"
+for n,v in [
+("EncoderInstallHeight",ENC_INSTALL_HEIGHT),("EncoderShaftDiameter",ENC_SHAFT_D),
+("EncoderPressTravel",ENC_PRESS_TRAVEL),("WheelDiameter",WHEEL_D),("StackTarget",STACK_TARGET),
+("AS5600BoardThickness",AS_PCB_T),("MagnetDiameter",AS_MAGNET_D),("MagnetThickness",AS_MAGNET_T),
+("PackageToMagnetGap",AS_PACKAGE_TO_MAGNET_GAP),("BaseThickness",BASE_T),("BaseBoreDiameter",BASE_BORE_D),
+("BushingOD",BUSH_OD),("BushingID",BUSH_ID),("LowerWasherThickness",LOWER_WASHER_T),
+("UpperWasherThickness",UPPER_WASHER_T),("UpperWasherPocketDepth",UPPER_WASHER_POCKET_DEPTH),("WasherKeyWidth",WASHER_KEY_WIDTH),("LowerWasherCollarOD",LOWER_WASHER_COLLAR_OD),("LowerWasherCollarID",LOWER_WASHER_COLLAR_ID),("LowerWasherCollarHeight",LOWER_WASHER_COLLAR_H),("RetainerThickness",RETAINER_T),("TargetAxialEndplay",TARGET_AXIAL_ENDPLAY),
+("JournalDiameter",ROTOR_JOURNAL_D),("JournalLength",ROTOR_JOURNAL_L)]:
+    meta.addProperty("App::PropertyLength",n,"Reference dimensions"); setattr(meta,n,v)
+meta.addProperty("App::PropertyString","EncoderModel","Reference"); meta.EncoderModel=ENC_MODEL
+meta.addProperty("App::PropertyInteger","EncoderPulsesPerRev","Reference"); meta.EncoderPulsesPerRev=ENC_PULSES
+meta.addProperty("App::PropertyInteger","EncoderDetentsPerRev","Reference"); meta.EncoderDetentsPerRev=ENC_DETENTS
+root.addObject(meta); meta.Visibility=False
+
+doc.recompute()
+try:
+    import FreeCADGui as Gui
+    Gui.activeDocument().activeView().viewAxonometric(); Gui.activeDocument().activeView().fitAll()
+except Exception: pass
+try: out=os.path.dirname(os.path.abspath(__file__))
+except Exception: out=os.getcwd()
+fcstd=os.path.join(out,"V2.0_Full_Internal_Layout.FCStd")
+step=os.path.join(out,"V2.0_Full_Internal_Layout.step")
+doc.recompute(); doc.saveAs(fcstd)
+Part.export([as_obj,pkg_obj,mag_obj,rotor_obj,base_obj,bush_obj,lower_obj,upper_obj,ret_obj,
+             enc_board_obj,enc_body_obj,shaft_obj,wheel_hub_obj,display_obj,tsl_obj,tsl_pkg_obj,witness_obj,rails_obj,support_obj,posts_obj,display_pads_obj]+screw_objs+driver_objs+[rod_sweep_obj],step)
+print("Saved:",fcstd,step)
+print("Open chassis envelope: %.1f x %.1f mm; provisional." % (BASE_X,BASE_Y))
+print("Nominal axial endplay target: %.2f mm; verify with measured stack." % TARGET_AXIAL_ENDPLAY)
+print("Fastener seats and driver volumes are provisional envelopes, not selected hardware.")
+print("Linkage rod 360-degree sweep is a keep-out reference, not a clearance result.")
+print("Encoder pins and exact PCB footprint intentionally omitted.")

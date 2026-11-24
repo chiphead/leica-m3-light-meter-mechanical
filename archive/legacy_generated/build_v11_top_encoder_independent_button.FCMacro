@@ -1,0 +1,116 @@
+# -*- coding: utf-8 -*-
+# FreeCAD macro: V1.1 top encoder and independent center-button mechanism study
+# All dimensions are placeholders. The encoder model deliberately exposes the unresolved shaft/button interface.
+import os, math
+import FreeCAD as App
+import Part
+
+# ---------------- Provisional editable dimensions (mm) ----------------
+AS_BOARD_X, AS_BOARD_Y, AS_BOARD_T = 23.0, 23.0, 1.6
+AS_BOARD_TOP_Z = 0.0
+AS_PACKAGE_XY, AS_PACKAGE_H = 2.0, 1.5
+ENC_BODY_X, ENC_BODY_Y, ENC_BODY_Z = 8.0, 8.0, 8.0
+ENC_BODY_BOTTOM_Z = 5.0
+ENC_SHAFT_D, ENC_SHAFT_LENGTH = 4.0, 6.0
+ENC_SHAFT_TOP_Z = ENC_BODY_BOTTOM_Z + ENC_BODY_Z + ENC_SHAFT_LENGTH
+DIAL_OD, DIAL_T = 20.0, 1.5  # preserve user's existing approx. Ø20 dial envelope
+DIAL_HUB_OD, DIAL_HUB_ID, DIAL_HUB_H = 7.0, 4.2, 2.0
+DIAL_SHAFT_CLEARANCE_D = 4.2
+BUTTON_CAP_D, BUTTON_CAP_T = 3.2, 1.0
+BUTTON_PLUNGER_D = 1.6
+BUTTON_GUIDE_OD, BUTTON_GUIDE_ID = 3.0, 1.8
+BUTTON_TRAVEL = 0.6
+BUTTON_SPRING_OD = 2.4
+SUPPORT_PLATE_X, SUPPORT_PLATE_Y, SUPPORT_PLATE_T = 18.0, 18.0, 1.6
+SUPPORT_Z = 3.0
+SUPPORT_SCREW_PCD, SUPPORT_SCREW_D = 14.0, 2.0
+
+# Coordinate: AS5600 PCB top is Z=0; encoder is above it (+Z).
+# The PCB is a reference envelope only and is not a structural support.
+ENC_BODY_TOP_Z = ENC_BODY_BOTTOM_Z + ENC_BODY_Z
+SHAFT_BOTTOM_Z = ENC_BODY_TOP_Z
+SHAFT_TOP_Z = SHAFT_BOTTOM_Z + ENC_SHAFT_LENGTH
+DIAL_BOTTOM_Z = SHAFT_TOP_Z - DIAL_T
+DIAL_TOP_Z = DIAL_BOTTOM_Z + DIAL_T
+
+doc_name='V11_Top_Encoder_Independent_Button_Study'
+if App.getDocument(doc_name): App.closeDocument(doc_name)
+doc=App.newDocument(doc_name)
+root=doc.addObject('App::DocumentObjectGroup','TopControlAssembly')
+root.Label='V1.1 top encoder + independent center button — unresolved interface study'
+
+def add(name,label,shape,color):
+    o=doc.addObject('PartDesign::Feature',name); o.Label=label; o.Shape=shape
+    o.ViewObject.ShapeColor=color; root.addObject(o); return o
+
+# AS5600 board and underside sensor package, for stack context only.
+as_board=Part.makeBox(AS_BOARD_X,AS_BOARD_Y,AS_BOARD_T,App.Vector(-AS_BOARD_X/2,-AS_BOARD_Y/2,AS_BOARD_TOP_Z))
+as_obj=add('AS5600Board','AS5600 PCB envelope; reference only, not load-bearing',as_board,(0.45,0.68,0.48))
+pkg=Part.makeBox(AS_PACKAGE_XY,AS_PACKAGE_XY,AS_PACKAGE_H,App.Vector(-AS_PACKAGE_XY/2,-AS_PACKAGE_XY/2,AS_BOARD_TOP_Z-AS_PACKAGE_H))
+pkg_obj=add('AS5600Package','AS5600 package on PCB underside',pkg,(0.15,0.85,0.35))
+
+# Encoder body and shaft. Shaft is shown as a solid placeholder; a bore is not assumed.
+enc=Part.makeBox(ENC_BODY_X,ENC_BODY_Y,ENC_BODY_Z,App.Vector(-ENC_BODY_X/2,-ENC_BODY_Y/2,ENC_BODY_BOTTOM_Z))
+enc_obj=add('EncoderBody','Encoder body placeholder 8 x 8 x 8 mm',enc,(0.28,0.42,0.78))
+shaft=Part.makeCylinder(ENC_SHAFT_D/2,ENC_SHAFT_LENGTH,App.Vector(0,0,SHAFT_BOTTOM_Z))
+shaft_obj=add('EncoderSolidShaft','Solid encoder shaft placeholder — actual shaft type unknown',shaft,(0.22,0.28,0.38))
+
+# User dial envelope and a separate hub. Hub bore has provisional clearance over shaft.
+dial=Part.makeCylinder(DIAL_OD/2,DIAL_T,App.Vector(0,0,DIAL_BOTTOM_Z))
+dial_hole=Part.makeCylinder(DIAL_SHAFT_CLEARANCE_D/2,DIAL_T+0.2,App.Vector(0,0,DIAL_BOTTOM_Z-0.1))
+dial_obj=add('ExistingDialEnvelope','Existing approx. Ø20 dial envelope; do not redesign its styling',dial.cut(dial_hole),(0.78,0.55,0.28))
+hub_o=Part.makeCylinder(DIAL_HUB_OD/2,DIAL_HUB_H,App.Vector(0,0,DIAL_BOTTOM_Z-DIAL_HUB_H))
+hub_i=Part.makeCylinder(DIAL_HUB_ID/2,DIAL_HUB_H+0.2,App.Vector(0,0,DIAL_BOTTOM_Z-DIAL_HUB_H-0.1))
+hub_obj=add('RotatingDialHub','Separate rotating hub/coupler placeholder',hub_o.cut(hub_i),(0.82,0.42,0.20))
+
+# Independent stationary button path, drawn concentrically as a candidate only.
+# It requires a hollow shaft or a separate concentric sleeve; it conflicts with the solid shaft shown above.
+guide_bottom=SUPPORT_Z+SUPPORT_PLATE_T
+guide_top=DIAL_TOP_Z+BUTTON_TRAVEL+1.0
+guide_len=guide_top-guide_bottom
+go=Part.makeCylinder(BUTTON_GUIDE_OD/2,guide_len,App.Vector(0,0,guide_bottom))
+gi=Part.makeCylinder(BUTTON_GUIDE_ID/2,guide_len+0.2,App.Vector(0,0,guide_bottom-0.1))
+guide_obj=add('StationaryButtonGuide','Stationary button guide sleeve — candidate concentric path',go.cut(gi),(0.18,0.68,0.72))
+plunger_len=guide_len-1.0
+plunger=Part.makeCylinder(BUTTON_PLUNGER_D/2,plunger_len,App.Vector(0,0,guide_bottom+0.5))
+plunger_obj=add('ButtonPlunger','Non-rotating independent button plunger',plunger,(0.72,0.72,0.78))
+cap=Part.makeCylinder(BUTTON_CAP_D/2,BUTTON_CAP_T,App.Vector(0,0,DIAL_TOP_Z+BUTTON_TRAVEL))
+cap_obj=add('ButtonCap','Stationary center button cap; does not rotate with dial',cap,(0.88,0.88,0.88))
+
+# Spring representation: simplified helical wire along the plunger; concept only.
+spring_shape=Part.makeCompound([Part.makeTorus(BUTTON_SPRING_OD/2,0.18,App.Vector(0,0,5.0+i*0.45),App.Vector(0,0,1)) for i in range(5)])
+spring_obj=add('ReturnSpringConcept','Simplified return spring path; not a manufacturable spring',spring_shape,(0.78,0.78,0.82))
+
+# Support plate and four mounting holes; supports encoder/button bracket independently of PCB.
+plate=Part.makeBox(SUPPORT_PLATE_X,SUPPORT_PLATE_Y,SUPPORT_PLATE_T,App.Vector(-SUPPORT_PLATE_X/2,-SUPPORT_PLATE_Y/2,SUPPORT_Z))
+for a in (45,135,225,315):
+    rad=math.radians(a); x=SUPPORT_SCREW_PCD/2*math.cos(rad); y=SUPPORT_SCREW_PCD/2*math.sin(rad)
+    plate=plate.cut(Part.makeCylinder(SUPPORT_SCREW_D/2,SUPPORT_PLATE_T+0.2,App.Vector(x,y,SUPPORT_Z-0.1)))
+plate_obj=add('IndependentSupportPlate','Independent support plate with four fastener holes; anchor to enclosure bosses',plate,(0.55,0.55,0.58))
+
+# Separate mechanical stop ring around the guide; force should react into support plate/bracket.
+stop=Part.makeCylinder(4.0,1.0,App.Vector(0,0,SUPPORT_Z+SUPPORT_PLATE_T))
+stop_hole=Part.makeCylinder(BUTTON_GUIDE_OD/2+0.2,1.2,App.Vector(0,0,SUPPORT_Z+SUPPORT_PLATE_T-0.1))
+stop_obj=add('ButtonTravelStop','Independent button travel stop ring; transfer load to bracket',stop.cut(stop_hole),(0.65,0.50,0.72))
+
+# Diagnostic collision witness: the central solid encoder shaft occupies the candidate button passage.
+conflict=Part.makeCylinder(ENC_SHAFT_D/2,ENC_SHAFT_LENGTH,App.Vector(0,0,SHAFT_BOTTOM_Z))
+conflict_obj=add('SolidShaftButtonConflict','WARNING: solid shaft conflicts with a concentric button passage',conflict,(0.95,0.12,0.12))
+
+p=doc.addObject('App::FeaturePython','TopControlParameters'); p.Label='V1.1 editable provisional parameters'
+for n,v in [('EncoderBodyWidth',ENC_BODY_X),('EncoderBodyHeight',ENC_BODY_Y),('EncoderBodyThickness',ENC_BODY_Z),('EncoderShaftDiameter',ENC_SHAFT_D),('EncoderShaftLength',ENC_SHAFT_LENGTH),('DialOuterDiameter',DIAL_OD),('ButtonCapDiameter',BUTTON_CAP_D),('ButtonPlungerDiameter',BUTTON_PLUNGER_D),('ButtonTravel',BUTTON_TRAVEL),('SupportPlateThickness',SUPPORT_PLATE_T)]:
+    p.addProperty('App::PropertyLength',n,'Provisional dimensions'); setattr(p,n,v)
+root.addObject(p); p.Visibility=False
+doc.recompute()
+try:
+    import FreeCADGui as Gui
+    Gui.activeDocument().activeView().viewAxonometric(); Gui.activeDocument().activeView().fitAll()
+except Exception: pass
+try: out=os.path.dirname(os.path.abspath(__file__))
+except Exception: out=os.getcwd()
+fcstd=os.path.join(out,'V1.1_Top_Encoder_Independent_Button.FCStd')
+step=os.path.join(out,'V1.1_Top_Encoder_Independent_Button.step')
+doc.recompute(); doc.saveAs(fcstd)
+Part.export([as_obj,pkg_obj,enc_obj,shaft_obj,dial_obj,hub_obj,guide_obj,plunger_obj,cap_obj,spring_obj,plate_obj,stop_obj,conflict_obj],step)
+print('Saved:',fcstd,step)
+print('WARNING: concentric button path requires a verified hollow shaft or independent sleeve; current solid-shaft placeholder intentionally exposes the conflict.')
