@@ -1,6 +1,6 @@
 # STEP 几何内核检查报告
 
-- 生成时间（UTC）：2026-11-24T10:35:44.783371+00:00
+- 生成时间（UTC）：2026-11-24T10:49:26.434571+00:00
 - 输入文件：source/leica_m3_light_meter.stp
 - 文件大小：565011 bytes
 - CadQuery：2.5.2
@@ -7960,7 +7960,7 @@
 ## 原始数据
 
 {
-  "generated_utc": "2026-11-24T10:35:44.783371+00:00",
+  "generated_utc": "2026-11-24T10:49:26.434571+00:00",
   "source": "source/leica_m3_light_meter.stp",
   "source_bytes": 565011,
   "cadquery_version": "2.5.2",
@@ -121328,6 +121328,573 @@
             "clear_of_current_cover": false
           }
         ],
+        "bridge_only_cover_sweep": [
+          {
+            "angle_deg": 0,
+            "intersection_volume_mm3": 1.08,
+            "error": null
+          },
+          {
+            "angle_deg": 15,
+            "intersection_volume_mm3": 1.08,
+            "error": null
+          },
+          {
+            "angle_deg": 30,
+            "intersection_volume_mm3": 1.073260243,
+            "error": null
+          },
+          {
+            "angle_deg": 45,
+            "intersection_volume_mm3": 0.902035075,
+            "error": null
+          },
+          {
+            "angle_deg": 60,
+            "intersection_volume_mm3": 0.817868054,
+            "error": null
+          },
+          {
+            "angle_deg": 75,
+            "intersection_volume_mm3": 0.783925439,
+            "error": null
+          },
+          {
+            "angle_deg": 90,
+            "intersection_volume_mm3": 0.774310334,
+            "error": null
+          },
+          {
+            "angle_deg": 105,
+            "intersection_volume_mm3": 0.783925439,
+            "error": null
+          },
+          {
+            "angle_deg": 120,
+            "intersection_volume_mm3": 0.817868054,
+            "error": null
+          },
+          {
+            "angle_deg": 135,
+            "intersection_volume_mm3": 0.902035075,
+            "error": null
+          },
+          {
+            "angle_deg": 150,
+            "intersection_volume_mm3": 1.073260243,
+            "error": null
+          },
+          {
+            "angle_deg": 165,
+            "intersection_volume_mm3": 1.08,
+            "error": null
+          },
+          {
+            "angle_deg": 180,
+            "intersection_volume_mm3": 1.08,
+            "error": null
+          },
+          {
+            "angle_deg": 195,
+            "intersection_volume_mm3": 1.08,
+            "error": null
+          },
+          {
+            "angle_deg": 210,
+            "intersection_volume_mm3": 1.073260243,
+            "error": null
+          },
+          {
+            "angle_deg": 225,
+            "intersection_volume_mm3": 0.902035075,
+            "error": null
+          },
+          {
+            "angle_deg": 240,
+            "intersection_volume_mm3": 0.817868054,
+            "error": null
+          },
+          {
+            "angle_deg": 255,
+            "intersection_volume_mm3": 0.783925439,
+            "error": null
+          },
+          {
+            "angle_deg": 270,
+            "intersection_volume_mm3": 0.774310334,
+            "error": null
+          },
+          {
+            "angle_deg": 285,
+            "intersection_volume_mm3": 0.783925439,
+            "error": null
+          },
+          {
+            "angle_deg": 300,
+            "intersection_volume_mm3": 0.817868054,
+            "error": null
+          },
+          {
+            "angle_deg": 315,
+            "intersection_volume_mm3": 0.902035075,
+            "error": null
+          },
+          {
+            "angle_deg": 330,
+            "intersection_volume_mm3": 1.073260243,
+            "error": null
+          },
+          {
+            "angle_deg": 345,
+            "intersection_volume_mm3": 1.08,
+            "error": null
+          }
+        ],
+        "dial_only_cover_baseline_sweep": [
+          {
+            "angle_deg": 0,
+            "intersection_volume_mm3": 186.323213776,
+            "error": null
+          },
+          {
+            "angle_deg": 15,
+            "intersection_volume_mm3": 186.365721464,
+            "error": null
+          },
+          {
+            "angle_deg": 30,
+            "intersection_volume_mm3": 186.976321965,
+            "error": null
+          },
+          {
+            "angle_deg": 45,
+            "intersection_volume_mm3": 187.621247835,
+            "error": null
+          },
+          {
+            "angle_deg": 60,
+            "intersection_volume_mm3": 184.468448767,
+            "error": null
+          },
+          {
+            "angle_deg": 75,
+            "intersection_volume_mm3": 182.587086189,
+            "error": null
+          },
+          {
+            "angle_deg": 90,
+            "intersection_volume_mm3": 183.986130469,
+            "error": null
+          },
+          {
+            "angle_deg": 105,
+            "intersection_volume_mm3": 184.981803168,
+            "error": null
+          },
+          {
+            "angle_deg": 120,
+            "intersection_volume_mm3": 185.779585694,
+            "error": null
+          },
+          {
+            "angle_deg": 135,
+            "intersection_volume_mm3": 187.058101058,
+            "error": null
+          },
+          {
+            "angle_deg": 150,
+            "intersection_volume_mm3": 186.97632733,
+            "error": null
+          },
+          {
+            "angle_deg": 165,
+            "intersection_volume_mm3": 186.365726209,
+            "error": null
+          },
+          {
+            "angle_deg": 180,
+            "intersection_volume_mm3": 186.323218376,
+            "error": null
+          },
+          {
+            "angle_deg": 195,
+            "intersection_volume_mm3": 186.365726208,
+            "error": null
+          },
+          {
+            "angle_deg": 210,
+            "intersection_volume_mm3": 186.97632733,
+            "error": null
+          },
+          {
+            "angle_deg": 225,
+            "intersection_volume_mm3": 187.05810531,
+            "error": null
+          },
+          {
+            "angle_deg": 240,
+            "intersection_volume_mm3": 185.779585122,
+            "error": null
+          },
+          {
+            "angle_deg": 255,
+            "intersection_volume_mm3": 184.981803152,
+            "error": null
+          },
+          {
+            "angle_deg": 270,
+            "intersection_volume_mm3": 183.986130576,
+            "error": null
+          },
+          {
+            "angle_deg": 285,
+            "intersection_volume_mm3": 182.587086227,
+            "error": null
+          },
+          {
+            "angle_deg": 300,
+            "intersection_volume_mm3": 184.468448349,
+            "error": null
+          },
+          {
+            "angle_deg": 315,
+            "intersection_volume_mm3": 187.621247835,
+            "error": null
+          },
+          {
+            "angle_deg": 330,
+            "intersection_volume_mm3": 186.976321964,
+            "error": null
+          },
+          {
+            "angle_deg": 345,
+            "intersection_volume_mm3": 186.365721464,
+            "error": null
+          }
+        ],
+        "bridge_dial_engagement": {
+          "intersection_volume_mm3": 0.72,
+          "intersection_valid": true,
+          "intersection_solid_count": 2,
+          "intersection_components_bbox_mm": [
+            {
+              "min": [
+                34.2,
+                -3.0,
+                18.0
+              ],
+              "max": [
+                34.8,
+                -2.0,
+                18.6
+              ],
+              "size": [
+                0.6,
+                1.0,
+                0.6
+              ]
+            },
+            {
+              "min": [
+                34.2,
+                2.0,
+                18.0
+              ],
+              "max": [
+                34.8,
+                3.0,
+                18.6
+              ],
+              "size": [
+                0.6,
+                1.0,
+                0.6
+              ]
+            }
+          ],
+          "z_slice_scan": [
+            {
+              "z_range_mm": [
+                18.0,
+                18.1
+              ],
+              "overlap_volume_mm3": 0.12,
+              "overlap_area_equivalent_mm2": 1.2,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.2,
+                    -3.0,
+                    18.0
+                  ],
+                  "max": [
+                    34.8,
+                    -2.0,
+                    18.1
+                  ],
+                  "size": [
+                    0.6,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.2,
+                    2.0,
+                    18.0
+                  ],
+                  "max": [
+                    34.8,
+                    3.0,
+                    18.1
+                  ],
+                  "size": [
+                    0.6,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.1,
+                18.2
+              ],
+              "overlap_volume_mm3": 0.12,
+              "overlap_area_equivalent_mm2": 1.2,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.2,
+                    -3.0,
+                    18.1
+                  ],
+                  "max": [
+                    34.8,
+                    -2.0,
+                    18.2
+                  ],
+                  "size": [
+                    0.6,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.2,
+                    2.0,
+                    18.1
+                  ],
+                  "max": [
+                    34.8,
+                    3.0,
+                    18.2
+                  ],
+                  "size": [
+                    0.6,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.2,
+                18.3
+              ],
+              "overlap_volume_mm3": 0.12,
+              "overlap_area_equivalent_mm2": 1.2,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.2,
+                    -3.0,
+                    18.2
+                  ],
+                  "max": [
+                    34.8,
+                    -2.0,
+                    18.3
+                  ],
+                  "size": [
+                    0.6,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.2,
+                    2.0,
+                    18.2
+                  ],
+                  "max": [
+                    34.8,
+                    3.0,
+                    18.3
+                  ],
+                  "size": [
+                    0.6,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.3,
+                18.4
+              ],
+              "overlap_volume_mm3": 0.12,
+              "overlap_area_equivalent_mm2": 1.2,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.2,
+                    -3.0,
+                    18.3
+                  ],
+                  "max": [
+                    34.8,
+                    -2.0,
+                    18.4
+                  ],
+                  "size": [
+                    0.6,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.2,
+                    2.0,
+                    18.3
+                  ],
+                  "max": [
+                    34.8,
+                    3.0,
+                    18.4
+                  ],
+                  "size": [
+                    0.6,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.4,
+                18.5
+              ],
+              "overlap_volume_mm3": 0.12,
+              "overlap_area_equivalent_mm2": 1.2,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.2,
+                    -3.0,
+                    18.4
+                  ],
+                  "max": [
+                    34.8,
+                    -2.0,
+                    18.5
+                  ],
+                  "size": [
+                    0.6,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.2,
+                    2.0,
+                    18.4
+                  ],
+                  "max": [
+                    34.8,
+                    3.0,
+                    18.5
+                  ],
+                  "size": [
+                    0.6,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.5,
+                18.6
+              ],
+              "overlap_volume_mm3": 0.12,
+              "overlap_area_equivalent_mm2": 1.2,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.2,
+                    -3.0,
+                    18.5
+                  ],
+                  "max": [
+                    34.8,
+                    -2.0,
+                    18.6
+                  ],
+                  "size": [
+                    0.6,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.2,
+                    2.0,
+                    18.5
+                  ],
+                  "max": [
+                    34.8,
+                    3.0,
+                    18.6
+                  ],
+                  "size": [
+                    0.6,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.6,
+                18.7
+              ],
+              "overlap_volume_mm3": 0.0,
+              "overlap_area_equivalent_mm2": 0.0,
+              "component_count": 0,
+              "components_bbox_mm": []
+            }
+          ]
+        },
         "clear_of_frozen_geometry_all_angles": true,
         "clear_of_current_cover_all_angles": false
       },
@@ -121658,6 +122225,573 @@
             "clear_of_current_cover": false
           }
         ],
+        "bridge_only_cover_sweep": [
+          {
+            "angle_deg": 0,
+            "intersection_volume_mm3": 1.44,
+            "error": null
+          },
+          {
+            "angle_deg": 15,
+            "intersection_volume_mm3": 1.44,
+            "error": null
+          },
+          {
+            "angle_deg": 30,
+            "intersection_volume_mm3": 1.416071317,
+            "error": null
+          },
+          {
+            "angle_deg": 45,
+            "intersection_volume_mm3": 1.204367247,
+            "error": null
+          },
+          {
+            "angle_deg": 60,
+            "intersection_volume_mm3": 1.091079488,
+            "error": null
+          },
+          {
+            "angle_deg": 75,
+            "intersection_volume_mm3": 1.045604051,
+            "error": null
+          },
+          {
+            "angle_deg": 90,
+            "intersection_volume_mm3": 1.032735778,
+            "error": null
+          },
+          {
+            "angle_deg": 105,
+            "intersection_volume_mm3": 1.045604051,
+            "error": null
+          },
+          {
+            "angle_deg": 120,
+            "intersection_volume_mm3": 1.091079488,
+            "error": null
+          },
+          {
+            "angle_deg": 135,
+            "intersection_volume_mm3": 1.204367247,
+            "error": null
+          },
+          {
+            "angle_deg": 150,
+            "intersection_volume_mm3": 1.416071317,
+            "error": null
+          },
+          {
+            "angle_deg": 165,
+            "intersection_volume_mm3": 1.44,
+            "error": null
+          },
+          {
+            "angle_deg": 180,
+            "intersection_volume_mm3": 1.44,
+            "error": null
+          },
+          {
+            "angle_deg": 195,
+            "intersection_volume_mm3": 1.44,
+            "error": null
+          },
+          {
+            "angle_deg": 210,
+            "intersection_volume_mm3": 1.416071317,
+            "error": null
+          },
+          {
+            "angle_deg": 225,
+            "intersection_volume_mm3": 1.204367247,
+            "error": null
+          },
+          {
+            "angle_deg": 240,
+            "intersection_volume_mm3": 1.091079488,
+            "error": null
+          },
+          {
+            "angle_deg": 255,
+            "intersection_volume_mm3": 1.045604051,
+            "error": null
+          },
+          {
+            "angle_deg": 270,
+            "intersection_volume_mm3": 1.032735778,
+            "error": null
+          },
+          {
+            "angle_deg": 285,
+            "intersection_volume_mm3": 1.045604051,
+            "error": null
+          },
+          {
+            "angle_deg": 300,
+            "intersection_volume_mm3": 1.091079488,
+            "error": null
+          },
+          {
+            "angle_deg": 315,
+            "intersection_volume_mm3": 1.204367247,
+            "error": null
+          },
+          {
+            "angle_deg": 330,
+            "intersection_volume_mm3": 1.416071317,
+            "error": null
+          },
+          {
+            "angle_deg": 345,
+            "intersection_volume_mm3": 1.44,
+            "error": null
+          }
+        ],
+        "dial_only_cover_baseline_sweep": [
+          {
+            "angle_deg": 0,
+            "intersection_volume_mm3": 186.323213776,
+            "error": null
+          },
+          {
+            "angle_deg": 15,
+            "intersection_volume_mm3": 186.365721464,
+            "error": null
+          },
+          {
+            "angle_deg": 30,
+            "intersection_volume_mm3": 186.976321965,
+            "error": null
+          },
+          {
+            "angle_deg": 45,
+            "intersection_volume_mm3": 187.621247835,
+            "error": null
+          },
+          {
+            "angle_deg": 60,
+            "intersection_volume_mm3": 184.468448767,
+            "error": null
+          },
+          {
+            "angle_deg": 75,
+            "intersection_volume_mm3": 182.587086189,
+            "error": null
+          },
+          {
+            "angle_deg": 90,
+            "intersection_volume_mm3": 183.986130469,
+            "error": null
+          },
+          {
+            "angle_deg": 105,
+            "intersection_volume_mm3": 184.981803168,
+            "error": null
+          },
+          {
+            "angle_deg": 120,
+            "intersection_volume_mm3": 185.779585694,
+            "error": null
+          },
+          {
+            "angle_deg": 135,
+            "intersection_volume_mm3": 187.058101058,
+            "error": null
+          },
+          {
+            "angle_deg": 150,
+            "intersection_volume_mm3": 186.97632733,
+            "error": null
+          },
+          {
+            "angle_deg": 165,
+            "intersection_volume_mm3": 186.365726209,
+            "error": null
+          },
+          {
+            "angle_deg": 180,
+            "intersection_volume_mm3": 186.323218376,
+            "error": null
+          },
+          {
+            "angle_deg": 195,
+            "intersection_volume_mm3": 186.365726208,
+            "error": null
+          },
+          {
+            "angle_deg": 210,
+            "intersection_volume_mm3": 186.97632733,
+            "error": null
+          },
+          {
+            "angle_deg": 225,
+            "intersection_volume_mm3": 187.05810531,
+            "error": null
+          },
+          {
+            "angle_deg": 240,
+            "intersection_volume_mm3": 185.779585122,
+            "error": null
+          },
+          {
+            "angle_deg": 255,
+            "intersection_volume_mm3": 184.981803152,
+            "error": null
+          },
+          {
+            "angle_deg": 270,
+            "intersection_volume_mm3": 183.986130576,
+            "error": null
+          },
+          {
+            "angle_deg": 285,
+            "intersection_volume_mm3": 182.587086227,
+            "error": null
+          },
+          {
+            "angle_deg": 300,
+            "intersection_volume_mm3": 184.468448349,
+            "error": null
+          },
+          {
+            "angle_deg": 315,
+            "intersection_volume_mm3": 187.621247835,
+            "error": null
+          },
+          {
+            "angle_deg": 330,
+            "intersection_volume_mm3": 186.976321964,
+            "error": null
+          },
+          {
+            "angle_deg": 345,
+            "intersection_volume_mm3": 186.365721464,
+            "error": null
+          }
+        ],
+        "bridge_dial_engagement": {
+          "intersection_volume_mm3": 0.96,
+          "intersection_valid": true,
+          "intersection_solid_count": 2,
+          "intersection_components_bbox_mm": [
+            {
+              "min": [
+                34.1,
+                -3.0,
+                18.0
+              ],
+              "max": [
+                34.9,
+                -2.0,
+                18.6
+              ],
+              "size": [
+                0.8,
+                1.0,
+                0.6
+              ]
+            },
+            {
+              "min": [
+                34.1,
+                2.0,
+                18.0
+              ],
+              "max": [
+                34.9,
+                3.0,
+                18.6
+              ],
+              "size": [
+                0.8,
+                1.0,
+                0.6
+              ]
+            }
+          ],
+          "z_slice_scan": [
+            {
+              "z_range_mm": [
+                18.0,
+                18.1
+              ],
+              "overlap_volume_mm3": 0.16,
+              "overlap_area_equivalent_mm2": 1.6,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.1,
+                    -3.0,
+                    18.0
+                  ],
+                  "max": [
+                    34.9,
+                    -2.0,
+                    18.1
+                  ],
+                  "size": [
+                    0.8,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.1,
+                    2.0,
+                    18.0
+                  ],
+                  "max": [
+                    34.9,
+                    3.0,
+                    18.1
+                  ],
+                  "size": [
+                    0.8,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.1,
+                18.2
+              ],
+              "overlap_volume_mm3": 0.16,
+              "overlap_area_equivalent_mm2": 1.6,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.1,
+                    -3.0,
+                    18.1
+                  ],
+                  "max": [
+                    34.9,
+                    -2.0,
+                    18.2
+                  ],
+                  "size": [
+                    0.8,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.1,
+                    2.0,
+                    18.1
+                  ],
+                  "max": [
+                    34.9,
+                    3.0,
+                    18.2
+                  ],
+                  "size": [
+                    0.8,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.2,
+                18.3
+              ],
+              "overlap_volume_mm3": 0.16,
+              "overlap_area_equivalent_mm2": 1.6,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.1,
+                    -3.0,
+                    18.2
+                  ],
+                  "max": [
+                    34.9,
+                    -2.0,
+                    18.3
+                  ],
+                  "size": [
+                    0.8,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.1,
+                    2.0,
+                    18.2
+                  ],
+                  "max": [
+                    34.9,
+                    3.0,
+                    18.3
+                  ],
+                  "size": [
+                    0.8,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.3,
+                18.4
+              ],
+              "overlap_volume_mm3": 0.16,
+              "overlap_area_equivalent_mm2": 1.6,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.1,
+                    -3.0,
+                    18.3
+                  ],
+                  "max": [
+                    34.9,
+                    -2.0,
+                    18.4
+                  ],
+                  "size": [
+                    0.8,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.1,
+                    2.0,
+                    18.3
+                  ],
+                  "max": [
+                    34.9,
+                    3.0,
+                    18.4
+                  ],
+                  "size": [
+                    0.8,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.4,
+                18.5
+              ],
+              "overlap_volume_mm3": 0.16,
+              "overlap_area_equivalent_mm2": 1.6,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.1,
+                    -3.0,
+                    18.4
+                  ],
+                  "max": [
+                    34.9,
+                    -2.0,
+                    18.5
+                  ],
+                  "size": [
+                    0.8,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.1,
+                    2.0,
+                    18.4
+                  ],
+                  "max": [
+                    34.9,
+                    3.0,
+                    18.5
+                  ],
+                  "size": [
+                    0.8,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.5,
+                18.6
+              ],
+              "overlap_volume_mm3": 0.16,
+              "overlap_area_equivalent_mm2": 1.6,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.1,
+                    -3.0,
+                    18.5
+                  ],
+                  "max": [
+                    34.9,
+                    -2.0,
+                    18.6
+                  ],
+                  "size": [
+                    0.8,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.1,
+                    2.0,
+                    18.5
+                  ],
+                  "max": [
+                    34.9,
+                    3.0,
+                    18.6
+                  ],
+                  "size": [
+                    0.8,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.6,
+                18.7
+              ],
+              "overlap_volume_mm3": 0.0,
+              "overlap_area_equivalent_mm2": 0.0,
+              "component_count": 0,
+              "components_bbox_mm": []
+            }
+          ]
+        },
         "clear_of_frozen_geometry_all_angles": true,
         "clear_of_current_cover_all_angles": false
       },
@@ -121988,9 +123122,583 @@
             "clear_of_current_cover": false
           }
         ],
+        "bridge_only_cover_sweep": [
+          {
+            "angle_deg": 0,
+            "intersection_volume_mm3": 1.8,
+            "error": null
+          },
+          {
+            "angle_deg": 15,
+            "intersection_volume_mm3": 1.8,
+            "error": null
+          },
+          {
+            "angle_deg": 30,
+            "intersection_volume_mm3": 1.74977708,
+            "error": null
+          },
+          {
+            "angle_deg": 45,
+            "intersection_volume_mm3": 1.508145157,
+            "error": null
+          },
+          {
+            "angle_deg": 60,
+            "intersection_volume_mm3": 1.364797135,
+            "error": null
+          },
+          {
+            "angle_deg": 75,
+            "intersection_volume_mm3": 1.307600227,
+            "error": null
+          },
+          {
+            "angle_deg": 90,
+            "intersection_volume_mm3": 1.291437385,
+            "error": null
+          },
+          {
+            "angle_deg": 105,
+            "intersection_volume_mm3": 1.307600227,
+            "error": null
+          },
+          {
+            "angle_deg": 120,
+            "intersection_volume_mm3": 1.364797135,
+            "error": null
+          },
+          {
+            "angle_deg": 135,
+            "intersection_volume_mm3": 1.508145157,
+            "error": null
+          },
+          {
+            "angle_deg": 150,
+            "intersection_volume_mm3": 1.74977708,
+            "error": null
+          },
+          {
+            "angle_deg": 165,
+            "intersection_volume_mm3": 1.8,
+            "error": null
+          },
+          {
+            "angle_deg": 180,
+            "intersection_volume_mm3": 1.8,
+            "error": null
+          },
+          {
+            "angle_deg": 195,
+            "intersection_volume_mm3": 1.8,
+            "error": null
+          },
+          {
+            "angle_deg": 210,
+            "intersection_volume_mm3": 1.74977708,
+            "error": null
+          },
+          {
+            "angle_deg": 225,
+            "intersection_volume_mm3": 1.508145157,
+            "error": null
+          },
+          {
+            "angle_deg": 240,
+            "intersection_volume_mm3": 1.364797135,
+            "error": null
+          },
+          {
+            "angle_deg": 255,
+            "intersection_volume_mm3": 1.307600227,
+            "error": null
+          },
+          {
+            "angle_deg": 270,
+            "intersection_volume_mm3": 1.291437385,
+            "error": null
+          },
+          {
+            "angle_deg": 285,
+            "intersection_volume_mm3": 1.307600227,
+            "error": null
+          },
+          {
+            "angle_deg": 300,
+            "intersection_volume_mm3": 1.364797135,
+            "error": null
+          },
+          {
+            "angle_deg": 315,
+            "intersection_volume_mm3": 1.508145157,
+            "error": null
+          },
+          {
+            "angle_deg": 330,
+            "intersection_volume_mm3": 1.74977708,
+            "error": null
+          },
+          {
+            "angle_deg": 345,
+            "intersection_volume_mm3": 1.8,
+            "error": null
+          }
+        ],
+        "dial_only_cover_baseline_sweep": [
+          {
+            "angle_deg": 0,
+            "intersection_volume_mm3": 186.323213776,
+            "error": null
+          },
+          {
+            "angle_deg": 15,
+            "intersection_volume_mm3": 186.365721464,
+            "error": null
+          },
+          {
+            "angle_deg": 30,
+            "intersection_volume_mm3": 186.976321965,
+            "error": null
+          },
+          {
+            "angle_deg": 45,
+            "intersection_volume_mm3": 187.621247835,
+            "error": null
+          },
+          {
+            "angle_deg": 60,
+            "intersection_volume_mm3": 184.468448767,
+            "error": null
+          },
+          {
+            "angle_deg": 75,
+            "intersection_volume_mm3": 182.587086189,
+            "error": null
+          },
+          {
+            "angle_deg": 90,
+            "intersection_volume_mm3": 183.986130469,
+            "error": null
+          },
+          {
+            "angle_deg": 105,
+            "intersection_volume_mm3": 184.981803168,
+            "error": null
+          },
+          {
+            "angle_deg": 120,
+            "intersection_volume_mm3": 185.779585694,
+            "error": null
+          },
+          {
+            "angle_deg": 135,
+            "intersection_volume_mm3": 187.058101058,
+            "error": null
+          },
+          {
+            "angle_deg": 150,
+            "intersection_volume_mm3": 186.97632733,
+            "error": null
+          },
+          {
+            "angle_deg": 165,
+            "intersection_volume_mm3": 186.365726209,
+            "error": null
+          },
+          {
+            "angle_deg": 180,
+            "intersection_volume_mm3": 186.323218376,
+            "error": null
+          },
+          {
+            "angle_deg": 195,
+            "intersection_volume_mm3": 186.365726208,
+            "error": null
+          },
+          {
+            "angle_deg": 210,
+            "intersection_volume_mm3": 186.97632733,
+            "error": null
+          },
+          {
+            "angle_deg": 225,
+            "intersection_volume_mm3": 187.05810531,
+            "error": null
+          },
+          {
+            "angle_deg": 240,
+            "intersection_volume_mm3": 185.779585122,
+            "error": null
+          },
+          {
+            "angle_deg": 255,
+            "intersection_volume_mm3": 184.981803152,
+            "error": null
+          },
+          {
+            "angle_deg": 270,
+            "intersection_volume_mm3": 183.986130576,
+            "error": null
+          },
+          {
+            "angle_deg": 285,
+            "intersection_volume_mm3": 182.587086227,
+            "error": null
+          },
+          {
+            "angle_deg": 300,
+            "intersection_volume_mm3": 184.468448349,
+            "error": null
+          },
+          {
+            "angle_deg": 315,
+            "intersection_volume_mm3": 187.621247835,
+            "error": null
+          },
+          {
+            "angle_deg": 330,
+            "intersection_volume_mm3": 186.976321964,
+            "error": null
+          },
+          {
+            "angle_deg": 345,
+            "intersection_volume_mm3": 186.365721464,
+            "error": null
+          }
+        ],
+        "bridge_dial_engagement": {
+          "intersection_volume_mm3": 1.2,
+          "intersection_valid": true,
+          "intersection_solid_count": 2,
+          "intersection_components_bbox_mm": [
+            {
+              "min": [
+                34.0,
+                -3.0,
+                18.0
+              ],
+              "max": [
+                35.0,
+                -2.0,
+                18.6
+              ],
+              "size": [
+                1.0,
+                1.0,
+                0.6
+              ]
+            },
+            {
+              "min": [
+                34.0,
+                2.0,
+                18.0
+              ],
+              "max": [
+                35.0,
+                3.0,
+                18.6
+              ],
+              "size": [
+                1.0,
+                1.0,
+                0.6
+              ]
+            }
+          ],
+          "z_slice_scan": [
+            {
+              "z_range_mm": [
+                18.0,
+                18.1
+              ],
+              "overlap_volume_mm3": 0.2,
+              "overlap_area_equivalent_mm2": 2.0,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.0,
+                    -3.0,
+                    18.0
+                  ],
+                  "max": [
+                    35.0,
+                    -2.0,
+                    18.1
+                  ],
+                  "size": [
+                    1.0,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.0,
+                    2.0,
+                    18.0
+                  ],
+                  "max": [
+                    35.0,
+                    3.0,
+                    18.1
+                  ],
+                  "size": [
+                    1.0,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.1,
+                18.2
+              ],
+              "overlap_volume_mm3": 0.2,
+              "overlap_area_equivalent_mm2": 2.0,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.0,
+                    -3.0,
+                    18.1
+                  ],
+                  "max": [
+                    35.0,
+                    -2.0,
+                    18.2
+                  ],
+                  "size": [
+                    1.0,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.0,
+                    2.0,
+                    18.1
+                  ],
+                  "max": [
+                    35.0,
+                    3.0,
+                    18.2
+                  ],
+                  "size": [
+                    1.0,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.2,
+                18.3
+              ],
+              "overlap_volume_mm3": 0.2,
+              "overlap_area_equivalent_mm2": 2.0,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.0,
+                    -3.0,
+                    18.2
+                  ],
+                  "max": [
+                    35.0,
+                    -2.0,
+                    18.3
+                  ],
+                  "size": [
+                    1.0,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.0,
+                    2.0,
+                    18.2
+                  ],
+                  "max": [
+                    35.0,
+                    3.0,
+                    18.3
+                  ],
+                  "size": [
+                    1.0,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.3,
+                18.4
+              ],
+              "overlap_volume_mm3": 0.2,
+              "overlap_area_equivalent_mm2": 2.0,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.0,
+                    -3.0,
+                    18.3
+                  ],
+                  "max": [
+                    35.0,
+                    -2.0,
+                    18.4
+                  ],
+                  "size": [
+                    1.0,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.0,
+                    2.0,
+                    18.3
+                  ],
+                  "max": [
+                    35.0,
+                    3.0,
+                    18.4
+                  ],
+                  "size": [
+                    1.0,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.4,
+                18.5
+              ],
+              "overlap_volume_mm3": 0.2,
+              "overlap_area_equivalent_mm2": 2.0,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.0,
+                    -3.0,
+                    18.4
+                  ],
+                  "max": [
+                    35.0,
+                    -2.0,
+                    18.5
+                  ],
+                  "size": [
+                    1.0,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.0,
+                    2.0,
+                    18.4
+                  ],
+                  "max": [
+                    35.0,
+                    3.0,
+                    18.5
+                  ],
+                  "size": [
+                    1.0,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.5,
+                18.6
+              ],
+              "overlap_volume_mm3": 0.2,
+              "overlap_area_equivalent_mm2": 2.0,
+              "component_count": 2,
+              "components_bbox_mm": [
+                {
+                  "min": [
+                    34.0,
+                    -3.0,
+                    18.5
+                  ],
+                  "max": [
+                    35.0,
+                    -2.0,
+                    18.6
+                  ],
+                  "size": [
+                    1.0,
+                    1.0,
+                    0.1
+                  ]
+                },
+                {
+                  "min": [
+                    34.0,
+                    2.0,
+                    18.5
+                  ],
+                  "max": [
+                    35.0,
+                    3.0,
+                    18.6
+                  ],
+                  "size": [
+                    1.0,
+                    1.0,
+                    0.1
+                  ]
+                }
+              ]
+            },
+            {
+              "z_range_mm": [
+                18.6,
+                18.7
+              ],
+              "overlap_volume_mm3": 0.0,
+              "overlap_area_equivalent_mm2": 0.0,
+              "component_count": 0,
+              "components_bbox_mm": []
+            }
+          ]
+        },
         "clear_of_frozen_geometry_all_angles": true,
         "clear_of_current_cover_all_angles": false
       }
+    },
+    "input_bridge_cover_and_engagement_scan_parameters": {
+      "rotation_step_deg": 15,
+      "bridge_only_cover_checked_separately": true,
+      "dial_only_cover_baseline_checked_separately": true,
+      "engagement_z_slice_step_mm": 0.1,
+      "engagement_section_scope": "bridge intersect translated shutter dial"
     },
     "high_gear_layer_scan_parameters": {
       "z_starts_mm": [
