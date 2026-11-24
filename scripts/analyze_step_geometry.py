@@ -1716,10 +1716,58 @@ def main():
             moving_fuse_error = str(exc)
 
         sweep_rows = []
+        bridge_only_cover_sweep = []
+        dial_only_cover_baseline_sweep = []
+        bridge_dial_engagement = {
+            "intersection_volume_mm3": None,
+            "intersection_valid": False,
+            "intersection_solid_count": None,
+            "intersection_components_bbox_mm": [],
+            "z_slice_scan": [],
+        }
         if moving_dial_bridge is not None:
+            try:
+                engagement = bridge.intersect(moved_shutter_dial)
+                bridge_dial_engagement.update({
+                    "intersection_volume_mm3": round(float(engagement.Volume()), 9),
+                    "intersection_valid": bool(engagement.isValid()),
+                    "intersection_solid_count": len(engagement.Solids()),
+                    "intersection_components_bbox_mm": [bbox(x) for x in engagement.Solids()],
+                })
+                # Thin Z slices localize where the bridge actually engages the
+                # existing dial material; these are section samples, not strength data.
+                for slice_index in range(7):
+                    z0 = round(bridge_z_min_mm + slice_index * 0.1, 4)
+                    probe = cq.Solid.makeBox(
+                        bridge_width_mm + 0.02, bridge_span_y_mm + 0.02, 0.1,
+                        cq.Vector(bridge_center_x_mm - (bridge_width_mm + 0.02) / 2.0,
+                                  bridge_center_y_mm - (bridge_span_y_mm + 0.02) / 2.0,
+                                  z0),
+                    )
+                    section = engagement.intersect(probe)
+                    bridge_dial_engagement["z_slice_scan"].append({
+                        "z_range_mm": [z0, round(z0 + 0.1, 4)],
+                        "overlap_volume_mm3": round(float(section.Volume()), 9),
+                        "overlap_area_equivalent_mm2": round(float(section.Volume()) / 0.1, 9),
+                        "component_count": len(section.Solids()),
+                        "components_bbox_mm": [bbox(x) for x in section.Solids()],
+                    })
+            except Exception as exc:
+                bridge_dial_engagement["error"] = str(exc)
+
             for angle_deg in range(0, 360, 15):
                 try:
                     rotated_moving = moving_dial_bridge.rotate(
+                        (bridge_center_x_mm, bridge_center_y_mm, 0.0),
+                        (bridge_center_x_mm, bridge_center_y_mm, 1.0),
+                        float(angle_deg),
+                    )
+                    rotated_bridge = bridge.rotate(
+                        (bridge_center_x_mm, bridge_center_y_mm, 0.0),
+                        (bridge_center_x_mm, bridge_center_y_mm, 1.0),
+                        float(angle_deg),
+                    )
+                    rotated_dial = moved_shutter_dial.rotate(
                         (bridge_center_x_mm, bridge_center_y_mm, 0.0),
                         (bridge_center_x_mm, bridge_center_y_mm, 1.0),
                         float(angle_deg),
@@ -1737,6 +1785,26 @@ def main():
                                 "intersection_volume_mm3": round(overlap, 9) if overlap is not None else None,
                                 "error": error,
                             })
+                    try:
+                        bridge_cover_overlap = float(rotated_bridge.intersect(solids[4]).Volume())
+                        bridge_cover_error = None
+                    except Exception as exc:
+                        bridge_cover_overlap, bridge_cover_error = None, str(exc)
+                    try:
+                        dial_cover_overlap = float(rotated_dial.intersect(solids[4]).Volume())
+                        dial_cover_error = None
+                    except Exception as exc:
+                        dial_cover_overlap, dial_cover_error = None, str(exc)
+                    bridge_only_cover_sweep.append({
+                        "angle_deg": angle_deg,
+                        "intersection_volume_mm3": round(bridge_cover_overlap, 9) if bridge_cover_overlap is not None else None,
+                        "error": bridge_cover_error,
+                    })
+                    dial_only_cover_baseline_sweep.append({
+                        "angle_deg": angle_deg,
+                        "intersection_volume_mm3": round(dial_cover_overlap, 9) if dial_cover_overlap is not None else None,
+                        "error": dial_cover_error,
+                    })
                     sweep_rows.append({
                         "angle_deg": angle_deg,
                         "collision_count": len(checks),
@@ -1757,6 +1825,12 @@ def main():
                         "clear_of_frozen_geometry": False,
                         "clear_of_current_cover": False,
                     })
+                    bridge_only_cover_sweep.append({
+                        "angle_deg": angle_deg, "intersection_volume_mm3": None, "error": str(exc)
+                    })
+                    dial_only_cover_baseline_sweep.append({
+                        "angle_deg": angle_deg, "intersection_volume_mm3": None, "error": str(exc)
+                    })
         input_bridge_sweep_by_bridge_width[str(bridge_width_mm)] = {
             "bridge_width_x_mm": bridge_width_mm,
             "bridge_span_y_mm": bridge_span_y_mm,
@@ -1768,6 +1842,9 @@ def main():
             "rotation_step_deg": 15,
             "rotation_samples": len(sweep_rows),
             "rotation_sweep": sweep_rows,
+            "bridge_only_cover_sweep": bridge_only_cover_sweep,
+            "dial_only_cover_baseline_sweep": dial_only_cover_baseline_sweep,
+            "bridge_dial_engagement": bridge_dial_engagement,
             "clear_of_frozen_geometry_all_angles": len(sweep_rows) == 24 and all(x["clear_of_frozen_geometry"] for x in sweep_rows),
             "clear_of_current_cover_all_angles": len(sweep_rows) == 24 and all(x["clear_of_current_cover"] for x in sweep_rows),
         }
@@ -1946,6 +2023,13 @@ def main():
         "high_gear_input_stub_checks": high_gear_input_stub_checks,
         "input_bridge_hub_candidate_scan": input_bridge_hub_candidate_scan,
         "input_bridge_sweep_by_bridge_width": input_bridge_sweep_by_bridge_width,
+        "input_bridge_cover_and_engagement_scan_parameters": {
+            "rotation_step_deg": 15,
+            "bridge_only_cover_checked_separately": True,
+            "dial_only_cover_baseline_checked_separately": True,
+            "engagement_z_slice_step_mm": 0.1,
+            "engagement_section_scope": "bridge intersect translated shutter dial",
+        },
         "high_gear_layer_scan_parameters": {"z_starts_mm": [20.5, 23.5], "step_mm": 0.25, "blank_diameter_mm": 11.0, "face_width_mm": 2.0, "centers_xy_mm": [[24.5, 0.0], [34.5, 0.0]]},
         "gear_layer_pin_clearance_scan": gear_layer_pin_clearance_scan,
         "true_gear_axial_window_scan": true_gear_axial_window_scan,
