@@ -23,7 +23,14 @@ def distance(a, b):
         return f"unavailable: {exc}"
 
 def check(a, b, label):
-    return {"pair": label, "intersection_volume_mm3": volume(a.intersect(b)),
+    overlap = a.intersect(b)
+    overlap_solids = overlap.Solids()
+    bbox = overlap.BoundingBox() if volume(overlap) > 1e-8 else None
+    return {"pair": label, "intersection_volume_mm3": volume(overlap),
+            "intersection_solid_count": len(overlap_solids),
+            "intersection_bbox_mm": ([round(float(v), 4) for v in
+                (bbox.xmin, bbox.ymin, bbox.zmin, bbox.xmax, bbox.ymax, bbox.zmax)]
+                if bbox else None),
             "minimum_distance_mm": distance(a, b)}
 
 def main():
@@ -88,6 +95,7 @@ def main():
         "checks":pairs,"cover_face_overlap_diagnostics":face_rows,
         "limitations":[
             "The original cover and body are not modified.",
+            "Intersection bounding boxes localize volumetric interference; they do not define a valid cut profile.",
             "A cylindrical gear blank is only a spatial envelope; it does not validate involute tooth geometry or meshing.",
             "The Ø2 axial probes are diagnostic envelopes, not selected shaft diameters or approved shaft paths.",
             "Zero overlap is not a manufacturing clearance or assembly-path proof.",
@@ -103,11 +111,11 @@ def main():
         "- 齿轮毛坯探针：Ø11 x 2 mm，Z=21…23 mm；仅用于空间检查，不代表真实齿形。","",
         "## 原始盖子包围盒（mm）","",
         f"- Min：{report['cover_bbox_mm']['min']}",f"- Max：{report['cover_bbox_mm']['max']}","",
-        "## 盖子与改造机构的实体检查","","|检查对象|交叠体积 (mm³)|最小距离 (mm)|说明|",
-        "|---|---:|---:|---|"]
+        "## 盖子与改造机构的实体检查","","|检查对象|交叠体积 (mm³)|交叠实体数|交叠区域包围盒 min/max (mm)|最小距离 (mm)|说明|",
+        "|---|---:|---:|---|---:|---|"]
     for item in pairs:
         note = "原始盖体/主体配合基线，不能简单当作碰撞" if "baseline fit" in item["pair"] else "实体空间探针"
-        lines.append(f"|{item['pair']}|{item['intersection_volume_mm3']}|{item['minimum_distance_mm']}|{note}|")
+        lines.append(f"|{item['pair']}|{item['intersection_volume_mm3']}|{item['intersection_solid_count']}|{item['intersection_bbox_mm']}|{item['minimum_distance_mm']}|{note}|")
     lines += ["","## 盖子面级交叠定位",""]
     if face_rows:
         lines += ["|障碍物|盖子面枚举|曲面类型|边界交叠面积 (mm²)|盖子面包围盒 min/max (mm)|","|---|---:|---|---:|---|"]
