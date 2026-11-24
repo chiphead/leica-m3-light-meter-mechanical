@@ -40,6 +40,5 @@ def load_or_compute(*, stage: str, version: str, inputs: dict[str, Any], compute
     temporary = path.with_suffix(".json.tmp")
     temporary.write_text(json.dumps(envelope, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     temporary.replace(path)
-    print(f"CAD cache stored: {stage} ({key[:12]})
-")
+    print(f"CAD cache stored: {stage} ({key[:12]})")
     return result
