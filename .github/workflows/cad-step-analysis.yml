@@ -2,24 +2,21 @@ name: CAD STEP geometry analysis
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
     paths:
       - "source/**"
       - "scripts/analyze_step_geometry.py"
       - "scripts/analyze_open_cover_body_relief.py"
       - "scripts/analyze_original_cover_revision.py"
       - "scripts/analyze_cover_interference_sections.py"
+      - "scripts/analyze_shutter_vertical_clearance.py"
       - "scripts/analysis_cache.py"
       - ".github/workflows/cad-step-analysis.yml"
-
 permissions:
   contents: write
-
 concurrency:
   group: cad-step-analysis-main
   cancel-in-progress: false
-
 jobs:
   analyze-step:
     runs-on: ubuntu-latest
@@ -49,6 +46,7 @@ jobs:
           python scripts/analyze_open_cover_body_relief.py
           python scripts/analyze_original_cover_revision.py
           python scripts/analyze_cover_interference_sections.py
+          python scripts/analyze_shutter_vertical_clearance.py
       - name: Upload open-cover STEP and STL candidates
         uses: actions/upload-artifact@v4
         with:
@@ -62,10 +60,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           git reset --soft origin/main
-          git add working/STEP_GEOMETRY_REPORT.md working/OPEN_COVER_BODY_RELIEF_REPORT.md working/ORIGINAL_COVER_REVISION_AUDIT.md working/COVER_SHUTTER_INTERFERENCE_SECTIONS.md
-          if git diff --cached --quiet; then
-            echo "Geometry reports unchanged"
-            exit 0
-          fi
-          git commit -m "Add cover shutter interference section diagnostics"
+          git add working/STEP_GEOMETRY_REPORT.md working/OPEN_COVER_BODY_RELIEF_REPORT.md working/ORIGINAL_COVER_REVISION_AUDIT.md working/COVER_SHUTTER_INTERFERENCE_SECTIONS.md working/SHUTTER_VERTICAL_CLEARANCE_SCAN.md
+          if git diff --cached --quiet; then echo "Geometry reports unchanged"; exit 0; fi
+          git commit -m "Add shutter vertical clearance sensitivity scan"
           git push origin HEAD:main
