@@ -8,6 +8,7 @@ on:
       - "source/**"
       - "scripts/analyze_step_geometry.py"
       - "scripts/analyze_open_cover_body_relief.py"
+      - "scripts/analyze_original_cover_revision.py"
       - "scripts/analysis_cache.py"
       - ".github/workflows/cad-step-analysis.yml"
 
@@ -45,6 +46,7 @@ jobs:
         run: |
           python scripts/analyze_step_geometry.py
           python scripts/analyze_open_cover_body_relief.py
+          python scripts/analyze_original_cover_revision.py
       - name: Upload open-cover STEP and STL candidates
         uses: actions/upload-artifact@v4
         with:
@@ -58,7 +60,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           git reset --soft origin/main
-          git add working/STEP_GEOMETRY_REPORT.md working/OPEN_COVER_BODY_RELIEF_REPORT.md
+          git add working/STEP_GEOMETRY_REPORT.md working/OPEN_COVER_BODY_RELIEF_REPORT.md working/ORIGINAL_COVER_REVISION_AUDIT.md
           if git diff --cached --quiet; then
             echo "Geometry reports unchanged"
             exit 0
