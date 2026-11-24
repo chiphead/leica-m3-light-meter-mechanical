@@ -1480,6 +1480,49 @@ def main():
             ),
         })
 
+    # Segment the output-axis corridor by height so intentional integral
+    # material overlap can be distinguished from a genuinely blocked shaft path.
+    segmented_output_axis_checks = []
+    output_axis_xy = (24.5, 0.0)
+    output_axis_diameters = [1.0, 1.5, 2.0, 2.5, 3.0]
+    output_axis_z_edges = [round(i * 0.5, 3) for i in range(44)]  # 0.0..21.5
+    output_axis_obstacles = (
+        ("main_body", solids[5]),
+        ("encoder_button", solids[1]),
+        ("encoder_dial", solids[2]),
+        ("encoder_bracket", solids[6]),
+        ("translated_shutter_dial", moved_shutter_dial),
+    )
+    for z0, z1 in zip(output_axis_z_edges, output_axis_z_edges[1:]):
+        for diameter in output_axis_diameters:
+            shaft_slice = cq.Solid.makeCylinder(
+                diameter / 2.0, z1 - z0,
+                cq.Vector(output_axis_xy[0], output_axis_xy[1], z0),
+                cq.Vector(0, 0, 1),
+            )
+            checks = []
+            for obstacle_name, obstacle in output_axis_obstacles:
+                try:
+                    overlap = float(shaft_slice.intersect(obstacle).Volume())
+                    error = None
+                except Exception as exc:
+                    overlap, error = None, str(exc)
+                checks.append({
+                    "obstacle": obstacle_name,
+                    "intersection_volume_mm3": round(overlap, 9) if overlap is not None else None,
+                    "error": error,
+                })
+            segmented_output_axis_checks.append({
+                "axis_xy_mm": list(output_axis_xy),
+                "shaft_diameter_mm": diameter,
+                "z_range_mm": [z0, z1],
+                "checks": checks,
+                "clear_of_all_checked_geometry": all(
+                    x["error"] is None and x["intersection_volume_mm3"] is not None
+                    and x["intersection_volume_mm3"] <= 1e-6 for x in checks
+                ),
+            })
+
     high_gear_input_stub_checks = []
     high_gear_input_axis_xy = (34.5, 0.0)
     high_gear_input_stub_z_range = (20.9, 21.5)
@@ -1589,6 +1632,7 @@ def main():
         "true_10mm_gear_pair_height_scan": true_10mm_gear_pair_height_scan,
         "high_gear_layer_scan": high_gear_layer_scan,
         "high_gear_output_shaft_checks": high_gear_output_shaft_checks,
+        "segmented_output_axis_checks": segmented_output_axis_checks,
         "high_gear_input_stub_checks": high_gear_input_stub_checks,
         "high_gear_layer_scan_parameters": {"z_starts_mm": [20.5, 23.5], "step_mm": 0.25, "blank_diameter_mm": 11.0, "face_width_mm": 2.0, "centers_xy_mm": [[24.5, 0.0], [34.5, 0.0]]},
         "gear_layer_pin_clearance_scan": gear_layer_pin_clearance_scan,
