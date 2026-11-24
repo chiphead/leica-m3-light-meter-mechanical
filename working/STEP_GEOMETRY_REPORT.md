@@ -1,6 +1,6 @@
 # STEP 几何内核检查报告
 
-- 生成时间（UTC）：2026-11-24T11:37:44.022604+00:00
+- 生成时间（UTC）：2026-11-24T12:23:54.712809+00:00
 - 输入文件：source/leica_m3_light_meter.stp
 - 文件大小：565011 bytes
 - CadQuery：2.5.2
@@ -7960,7 +7960,7 @@
 ## 原始数据
 
 {
-  "generated_utc": "2026-11-24T11:37:44.022604+00:00",
+  "generated_utc": "2026-11-24T12:23:54.712809+00:00",
   "source": "source/leica_m3_light_meter.stp",
   "source_bytes": 565011,
   "cadquery_version": "2.5.2",
@@ -125506,6 +125506,125 @@
         "main_body_intersection_mm3": 0.0,
         "clear_of_main_body": true,
         "error": null
+      }
+    ],
+    "input_new_cover_ring_body_relief_scan": [
+      {
+        "radial_clearance_mm": 0.5,
+        "radial_frame_width_mm": 1.5,
+        "moving_sweep_radius_mm": 31.996925,
+        "body_relief_method": "subtract exact main-body B-rep intersection from cover ring",
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "candidate_volume_mm3": 1858.800671286,
+        "removed_volume_mm3": 21.268651904,
+        "moving_assembly_intersection_mm3": 0.0,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "error": null,
+        "limitations": [
+          "Only the cover candidate is trimmed; source STEP and main body remain unchanged",
+          "Exact body subtraction provides zero-clearance contact at the trimmed interface, not manufacturing clearance",
+          "Single-solid topology does not prove adequate stiffness, mounting, sealing, tool access or printability"
+        ]
+      },
+      {
+        "radial_clearance_mm": 0.75,
+        "radial_frame_width_mm": 1.5,
+        "moving_sweep_radius_mm": 31.996925,
+        "body_relief_method": "subtract exact main-body B-rep intersection from cover ring",
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "candidate_volume_mm3": 1872.972869157,
+        "removed_volume_mm3": 21.233620974,
+        "moving_assembly_intersection_mm3": 0.0,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "error": null,
+        "limitations": [
+          "Only the cover candidate is trimmed; source STEP and main body remain unchanged",
+          "Exact body subtraction provides zero-clearance contact at the trimmed interface, not manufacturing clearance",
+          "Single-solid topology does not prove adequate stiffness, mounting, sealing, tool access or printability"
+        ]
+      },
+      {
+        "radial_clearance_mm": 1.0,
+        "radial_frame_width_mm": 1.5,
+        "moving_sweep_radius_mm": 31.996925,
+        "body_relief_method": "subtract exact main-body B-rep intersection from cover ring",
+        "candidate_valid": true,
+        "candidate_solid_count": 1,
+        "candidate_volume_mm3": 1887.144121486,
+        "removed_volume_mm3": 21.199535587,
+        "moving_assembly_intersection_mm3": 0.0,
+        "fixed_geometry_checks": [
+          {
+            "obstacle": "main_body",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_button",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_dial",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          },
+          {
+            "obstacle": "encoder_bracket",
+            "intersection_volume_mm3": 0.0,
+            "error": null
+          }
+        ],
+        "error": null,
+        "limitations": [
+          "Only the cover candidate is trimmed; source STEP and main body remain unchanged",
+          "Exact body subtraction provides zero-clearance contact at the trimmed interface, not manufacturing clearance",
+          "Single-solid topology does not prove adequate stiffness, mounting, sealing, tool access or printability"
+        ]
       }
     ],
     "input_new_cover_ring_sector_scan_parameters": {
