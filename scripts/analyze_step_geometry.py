@@ -1446,6 +1446,51 @@ def main():
                 "error": str(exc),
             })
 
+    # Expand the local void ROI across the full nearby Y span and refine Z
+    # sampling around the previously observed gap termination. This measures
+    # missing material directly and remains diagnostic-only.
+    input_gap_expanded_void_sweep = []
+    expanded_gap_roi = {
+        "x_mm": [33.0, 36.0],
+        "y_mm": [-5.5, 5.5],
+        "z_mm": [16.0, 20.3],
+    }
+    expanded_gap_z_step = 0.05
+    expanded_gap_slab_thickness = 0.02
+    expanded_gap_z_values = [
+        round(16.0 + expanded_gap_z_step * i, 2)
+        for i in range(87)
+    ]
+    for z_center in expanded_gap_z_values:
+        probe = cq.Solid.makeBox(
+            3.0, 11.0, expanded_gap_slab_thickness,
+            cq.Vector(33.0, -5.5, z_center - expanded_gap_slab_thickness / 2.0)
+        )
+        try:
+            missing = probe.cut(moved_shutter_dial)
+            parts = missing.Solids() or ([missing] if missing.Volume() > 1e-8 else [])
+            input_gap_expanded_void_sweep.append({
+                "z_center_mm": z_center,
+                "missing_area_estimate_mm2": round(
+                    float(missing.Volume()) / expanded_gap_slab_thickness, 6
+                ),
+                "void_components": [
+                    {
+                        "bbox_mm": bbox(part),
+                        "area_estimate_mm2": round(
+                            float(part.Volume()) / expanded_gap_slab_thickness, 6
+                        ),
+                    }
+                    for part in parts
+                ],
+                "error": None,
+            })
+        except Exception as exc:
+            input_gap_expanded_void_sweep.append({
+                "z_center_mm": z_center,
+                "error": str(exc),
+            })
+
     # Cross-sections of the material bridge between the fixed output axis and
     # the preserved pin-hole axis. Offset from exact Y=0 to avoid the known
     # symmetry-plane Boolean artifact. These are diagnostics, not cut geometry.
@@ -1485,6 +1530,10 @@ def main():
         "input_gap_z_sweep_step_mm": 0.1,
         "input_gap_local_void_sweep": input_gap_local_void_sweep,
         "input_gap_local_void_sweep_roi_mm": local_gap_roi,
+        "input_gap_expanded_void_sweep": input_gap_expanded_void_sweep,
+        "input_gap_expanded_void_sweep_roi_mm": expanded_gap_roi,
+        "input_gap_expanded_void_sweep_z_step_mm": expanded_gap_z_step,
+        "input_gap_expanded_void_sweep_slab_thickness_mm": expanded_gap_slab_thickness,
         "output_pin_bridge_sections": output_pin_bridge_sections,
         "pin_hole_entry_plane_z_mm": 17.1,
         "pin_hole_envelope": {"center_xy_mm": [28.0, 0.0], "radius_mm": 0.9, "z_range_mm": [17.1, 20.9]},
