@@ -58,13 +58,14 @@ jobs:
           python scripts/analyze_cover_body_interface.py
           python scripts/analyze_cover_mating_patch_removal.py
           python scripts/analyze_cover_vertical_removal_obstacles.py
-      - name: Commit geometry reports
+          python scripts/search_cover_side_lane_bridges.py
+      - name: Commit geometry reports and candidates
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           git reset --soft origin/main
-          git add working/STEP_GEOMETRY_REPORT.md working/OPEN_COVER_BODY_RELIEF_REPORT.md working/ORIGINAL_COVER_REVISION_AUDIT.md working/COVER_SHUTTER_INTERFERENCE_SECTIONS.md working/SHUTTER_VERTICAL_CLEARANCE_SCAN.md working/SHUTTER_MULTI_COMPONENT_SCAN.md working/ORIGINAL_COVER_LOCAL_RELIEF_SCREEN.md working/COVER_RELIEF_TOPOLOGY_DIAGNOSTIC.md working/COVER_BODY_INTERFACE_AUDIT.md working/COVER_MATING_PATCH_AND_REMOVAL_AUDIT.md working/COVER_VERTICAL_REMOVAL_OBSTACLE_AUDIT.md
+          git add working/STEP_GEOMETRY_REPORT.md working/OPEN_COVER_BODY_RELIEF_REPORT.md working/ORIGINAL_COVER_REVISION_AUDIT.md working/COVER_SHUTTER_INTERFERENCE_SECTIONS.md working/SHUTTER_VERTICAL_CLEARANCE_SCAN.md working/SHUTTER_MULTI_COMPONENT_SCAN.md working/ORIGINAL_COVER_LOCAL_RELIEF_SCREEN.md working/COVER_RELIEF_TOPOLOGY_DIAGNOSTIC.md working/COVER_BODY_INTERFACE_AUDIT.md working/COVER_MATING_PATCH_AND_REMOVAL_AUDIT.md working/COVER_VERTICAL_REMOVAL_OBSTACLE_AUDIT.md working/COVER_SIDE_LANE_BRIDGE_SEARCH.md working/cover_side_lane_candidates/
           if git diff --cached --quiet; then echo "Geometry reports unchanged"; exit 0; fi
-          git commit -m "Audit original cover body mating interface"
+          git commit -m "Search original cover side-lane bridge candidates"
           git push origin HEAD:main
