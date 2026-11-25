@@ -37,7 +37,7 @@ def gear_outline(module, teeth, pressure_deg, phase, samples=12):
             a = center - half_width(radius)
             points.append((radius*math.cos(a), radius*math.sin(a)))
         tip = half_width(ra)
-        for i in range(1,5):
+        for i in range(1,4):
             a = center - tip + 2.0*tip*i/4.0
             points.append((ra*math.cos(a), ra*math.sin(a)))
         for radius in reversed(radii):
