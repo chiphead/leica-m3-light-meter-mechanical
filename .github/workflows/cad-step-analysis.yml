@@ -16,6 +16,7 @@ on:
       - "scripts/analyze_cover_body_interface.py"
       - "scripts/analyze_cover_mating_patch_removal.py"
       - "scripts/analyze_cover_vertical_removal_obstacles.py"
+      - "scripts/search_cover_side_lane_bridges.py"
       - "scripts/analysis_cache.py"
       - ".github/workflows/cad-step-analysis.yml"
 permissions:
@@ -65,7 +66,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           git reset --soft origin/main
-          git add working/STEP_GEOMETRY_REPORT.md working/OPEN_COVER_BODY_RELIEF_REPORT.md working/ORIGINAL_COVER_REVISION_AUDIT.md working/COVER_SHUTTER_INTERFERENCE_SECTIONS.md working/SHUTTER_VERTICAL_CLEARANCE_SCAN.md working/SHUTTER_MULTI_COMPONENT_SCAN.md working/ORIGINAL_COVER_LOCAL_RELIEF_SCREEN.md working/COVER_RELIEF_TOPOLOGY_DIAGNOSTIC.md working/COVER_BODY_INTERFACE_AUDIT.md working/COVER_MATING_PATCH_AND_REMOVAL_AUDIT.md working/COVER_VERTICAL_REMOVAL_OBSTACLE_AUDIT.md working/COVER_SIDE_LANE_BRIDGE_SEARCH.md working/cover_side_lane_candidates/
+          git add working/STEP_GEOMETRY_REPORT.md working/OPEN_COVER_BODY_RELIEF_REPORT.md working/ORIGINAL_COVER_REVISION_AUDIT.md working/COVER_SHUTTER_INTERFERENCE_SECTIONS.md working/SHUTTER_VERTICAL_CLEARANCE_SCAN.md working/SHUTTER_MULTI_COMPONENT_SCAN.md working/ORIGINAL_COVER_LOCAL_RELIEF_SCREEN.md working/COVER_RELIEF_TOPOLOGY_DIAGNOSTIC.md working/COVER_BODY_INTERFACE_AUDIT.md working/COVER_MATING_PATCH_AND_REMOVAL_AUDIT.md working/COVER_VERTICAL_REMOVAL_OBSTACLE_AUDIT.md working/COVER_SIDE_LANE_BRIDGE_SEARCH.md
+          if find working/cover_side_lane_candidates -type f -print -quit 2>/dev/null | grep -q .; then
+            git add working/cover_side_lane_candidates/
+          fi
           if git diff --cached --quiet; then echo "Geometry reports unchanged"; exit 0; fi
           git commit -m "Search original cover side-lane bridge candidates"
           git push origin HEAD:main
