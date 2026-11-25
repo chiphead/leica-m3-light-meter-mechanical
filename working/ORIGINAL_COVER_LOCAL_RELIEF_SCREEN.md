@@ -1,6 +1,6 @@
 # 原始盖体局部避让候选筛查
 
-- 生成时间 UTC：2026-11-25T00:28:25.066296+00:00
+- 生成时间 UTC：2026-11-25T02:29:19.007511+00:00
 - 原始 STEP 只读；仅对原盖体副本执行切除。
 - 原始盖体与 +X 10 mm 快门输入件交叠：186.323214 mm³。
 - 偏置方法：OpenCascade BRepOffsetAPI_MakeOffsetShape 正向三维偏置。
@@ -24,7 +24,7 @@
 
 ~~~json
 {
-  "generated_utc": "2026-11-25T00:28:25.066296+00:00",
+  "generated_utc": "2026-11-25T02:29:19.007511+00:00",
   "source": "source/leica_m3_light_meter.stp (read-only)",
   "base_cover_shutter_overlap_mm3": 186.323214,
   "method": "OpenCascade BRepOffsetAPI_MakeOffsetShape positive 3D offset; subtract only from a copy of the original cover.",
